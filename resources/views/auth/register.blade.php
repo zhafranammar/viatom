@@ -48,5 +48,17 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
+
+         <div class="flex items-center justify-center mt-4">
+                <a href="/auth/google" class="google-btn">
+                    <div class="google-icon-wrapper">
+                        <img
+                            class="google-icon"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                        />
+                    </div>
+                    <p class="btn-text">Sign In with Google</p>
+                </a>
+            </div>
     </form>
 </x-guest-layout>
