@@ -31,4 +31,9 @@ Route::middleware('auth')->group(function () {
 Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
+// Make route to levels
+Route::get('/play', function () {
+    return view('levels/level1');
+})->middleware(['auth', 'verified'])->name('play');
+
 require __DIR__ . '/auth.php';
