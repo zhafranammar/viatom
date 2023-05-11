@@ -1,7 +1,17 @@
+var gameContainer = document.querySelector('#game-container');
+let WIDTH_GAME = gameContainer.offsetWidth;
+let landscape = true
+let HEIGHT_GAME = WIDTH_GAME * 9 / 16;
+if (WIDTH_GAME < 640) {
+  landscape = false
+  HEIGHT_GAME = WIDTH_GAME * 16 / 9;
+}
+
 var config = {
   type: Phaser.AUTO,
-  width: 1920,
-  height: 1080,
+  width: WIDTH_GAME,
+  height: HEIGHT_GAME,
+  parent: 'game-container',
   physics: {
     default: 'arcade'
   },
@@ -17,14 +27,20 @@ console.log('Level 1');
 function preload() {
   this.load.image('box', 'assets/images/BL-01.png');
   this.load.image('target', 'assets/images/BL-01.png');
+  this.load.image('background', 'assets/images/bg-dalton.png');
   this.input.addPointer(0);
 }
 
 function create() {
   this.cameras.main.setBackgroundColor('#ffffff');
+  this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'background');
   // Buat kotak
   // Cetak h1
-  var box = this.add.image(1200, 600, 'box');
+  if (landscape) {
+    var box = this.add.image(this.game.config.width * 10 / 12, this.game.config.height / 2, 'box');
+  } else {
+    var box = this.add.image(this.game.config.width / 2, this.game.config.height * 10 / 12, 'box');
+  }
   this.physics.add.existing(box);
   box.setScale(0.05);
 
@@ -35,15 +51,12 @@ function create() {
     // ubah x dan y box sesuai dengan posisi mouse
     box.x = pointer.x;
     box.y = pointer.y;
-    // update posisi box
-    // box.update();
-    console.log(box.x, box.y, target.x, target.y);
   });
   this.input.setDraggable(box);
 
 
   // Buat target
-  var target = this.add.image(600, 600, 'target');
+  var target = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'target');
   this.physics.add.existing(target);
   //set target transparent
   target.setAlpha(0);
