@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
         // call feature seeder
         $this->call(FeatureSeeder::class);
         $this->call(SceneSeeder::class);
+        $this->call(VideoSeeder::class);
+        $this->call(MateriSeeder::class);
     }
 }

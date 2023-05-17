@@ -16,7 +16,7 @@ class SceneController extends Controller
 
         return response()->json([
             'code' => 200,
-            'data' => $scene,
+            'data' => $scene
         ]);
     }
 
@@ -39,9 +39,21 @@ class SceneController extends Controller
         //find scene by level
         $scene = \App\Models\Scene::where('level', $id)->first();
 
+        if ($scene->type == "video") {
+            $detail = \App\Models\Video::where('level', $scene->level)->first();
+        } else if ($scene->type == "materi") {
+            $detail = \App\Models\Materi::where('level', $scene->level)->first();
+            // } else if ($scene->type == "build-the-atom") {
+            //     $detail = \App\Models\BuildTheAtom::where('scene_id', $scene->id)->first();
+            // } else if ($scene->type == "see-the-atom") {
+            //     $detail = \App\Models\SeeTheAtom::where('scene_id', $scene->id)->first();
+            // } else if ($scene->type == "atom-experiment") {
+            //     $detail = \App\Models\AtomExperiment::where('scene_id', $scene->id)->first();
+        }
         return response()->json([
             'code' => 200,
             'data' => $scene,
+            'detail' => $detail
         ]);
     }
 
