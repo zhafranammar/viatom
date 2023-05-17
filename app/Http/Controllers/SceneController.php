@@ -43,12 +43,16 @@ class SceneController extends Controller
             $detail = \App\Models\Video::where('level', $scene->level)->first();
         } else if ($scene->type == "materi") {
             $detail = \App\Models\Materi::where('level', $scene->level)->first();
-            // } else if ($scene->type == "build-the-atom") {
-            //     $detail = \App\Models\BuildTheAtom::where('scene_id', $scene->id)->first();
-            // } else if ($scene->type == "see-the-atom") {
-            //     $detail = \App\Models\SeeTheAtom::where('scene_id', $scene->id)->first();
-            // } else if ($scene->type == "atom-experiment") {
-            //     $detail = \App\Models\AtomExperiment::where('scene_id', $scene->id)->first();
+        } else if ($scene->type == "build-the-atom") {
+            $detail = \App\Models\BuildTheAtom::where('level', $scene->level)->first();
+        } else if ($scene->type == "see-the-atom") {
+            $detail = \App\Models\SeeTheAtom::where('level', $scene->level)->first();
+        } else if ($scene->type == "atom-experiment") {
+            $detail = \App\Models\AtomExperiment::where('level', $scene->level)->first();
+        } else if ($scene->type == "quiz") {
+            $detail = \App\Models\Quiz::where('level', $scene->level)->first();
+        } else if ($scene->type == "mini-game") {
+            $detail = \App\Models\MiniGame::where('level', $scene->level)->first();
         }
         return response()->json([
             'code' => 200,

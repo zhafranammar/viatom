@@ -21,7 +21,7 @@ class VideoSeeder extends Seeder
         ]);
         Video::Create([
             'title' => 'Video 2',
-            'level' => 6,
+            'level' => 8,
             'video_url' => 'https://www.youtube.com/embed/1X7fZoDs9KU',
             'thumbnail_url' => 'https://picsum.photos/200/300',
         ]);

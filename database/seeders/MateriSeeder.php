@@ -20,7 +20,7 @@ class MateriSeeder extends Seeder
         ]);
         Materi::Create([
             'title' => 'Materi 2',
-            'level' => 7,
+            'level' => 9,
             'description' => 'Description for Materi 2',
         ]);
     }

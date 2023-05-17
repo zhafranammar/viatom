@@ -35,23 +35,39 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 6,
-            'type' => 'video',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 7,
-            'type' => 'materi',
+            'type' => 'mini-game',
         ]);
         Scene::Create([
             'level' => 8,
-            'type' => 'build-the-atom',
+            'type' => 'video',
         ]);
         Scene::Create([
             'level' => 9,
-            'type' => 'see-the-atom',
+            'type' => 'materi',
         ]);
         Scene::Create([
             'level' => 10,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 11,
+            'type' => 'see-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 12,
             'type' => 'atom-experiment',
+        ]);
+        Scene::Create([
+            'level' => 13,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 14,
+            'type' => 'mini-game',
         ]);
     }
 }
