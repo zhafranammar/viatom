@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         // call feature seeder
         $this->call(FeatureSeeder::class);
+        $this->call(SceneSeeder::class);
     }
 }
