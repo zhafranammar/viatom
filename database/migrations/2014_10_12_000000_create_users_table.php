@@ -19,7 +19,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('points')->default(0);
-            $table->integer('level')->default(1);
+            $table->integer('max_level')->default(1);
+            $table->integer('current_level')->default(1);
+            $table->boolean('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

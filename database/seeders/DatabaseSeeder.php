@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // call feature seeder
+        $this->call(AdminSeeder::class);
         $this->call(FeatureSeeder::class);
         $this->call(SceneSeeder::class);
         $this->call(VideoSeeder::class);

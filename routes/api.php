@@ -37,3 +37,6 @@ Route::apiResource('see-the-atoms', SeeTheAtomController::class);
 Route::apiResource('atom-experiments', AtomExperimentController::class);
 Route::apiResource('quizzes', QuizController::class);
 Route::apiResource('mini-games', MiniGameController::class);
+
+// Make API for login
+Route::post('login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'apiStore']);
