@@ -32,9 +32,13 @@ Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'r
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
 // Make route to levels
-Route::get('/play', function () {
-    return view('levels/level1');
-})->middleware(['auth', 'verified'])->name('play');
+Route::get('/game', [App\Http\Controllers\LevelController::class, 'play'])
+    ->middleware(['auth', 'verified'])
+    ->name('play');
+
+Route::get('/next-level', [App\Http\Controllers\LevelController::class, 'nextLevel'])
+    ->middleware(['auth', 'verified'])
+    ->name('next-level');
 
 // Make route for CMS (Content Management System) where user is_admin is 1
 Route::middleware(['auth', 'verified'])->group(function () {

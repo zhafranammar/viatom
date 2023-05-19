@@ -2,47 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Scene;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function play()
     {
-        //
+        $user = auth()->user();
+        $level = $user->current_level;
+        $scene = Scene::where('level', $level)->first();
+        $page = 'games.' . $scene->type;
+        return view($page, compact('scene'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function nextLevel()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $user = auth()->user();
+        $user->current_level = $user->current_level + 1;
+        if ($user->max_level < $user->current_level) {
+            $user->max_level = $user->current_level;
+        }
+        $user->save();
+        return redirect()->route('play');
     }
 }
