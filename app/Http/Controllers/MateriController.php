@@ -62,4 +62,26 @@ class MateriController extends Controller
             'message' => 'Unauthorized',
         ]);
     }
+
+    public function learningMaterials()
+    {
+        $data = \App\Models\Scene::where('type', 'materi')->orWhere('type', 'video')->get();
+
+        return response()->json([
+            'code' => 200,
+            'data' => $data,
+        ]);
+    }
+
+    public function learningMaterial(string $id)
+    {
+        $data = \App\Models\Materi::where('level', $id)->first();
+        if (!$data) {
+            $data = \App\Models\Video::where('level', $id)->first();
+        }
+        return response()->json([
+            'code' => 200,
+            'data' => $data,
+        ]);
+    }
 }

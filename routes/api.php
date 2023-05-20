@@ -38,5 +38,9 @@ Route::apiResource('atom-experiments', AtomExperimentController::class);
 Route::apiResource('quizzes', QuizController::class);
 Route::apiResource('mini-games', MiniGameController::class);
 
+// Make api route for get learning materials
+Route::get('learning-materials', [MateriController::class, 'learningMaterials']);
+Route::get('learning-materials/{id}', [MateriController::class, 'learningMaterial']);
+
 // Make API for login
 Route::post('login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'apiStore']);
