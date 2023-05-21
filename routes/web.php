@@ -31,6 +31,10 @@ Route::middleware('auth')->group(function () {
 Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
+Route::get('/discussion/create', function () {
+    return view('discussion.create');
+})->middleware(['auth', 'verified'])->name('discussion');
+
 // Make route to levels
 Route::get('/game', [App\Http\Controllers\LevelController::class, 'play'])
     ->middleware(['auth', 'verified'])
