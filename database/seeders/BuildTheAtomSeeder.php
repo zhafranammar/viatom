@@ -17,13 +17,13 @@ class BuildTheAtomSeeder extends Seeder
             'title' => 'Atom Dalton',
             'level' => 3,
             'description' => 'Description for Build The Atom 1',
-            'src' => 'dalton.js',
+            'src' => 'js\build-the-atom\dalton.js',
         ]);
         BuildTheAtom::Create([
             'title' => 'Atom Thomson',
             'level' => 10,
             'description' => 'Description for Build The Atom 2',
-            'src' => 'thomson.js',
+            'src' => 'js\build-the-atom\thomson.js',
         ]);
     }
 }

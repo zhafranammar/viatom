@@ -49,7 +49,7 @@ class MateriController extends Controller
         return response()->json([
             'code' => 401,
             'message' => 'Unauthorized',
-        ]);
+        ])->setStatusCode(401);
     }
 
     /**
@@ -60,7 +60,7 @@ class MateriController extends Controller
         return response()->json([
             'code' => 401,
             'message' => 'Unauthorized',
-        ]);
+        ])->setStatusCode(401);
     }
 
     public function learningMaterials()
@@ -78,6 +78,13 @@ class MateriController extends Controller
         $data = \App\Models\Materi::where('level', $id)->first();
         if (!$data) {
             $data = \App\Models\Video::where('level', $id)->first();
+        }
+
+        if (!$data) {
+            return response()->json([
+                'code' => 404,
+                'message' => 'Not Found',
+            ])->setStatusCode(404);
         }
         return response()->json([
             'code' => 200,
