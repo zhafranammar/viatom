@@ -12,9 +12,39 @@ let atom = 0;
 if (tier == 'Bronze') {
   atom = 5;
 } else if (tier == 'Silver') {
-  atom = 7;
-} else {
   atom = 9;
+} else {
+  atom = 13;
+}
+
+let distance = WIDTH_GAME / 16;
+
+let centerX = WIDTH_GAME / 2;
+let centerY = HEIGHT_GAME / 2;
+let position = [
+  { x: centerX, y: centerY }
+];
+
+let radius = distance;
+
+// Menghitung posisi titik-titik pada lingkaran
+for (let i = 0; i < 4; i++) {
+  let angle = (Math.PI / 2) * i;
+  let x = centerX + radius * Math.cos(angle);
+  let y = centerY + radius * Math.sin(angle);
+  position.push({ x, y });
+}
+for (let i = 0; i < 4; i++) {
+  let angle = (Math.PI / 4) * (i * 2 + 1);
+  let x = centerX + radius * Math.cos(angle);
+  let y = centerY + radius * Math.sin(angle);
+  position.push({ x, y });
+}
+for (let i = 0; i < 4; i++) {
+  let angle = (Math.PI / 2) * i;
+  let x = centerX + radius / 2 * Math.cos(angle);
+  let y = centerY + radius / 2 * Math.sin(angle);
+  position.push({ x, y });
 }
 
 var config = {
@@ -45,15 +75,17 @@ function preload() {
 
 function create() {
   var electron = [];
+  var draggableElectron = null;
   if (landscape) {
     var core = this.add.image(this.game.config.width * 10 / 12, this.game.config.height / 2, 'core');
     for (let i = 0; i < atom; i++) {
-      console.log(i);
-      electron[i] = this.add.image(this.game.config.width * 10 / 12, this.game.config.height / 2, 'electron');
-      this.physics.add.existing(electron[i]);
-      electron[i].setScale(0.007);
+      electron[i] = this.add.image(position[i].x, position[i].y, 'electron');
+      // this.physics.add.existing(electron[i]);
+      electron[i].setAlpha(0);
+      electron[i].setScale(0.009);
       electron[i].setInteractive();
       electron[i].setDepth(1);
+      this.physics.add.existing(electron[i]);
       electron[i].on('drag', function (pointer) {
         electron[i].x = pointer.x;
         electron[i].y = pointer.y;
@@ -87,9 +119,32 @@ function create() {
 
   // apabila jarak antara core dan target kurang dari 1500 maka core akan berhenti
   this.physics.add.overlap(core, target, function () {
-    // console.log('Selamat, kamu berhasil menyelesaikan level 1!');
     core.destroy();
     target.setAlpha(1);
-    target.setScale(0.1);
+    target.setScale(0.12);
+    if (draggableElectron === null) {
+      draggableElectron = this.add.image(WIDTH_GAME * 10 / 12, HEIGHT_GAME / 2, 'electron');
+      draggableElectron.setScale(0.009);
+      draggableElectron.setInteractive();
+      this.input.setDraggable(draggableElectron);
+      this.physics.add.existing(draggableElectron);
+      draggableElectron.on('drag', function (pointer) {
+        draggableElectron.x = pointer.x;
+        draggableElectron.y = pointer.y;
+      });
+    }
+  }, null, this);
+  this.physics.add.overlap(draggableElectron, electron[0], function () {
+    console.log('Electron berhasil!');
+    draggableElectron.destroy();
+    let dragElectron = this.add.image(WIDTH_GAME * 10 / 12, HEIGHT_GAME / 2, 'electron');
+    var lastIndex = electron.length - 1;
+    electron[lastIndex].setAlpha(1);
+    electron[lastIndex].setScale(0.01);
+    electron[lastIndex].setDepth(2);
+    this.physics.add.existing(electron[lastIndex]);
+    this.physics.add.overlap(electron[lastIndex], dragElectron, function () {
+      console.log('Semua electron berhasil!');
+    }, null, this);
   }, null, this);
 }

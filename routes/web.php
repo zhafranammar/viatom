@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DiscussionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,10 @@ Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::
 Route::get('/discussion/create', function () {
     return view('discussion.create');
 })->middleware(['auth', 'verified'])->name('discussion');
+Route::get('/discussions', [DiscussionController::class, 'index']);
+Route::get('/discussions/{discussion}', [DiscussionController::class, 'show']);
+Route::post('/discussions', [DiscussionController::class, 'store']);
+Route::post('/discussions/{discussion}/replies', [DiscussionController::class, 'storeReply']);
 
 // Make route to levels
 Route::get('/game', [App\Http\Controllers\LevelController::class, 'play'])
