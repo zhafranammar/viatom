@@ -25,5 +25,11 @@ class BuildTheAtomSeeder extends Seeder
             'description' => 'Description for Build The Atom 2',
             'src' => 'js\build-the-atom\thomson.js',
         ]);
+        BuildTheAtom::Create([
+            'title' => 'Atom Rutherford',
+            'level' => 15,
+            'description' => 'Description for Build The Atom 3',
+            'src' => 'js\build-the-atom\rutherford.js',
+        ]);
     }
 }

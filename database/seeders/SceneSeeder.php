@@ -69,5 +69,9 @@ class SceneSeeder extends Seeder
             'level' => 14,
             'type' => 'mini-game',
         ]);
+        Scene::Create([
+            'level' => 15,
+            'type' => 'build-the-atom',
+        ]);
     }
 }
