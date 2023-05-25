@@ -31,5 +31,11 @@ class BuildTheAtomSeeder extends Seeder
             'description' => 'Description for Build The Atom 3',
             'src' => 'js\build-the-atom\rutherford.js',
         ]);
+        BuildTheAtom::Create([
+            'title' => 'Atom Bohr',
+            'level' => 16,
+            'description' => 'Description for Build The Atom 4',
+            'src' => 'js\build-the-atom\bohr.js',
+        ]);
     }
 }

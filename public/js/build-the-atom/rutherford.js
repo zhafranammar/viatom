@@ -9,10 +9,6 @@ if (WIDTH_GAME < 640) {
   HEIGHT_GAME = WIDTH_GAME * 16 / 9;
 }
 
-let startPosition = {
-  x: WIDTH_GAME * 10 / 12,
-  y: HEIGHT_GAME / 2
-}
 //declare atom with 3 attribute (proton, neutron, electron)
 let atom = {
   proton: 0,
@@ -109,7 +105,7 @@ function preload() {
   this.load.image('electron', 'assets/images/electron.png');
   this.load.image('proton', 'assets/images/proton.png');
   this.load.image('neutron', 'assets/images/neutron.png');
-  this.load.image('ring', 'assets/images/oval2.png');
+  this.load.image('ring', 'assets/images/oval.png');
   this.load.image('circle', 'assets/images/ring.png');
   this.input.addPointer(0);
 }
@@ -254,7 +250,7 @@ function makeOrbit(countOrbit) {
 
   draggableOrbit.setInteractive();
   draggableOrbit.setDepth(1);
-  draggableOrbit.setScale(0.009);
+  draggableOrbit.setScale(0.05);
 
   this.input.setDraggable(draggableOrbit);
   draggableOrbit.on('drag', (pointer) => {
