@@ -17,13 +17,25 @@ class AtomExperimentSeeder extends Seeder
             'title' => 'Menyusun Alat Sinar Katoda',
             'level' => 5,
             'description' => 'Description experiment 1',
-            'src' => 'katodaBuild.js',
+            'src' => 'js\atom-experiment\sinar-katoda-a.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Katoda',
             'level' => 12,
             'description' => 'Description experiment 2',
-            'src' => 'katodaBuild.js',
+            'src' => 'js\atom-experiment\sinar-katoda-b.js',
+        ]);
+        AtomExperiment::Create([
+            'title' => 'Alat Sinar Katoda',
+            'level' => 17,
+            'description' => 'Description experiment 3',
+            'src' => 'js\atom-experiment\sinar-katoda-c.js',
+        ]);
+        AtomExperiment::Create([
+            'title' => 'Alat Sinar Katoda',
+            'level' => 18,
+            'description' => 'Description experiment 4',
+            'src' => 'js\atom-experiment\sinar-katoda-d.js',
         ]);
     }
 }

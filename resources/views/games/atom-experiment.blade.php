@@ -19,6 +19,7 @@
             const scriptElement = document.createElement('script');
             scriptElement.src = gameScript;
             gameContainer.appendChild(scriptElement);
+            console.log(scriptElement);
             })
             .catch(error => {
             console.error('Terjadi kesalahan:', error);
@@ -29,10 +30,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" id="game-container">
-              {{-- <canvas id="game-canvas"></canvas> --}}
-              <script src="{{ asset('js/levels/level1.js') }}"></script>
             </div>
-            <a href="{{ route('next-level') }}">Next Level</a>
         </div>
     </div>
 </x-app-layout>
