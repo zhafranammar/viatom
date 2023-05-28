@@ -54,7 +54,7 @@ function create() {
 
   // Buat target
   var target = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'target');
-  console.log(target.width, target.height);
+  // console.log(target.width, target.height);
   this.physics.add.existing(target);
   //set target transparent
   target.setAlpha(0);

@@ -20,7 +20,6 @@
             const scriptElement = document.createElement('script');
             scriptElement.src = gameScript;
             gameContainer.appendChild(scriptElement);
-            console.log(scriptElement);
             })
             .catch(error => {
             console.error('Terjadi kesalahan:', error);
