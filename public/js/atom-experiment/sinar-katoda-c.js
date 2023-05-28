@@ -34,24 +34,24 @@ function preload() {
   this.load.image('electron', 'assets/images/electron.png');
   this.load.image('onButton', 'assets/images/on.png');
   this.load.image('offButton', 'assets/images/off.png');
-  this.load.image('magnet', 'assets/images/magnet.png');
+  this.load.image('plus', 'assets/images/plus.png');
+  this.load.image('minus', 'assets/images/minus.png');
   this.input.addPointer(0);
 }
 
 let electronInterval;
 let spawnInterval = 10; // Interval spawn (dalam milidetik)
 
-function calculateDistance(electron, magnet) {
-  const dx = magnet.x - electron.x;
-  const dy = magnet.y - electron.y;
+function calculateDistance(electron, object) {
+  const dx = object.x - electron.x;
+  const dy = object.y - electron.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-function spawnElectron(status, magnet) {
+function spawnElectron(status, plus, minus) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
       let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
-      // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({
         targets: electron,
@@ -63,12 +63,21 @@ function spawnElectron(status, magnet) {
           electron.destroy();
         },
         onUpdate: () => {
-          const distance = calculateDistance(electron, magnet);
-          if (distance > 0) {
-            const angle = Math.atan2(magnet.y - electron.y, magnet.x - electron.x);
+          const distancePlus = calculateDistance(electron, plus);
+          if (distancePlus > 0) {
+            const angle = Math.atan2(plus.y - electron.y, plus.x - electron.x);
             const speed = 0.2; // Adjust the speed as desired
             const newX = electron.x + Math.cos(angle) * speed;
             const newY = electron.y + Math.sin(angle) * speed;
+            electron.x = newX;
+            electron.y = newY;
+          }
+          const distanceMinus = calculateDistance(electron, minus);
+          if (distanceMinus > 0) {
+            const angle = Math.atan2(minus.y - electron.y, minus.x - electron.x);
+            const speed = 0.2; // Adjust the speed as desired
+            const newX = electron.x - Math.cos(angle) * speed;
+            const newY = electron.y - Math.sin(angle) * speed;
             electron.x = newX;
             electron.y = newY;
           }
@@ -88,18 +97,28 @@ function create() {
   let tube = this.add.image(centerX, centerY, 'tube');
   let onButton = this.add.image(centerX, centerY + 150, 'onButton');
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');
-  let magnet = this.add.image(centerX + 350, centerY, 'magnet');
+  let plus = this.add.image(centerX + 350, centerY, 'plus');
+  let minus = this.add.image(centerX + 350, centerY - 50, 'minus');
   tube.setScale(0.17);
   onButton.setScale(0.05);
   offButton.setScale(0.05);
-  magnet.setScale(0.05);
+  plus.setScale(0.03);
+  minus.setScale(0.03);
   offButton.setAlpha(0);
 
-  magnet.setInteractive();
-  this.input.setDraggable(magnet);
-  magnet.on('drag', (pointer) => {
-    magnet.x = pointer.x;
-    magnet.y = pointer.y;
+  plus.setInteractive();
+  this.input.setDraggable(plus);
+  plus.on('drag', (pointer) => {
+    plus.x = pointer.x;
+    plus.y = pointer.y;
+  }
+  );
+
+  minus.setInteractive();
+  this.input.setDraggable(minus);
+  minus.on('drag', (pointer) => {
+    minus.x = pointer.x;
+    minus.y = pointer.y;
   }
   );
 
@@ -108,7 +127,7 @@ function create() {
   onButton.on('pointerdown', () => {
     onButton.setAlpha(0);
     offButton.setAlpha(1);
-    spawnElectron.call(this, 1, magnet);
+    spawnElectron.call(this, 1, plus, minus);
   });
 
   // when click offButton
@@ -116,6 +135,6 @@ function create() {
   offButton.on('pointerdown', () => {
     onButton.setAlpha(1);
     offButton.setAlpha(0);
-    spawnElectron.call(this, 0, magnet);
+    spawnElectron.call(this, 0, plus, minus);
   });
 }

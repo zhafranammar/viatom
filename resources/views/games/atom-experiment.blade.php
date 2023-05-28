@@ -2,6 +2,7 @@
     <x-slot name="header">
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.50/dist/phaser.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js\utils\cameraUtils.js" type="module"></script>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Atom Experiment') }}
         </h2>

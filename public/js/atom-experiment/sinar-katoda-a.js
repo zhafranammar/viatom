@@ -1,3 +1,5 @@
+import { startCamera } from '../utils/cameraUtils.js';
+
 var gameContainer = document.querySelector('#game-container');
 let WIDTH_GAME = gameContainer.offsetWidth;
 let tier = user.tier;
@@ -40,20 +42,27 @@ function preload() {
 let electronInterval;
 let spawnInterval = 10; // Interval spawn (dalam milidetik)
 
-function spawnElectron(status) {
+function spawnElectron(status, turbin) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
       let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
-      console.log(electron);
+      // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({
         targets: electron,
-        x: centerX + 123,
+        x: turbin.x,
         duration: 5000,
         ease: 'Linear',
         // destroy electron
         onComplete: () => {
           electron.destroy();
+          // rotate turbin
+          this.tweens.add({
+            targets: turbin,
+            angle: 360,
+            duration: 5000,
+            ease: 'Linear',
+          });
         }
       });
     }, spawnInterval); // Spawn electron dengan interval yang ditentukan
@@ -64,6 +73,7 @@ function spawnElectron(status) {
 }
 
 function create() {
+  startCamera.call(this);
   let tube = this.add.image(centerX, centerY, 'tube');
   let onButton = this.add.image(centerX, centerY + 150, 'onButton');
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');

@@ -85,5 +85,9 @@ class SceneSeeder extends Seeder
             'level' => 18,
             'type' => 'atom-experiment',
         ]);
+        Scene::Create([
+            'level' => 19,
+            'type' => 'atom-experiment',
+        ]);
     }
 }

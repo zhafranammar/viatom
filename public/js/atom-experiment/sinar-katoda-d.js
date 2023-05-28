@@ -30,24 +30,17 @@ var config = {
 var game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image('tube', 'assets/images/tube.png');
+  this.load.image('tube', 'assets/images/tube2.png');
   this.load.image('electron', 'assets/images/electron.png');
   this.load.image('onButton', 'assets/images/on.png');
   this.load.image('offButton', 'assets/images/off.png');
-  this.load.image('magnet', 'assets/images/magnet.png');
   this.input.addPointer(0);
 }
 
 let electronInterval;
 let spawnInterval = 10; // Interval spawn (dalam milidetik)
 
-function calculateDistance(electron, magnet) {
-  const dx = magnet.x - electron.x;
-  const dy = magnet.y - electron.y;
-  return Math.sqrt(dx * dx + dy * dy);
-}
-
-function spawnElectron(status, magnet) {
+function spawnElectron(status) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
       let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
@@ -61,20 +54,6 @@ function spawnElectron(status, magnet) {
         // destroy electron
         onComplete: () => {
           electron.destroy();
-        },
-        onUpdate: () => {
-          const distance = calculateDistance(electron, magnet);
-          if (distance > 0) {
-            const angle = Math.atan2(magnet.y - electron.y, magnet.x - electron.x);
-            const speed = 0.2; // Adjust the speed as desired
-            const newX = electron.x + Math.cos(angle) * speed;
-            const newY = electron.y + Math.sin(angle) * speed;
-            electron.x = newX;
-            electron.y = newY;
-          }
-          if (electron.y > centerY - 55 || electron.y < centerY - 125) {
-            electron.destroy();
-          }
         }
       });
     }, spawnInterval); // Spawn electron dengan interval yang ditentukan
@@ -85,30 +64,20 @@ function spawnElectron(status, magnet) {
 }
 
 function create() {
-  let tube = this.add.image(centerX, centerY, 'tube');
+  let tube = this.add.image(centerX, centerY - 10, 'tube');
   let onButton = this.add.image(centerX, centerY + 150, 'onButton');
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');
-  let magnet = this.add.image(centerX + 350, centerY, 'magnet');
   tube.setScale(0.17);
   onButton.setScale(0.05);
   offButton.setScale(0.05);
-  magnet.setScale(0.05);
   offButton.setAlpha(0);
-
-  magnet.setInteractive();
-  this.input.setDraggable(magnet);
-  magnet.on('drag', (pointer) => {
-    magnet.x = pointer.x;
-    magnet.y = pointer.y;
-  }
-  );
 
   // when click onButton
   onButton.setInteractive();
   onButton.on('pointerdown', () => {
     onButton.setAlpha(0);
     offButton.setAlpha(1);
-    spawnElectron.call(this, 1, magnet);
+    spawnElectron.call(this, 1);
   });
 
   // when click offButton
@@ -116,6 +85,6 @@ function create() {
   offButton.on('pointerdown', () => {
     onButton.setAlpha(1);
     offButton.setAlpha(0);
-    spawnElectron.call(this, 0, magnet);
+    spawnElectron.call(this, 0);
   });
 }
