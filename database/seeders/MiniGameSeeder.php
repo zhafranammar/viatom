@@ -17,7 +17,7 @@ class MiniGameSeeder extends Seeder
             'title' => 'Mini Game 1',
             'level' => 7,
             'description' => 'Description for Mini Game 1',
-            'src' => 'miniGame1.js'
+            'src' => 'js\minigames\particle-smasher.js'
         ]);
         MiniGame::Create([
             'title' => 'Mini Game 2',

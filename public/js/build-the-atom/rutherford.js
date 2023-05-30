@@ -41,8 +41,10 @@ let draggableElectron;
 let draggableProton;
 let draggableNeutron;
 
-let distanceProton = WIDTH_GAME / 70;
-let distanceNeutron = WIDTH_GAME / 60;
+let distanceProton = 20.1;
+let distanceNeutron = 17.3;
+console.log(distanceNeutron);
+console.log(distanceProton);
 let distanceElectron = 121.6;
 
 let centerX = WIDTH_GAME / 2;
