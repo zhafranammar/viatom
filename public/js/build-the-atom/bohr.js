@@ -45,11 +45,11 @@ let draggableElectron;
 let positionLayer1 = [];
 let positionLayer2 = [];
 let positionLayer3 = [];
-let scaleCircle = [0.06, 0.09, 0.12]
+let scaleCircle = [0.18, 0.24, 0.30]
 
-let distanceLayer1 = 50;
-let distanceLayer2 = 75;
-let distanceLayer3 = 100;
+let distanceLayer1 = 150;
+let distanceLayer2 = 200;
+let distanceLayer3 = 250;
 
 let layer1 = [];
 let layer2 = [];
@@ -112,7 +112,7 @@ function makeLayer1(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.009);
+  draggableElectron.setScale(0.012);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -140,7 +140,7 @@ function makeLayer2(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.009);
+  draggableElectron.setScale(0.012);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -168,7 +168,7 @@ function makeLayer3(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.009);
+  draggableElectron.setScale(0.012);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -198,7 +198,7 @@ function makeOrbit(countOrbit) {
 
   draggableOrbit.setInteractive();
   draggableOrbit.setDepth(1);
-  draggableOrbit.setScale(0.05);
+  draggableOrbit.setScale(0.1);
 
   this.input.setDraggable(draggableOrbit);
   draggableOrbit.on('drag', (pointer) => {
@@ -232,7 +232,7 @@ function create() {
   for (let i = 0; i < atom.layer1; i++) {
     layer1[i] = this.add.image(positionLayer1[i].x, positionLayer1[i].y, 'electron');
     layer1[i].setAlpha(0);
-    layer1[i].setScale(0.012);
+    layer1[i].setScale(0.018);
     layer1[i].setInteractive();
     layer1[i].setDepth(1);
     this.physics.add.existing(layer1[i]);
@@ -241,7 +241,7 @@ function create() {
   for (let i = 0; i < atom.layer2; i++) {
     layer2[i] = this.add.image(positionLayer2[i].x, positionLayer2[i].y, 'electron');
     layer2[i].setAlpha(0);
-    layer2[i].setScale(0.012);
+    layer2[i].setScale(0.018);
     layer2[i].setInteractive();
     layer2[i].setDepth(1);
     this.physics.add.existing(layer2[i]);
@@ -250,7 +250,7 @@ function create() {
   for (let i = 0; i < atom.layer3; i++) {
     layer3[i] = this.add.image(positionLayer3[i].x, positionLayer3[i].y, 'electron');
     layer3[i].setAlpha(0);
-    layer3[i].setScale(0.012);
+    layer3[i].setScale(0.018);
     layer3[i].setInteractive();
     layer3[i].setDepth(1);
     this.physics.add.existing(layer3[i]);
@@ -264,7 +264,7 @@ function create() {
   }
   core.setInteractive();
   core.setDepth(1);
-  core.setScale(0.03);
+  core.setScale(0.1);
   core.on('drag', function (pointer) {
     core.x = pointer.x;
     core.y = pointer.y;
@@ -276,13 +276,13 @@ function create() {
   target.setInteractive();
   target.setDepth(1);
   target.setAlpha(0);
-  target.setScale(0.05);
+  target.setScale(0.08);
   this.physics.add.existing(target);
 
   this.physics.add.overlap(core, target, () => {
     core.destroy();
     target.setAlpha(1);
-    target.setScale(0.035);
+    target.setScale(0.1);
     makeOrbit.call(this, 0);
   }, null, this);
 }

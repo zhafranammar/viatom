@@ -18,7 +18,7 @@ if (tier == 'Bronze') {
 }
 
 let draggableElectron;
-let distance = WIDTH_GAME / 16;
+let distance = WIDTH_GAME / 6;
 
 let centerX = WIDTH_GAME / 2;
 let centerY = HEIGHT_GAME / 2;
@@ -82,7 +82,7 @@ function makeElectron(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.009);
+  draggableElectron.setScale(0.03);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -116,7 +116,7 @@ function create() {
   for (let i = 0; i < atom; i++) {
     electron[i] = this.add.image(position[i].x, position[i].y, 'electron');
     electron[i].setAlpha(0);
-    electron[i].setScale(0.012);
+    electron[i].setScale(0.03);
     electron[i].setInteractive();
     electron[i].setDepth(1);
     this.physics.add.existing(electron[i]);
@@ -137,13 +137,13 @@ function create() {
   // Buat target
   //set target transparent
   target.setAlpha(0);
-  target.setScale(0.05);
+  target.setScale(0.25);
 
   // apabila jarak antara core dan target kurang dari 1500 maka core akan berhenti
   this.physics.add.overlap(core, target, function () {
     core.destroy();
     target.setAlpha(1);
-    target.setScale(0.12);
+    target.setScale(0.35);
     makeElectron.call(this, 0);
   }, null, this);
 }

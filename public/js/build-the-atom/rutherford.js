@@ -41,11 +41,9 @@ let draggableElectron;
 let draggableProton;
 let draggableNeutron;
 
-let distanceProton = 20.1;
-let distanceNeutron = 17.3;
-console.log(distanceNeutron);
-console.log(distanceProton);
-let distanceElectron = 121.6;
+let distanceProton = 30;
+let distanceNeutron = 20;
+let distanceElectron = 285;
 
 let centerX = WIDTH_GAME / 2;
 let centerY = HEIGHT_GAME / 2;
@@ -117,7 +115,7 @@ function create() {
     orbit[i] = this.add.image(centerX, centerY, 'ring');
     orbit[i].angle = rotationOrbit[i] * 180 / Math.PI;
     orbit[i].setAlpha(0);
-    orbit[i].setScale(0.35);
+    orbit[i].setScale(0.8);
     orbit[i].setInteractive();
     orbit[i].setDepth(0);
     this.physics.add.existing(orbit[i]);
@@ -125,7 +123,7 @@ function create() {
   for (let i = 0; i < atom.electron; i++) {
     electron[i] = this.add.image(positionElectron[i].x, positionElectron[i].y, 'electron');
     electron[i].setAlpha(0);
-    electron[i].setScale(0.012);
+    electron[i].setScale(0.025);
     electron[i].setInteractive();
     electron[i].setDepth(1);
     this.physics.add.existing(electron[i]);
@@ -133,7 +131,7 @@ function create() {
   for (let i = 0; i < atom.proton; i++) {
     proton[i] = this.add.image(positionProton[i].x, positionProton[i].y, 'proton');
     proton[i].setAlpha(0);
-    proton[i].setScale(0.012);
+    proton[i].setScale(0.025);
     proton[i].setInteractive();
     let random = Math.floor(Math.random() * 2) + 1;
     proton[i].setDepth(random);
@@ -142,7 +140,7 @@ function create() {
   for (let i = 0; i < atom.neutron; i++) {
     neutron[i] = this.add.image(positionNeutron[i].x, positionNeutron[i].y, 'neutron');
     neutron[i].setAlpha(0);
-    neutron[i].setScale(0.012);
+    neutron[i].setScale(0.025);
     neutron[i].setInteractive();
     neutron[i].setDepth(1);
     this.physics.add.existing(neutron[i]);
@@ -159,7 +157,7 @@ function makeElectron(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.009);
+  draggableElectron.setScale(0.020);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -188,7 +186,7 @@ function makeProton(countProton) {
   }
   draggableProton.setInteractive();
   draggableProton.setDepth(1);
-  draggableProton.setScale(0.009);
+  draggableProton.setScale(0.02);
 
   this.input.setDraggable(draggableProton);
   draggableProton.on('drag', (pointer) => {
@@ -219,7 +217,7 @@ function makeNeutron(countNeutron) {
   }
   draggableNeutron.setInteractive();
   draggableNeutron.setDepth(1);
-  draggableNeutron.setScale(0.009);
+  draggableNeutron.setScale(0.02);
 
   this.input.setDraggable(draggableNeutron);
   draggableNeutron.on('drag', (pointer) => {
@@ -252,7 +250,7 @@ function makeOrbit(countOrbit) {
 
   draggableOrbit.setInteractive();
   draggableOrbit.setDepth(1);
-  draggableOrbit.setScale(0.05);
+  draggableOrbit.setScale(0.08);
 
   this.input.setDraggable(draggableOrbit);
   draggableOrbit.on('drag', (pointer) => {

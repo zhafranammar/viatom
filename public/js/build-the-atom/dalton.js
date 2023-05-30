@@ -39,7 +39,7 @@ function create() {
     var box = this.add.image(this.game.config.width / 2, this.game.config.height * 10 / 12, 'box');
   }
   this.physics.add.existing(box);
-  box.setScale(0.05);
+  box.setScale(0.1);
 
   //Buat box dapat di drag dan drop
   box.setInteractive();
@@ -58,13 +58,15 @@ function create() {
   this.physics.add.existing(target);
   //set target transparent
   target.setAlpha(0);
-  target.setScale(0.05);
+  target.setScale(0.1);
 
   // apabila jarak antara box dan target kurang dari 1500 maka box akan berhenti
   this.physics.add.overlap(box, target, function () {
     // console.log('Selamat, kamu berhasil menyelesaikan level 1!');
     box.destroy();
     target.setAlpha(1);
-    target.setScale(0.1);
+    target.setScale(0.3);
+    // make alert
+
   }, null, this);
-}
+} 
