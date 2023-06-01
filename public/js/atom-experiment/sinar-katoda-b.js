@@ -10,7 +10,7 @@ if (WIDTH_GAME < 640) {
 }
 
 let centerX = WIDTH_GAME / 2;
-let centerY = HEIGHT_GAME / 2;
+let centerY = HEIGHT_GAME * 5 / 12;
 
 var config = {
   type: Phaser.AUTO,
