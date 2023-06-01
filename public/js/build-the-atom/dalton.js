@@ -1,10 +1,10 @@
 var gameContainer = document.querySelector('#game-container');
-let WIDTH_GAME = gameContainer.offsetWidth;
+let WIDTH_GAME = gameContainer.clientWidth;
 let landscape = true
-let HEIGHT_GAME = WIDTH_GAME * 9 / 16;
+let HEIGHT_GAME = WIDTH_GAME * 9 / 21;
 if (WIDTH_GAME < 640) {
   landscape = false
-  HEIGHT_GAME = WIDTH_GAME * 16 / 9;
+  HEIGHT_GAME = WIDTH_GAME * 21 / 9;
 }
 
 var config = {

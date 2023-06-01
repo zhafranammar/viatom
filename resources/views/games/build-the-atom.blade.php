@@ -39,7 +39,7 @@
 <body style="background-image: url('assets/web/map1.png'); background-size: cover;">
     
     <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" id="game-container">
                 <div class="relative">
                     <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg absolute left-0 top-0 m-5">
