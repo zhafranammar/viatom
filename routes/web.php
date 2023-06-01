@@ -58,6 +58,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
             abort(403, 'Unauthorized');
         }
     })->name('cms');
+    Route::get('/cms/materi', function () {
+        if (auth()->user()->is_admin) {
+            return view('cms.materi.index');
+        } else {
+            abort(403, 'Unauthorized');
+        }
+    })->name('cms');
 });
 
 
