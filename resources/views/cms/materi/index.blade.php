@@ -123,10 +123,29 @@
 
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
       <div class="py-12">
-        <div class="max-w-full h-full mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    
+                    <h2 class="font-bold font-serif text-2xl">Materi</h2>
+                    <div class="mt-4">
+                        <a href="/cms/materi/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Materi</a>
+                    </div>
+
+                    {{-- Add table from database --}}
+                    <div class="mt-4">
+                        <table class="table-auto w-full">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2">No</th>
+                                    <th class="px-4 py-2">Judul</th>
+                                    <th class="px-4 py-2">Deskripsi</th>
+                                    <th class="px-4 py-2">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
