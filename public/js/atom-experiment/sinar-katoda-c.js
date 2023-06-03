@@ -51,11 +51,12 @@ function calculateDistance(electron, object) {
 function spawnElectron(status, plus, minus) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
-      let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
+      let electron = this.add.image(centerX - 105, centerY - 67, 'electron');
+      // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({
         targets: electron,
-        x: centerX + 120,
+        x: centerX + 108,
         duration: 5000,
         ease: 'Linear',
         // destroy electron
@@ -81,7 +82,7 @@ function spawnElectron(status, plus, minus) {
             electron.x = newX;
             electron.y = newY;
           }
-          if (electron.y > centerY - 55 || electron.y < centerY - 125) {
+          if (electron.y > centerY - 37 || electron.y < centerY - 102) {
             electron.destroy();
           }
         }
@@ -100,10 +101,10 @@ function create() {
   let plus = this.add.image(centerX + 350, centerY, 'plus');
   let minus = this.add.image(centerX + 350, centerY - 50, 'minus');
   tube.setScale(0.17);
-  onButton.setScale(0.05);
-  offButton.setScale(0.05);
-  plus.setScale(0.03);
-  minus.setScale(0.03);
+  onButton.setScale(0.03);
+  offButton.setScale(0.03);
+  plus.setScale(0.01);
+  minus.setScale(0.01);
   offButton.setAlpha(0);
 
   plus.setInteractive();

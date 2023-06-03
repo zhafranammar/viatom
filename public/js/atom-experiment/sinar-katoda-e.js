@@ -31,7 +31,7 @@ var game = new Phaser.Game(config);
 
 function preload() {
   this.load.image('tube', 'assets/images/tube.png');
-  this.load.image('electron', 'assets/images/electron.png');
+  this.load.image('electron', 'assets/images/electron3.png');
   this.load.image('onButton', 'assets/images/on.png');
   this.load.image('offButton', 'assets/images/off.png');
   this.load.image('turbin', 'assets/images/turbin.png');
@@ -46,12 +46,12 @@ let electronCount = 0;
 function spawnElectron(status, turbin) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
-      let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
-      electronCount++;
+      let electron = this.add.image(centerX - 105, centerY - 67, 'electron');
+      // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({
         targets: electron,
-        x: centerX + 120,
+        x: centerX + 100,
         duration: 5000,
         ease: 'Linear',
         // destroy electron
@@ -83,12 +83,12 @@ function create() {
   let tube = this.add.image(centerX, centerY, 'tube');
   let onButton = this.add.image(centerX, centerY + 150, 'onButton');
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');
-  let turbin = this.add.image(centerX + 120, centerY - 90, 'turbin');
-
+  let turbin = this.add.image(centerX + 100, centerY - 67, 'turbin');
+  let electron
   tube.setScale(0.17);
-  onButton.setScale(0.05);
-  offButton.setScale(0.05);
-  turbin.setScale(0.03);
+  onButton.setScale(0.03);
+  offButton.setScale(0.03);
+  turbin.setScale(0.025);
   offButton.setAlpha(0);
 
   // when click onButton

@@ -31,7 +31,7 @@ var game = new Phaser.Game(config);
 
 function preload() {
   this.load.image('tube', 'assets/images/tube.png');
-  this.load.image('electron', 'assets/images/electron.png');
+  this.load.image('electron', 'assets/images/electron3.png');
   this.load.image('onButton', 'assets/images/on.png');
   this.load.image('offButton', 'assets/images/off.png');
   this.load.image('magnet', 'assets/images/magnet.png');
@@ -50,12 +50,12 @@ function calculateDistance(electron, magnet) {
 function spawnElectron(status, magnet) {
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
-      let electron = this.add.image(centerX - 123, centerY - 90, 'electron');
+      let electron = this.add.image(centerX - 105, centerY - 67, 'electron');
       // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({
         targets: electron,
-        x: centerX + 120,
+        x: centerX + 108,
         duration: 5000,
         ease: 'Linear',
         // destroy electron
@@ -72,7 +72,7 @@ function spawnElectron(status, magnet) {
             electron.x = newX;
             electron.y = newY;
           }
-          if (electron.y > centerY - 55 || electron.y < centerY - 125) {
+          if (electron.y > centerY - 37 || electron.y < centerY - 102) {
             electron.destroy();
           }
         }
@@ -90,9 +90,9 @@ function create() {
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');
   let magnet = this.add.image(centerX + 350, centerY, 'magnet');
   tube.setScale(0.17);
-  onButton.setScale(0.05);
-  offButton.setScale(0.05);
-  magnet.setScale(0.05);
+  onButton.setScale(0.03);
+  offButton.setScale(0.03);
+  magnet.setScale(0.02);
   offButton.setAlpha(0);
 
   magnet.setInteractive();
