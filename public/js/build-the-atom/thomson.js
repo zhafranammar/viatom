@@ -83,7 +83,7 @@ function makeElectron(countElectron) {
   }
   draggableElectron.setInteractive();
   draggableElectron.setDepth(1);
-  draggableElectron.setScale(0.03);
+  draggableElectron.setScale(0.02);
 
   this.input.setDraggable(draggableElectron);
   draggableElectron.on('drag', (pointer) => {
@@ -117,7 +117,7 @@ function create() {
   for (let i = 0; i < atom; i++) {
     electron[i] = this.add.image(position[i].x, position[i].y, 'electron');
     electron[i].setAlpha(0);
-    electron[i].setScale(0.03);
+    electron[i].setScale(0.02);
     electron[i].setInteractive();
     electron[i].setDepth(1);
     this.physics.add.existing(electron[i]);
@@ -138,13 +138,13 @@ function create() {
   // Buat target
   //set target transparent
   target.setAlpha(0);
-  target.setScale(0.25);
+  target.setScale(0.2);
 
   // apabila jarak antara core dan target kurang dari 1500 maka core akan berhenti
   this.physics.add.overlap(core, target, function () {
     core.destroy();
     target.setAlpha(1);
-    target.setScale(0.35);
+    target.setScale(0.2);
     makeElectron.call(this, 0);
   }, null, this);
 }

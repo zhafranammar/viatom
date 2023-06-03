@@ -65,7 +65,7 @@ function create() {
     // console.log('Selamat, kamu berhasil menyelesaikan level 1!');
     box.destroy();
     target.setAlpha(1);
-    target.setScale(0.3);
+    target.setScale(0.2);
     // make alert
 
   }, null, this);
