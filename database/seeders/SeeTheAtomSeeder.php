@@ -17,13 +17,25 @@ class SeeTheAtomSeeder extends Seeder
             'title' => 'Atom Dalton',
             'level' => 4,
             'description' => 'See the Atom',
-            'src' => 'seeDalton.js',
+            'src' => 'https://mywebar.com/p/viatom-atom-dalton',
         ]);
         SeeTheAtom::Create([
             'title' => 'Atom Thomson',
             'level' => 11,
             'description' => 'See the Atom',
-            'src' => 'seeThomson.js',
+            'src' => 'https://mywebar.com/p/viatom-atom-thomson',
+        ]);
+        SeeTheAtom::Create([
+            'title' => 'Atom Rutherford',
+            'level' => 22,
+            'description' => 'See the Atom',
+            'src' => 'https://mywebar.com/p/viatom-atom-rutherford',
+        ]);
+        SeeTheAtom::Create([
+            'title' => 'Atom Bohr',
+            'level' => 23,
+            'description' => 'See the Atom',
+            'src' => 'https://mywebar.com/p/viatom-atom-bohr',
         ]);
     }
 }
