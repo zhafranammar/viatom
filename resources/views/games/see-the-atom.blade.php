@@ -22,7 +22,7 @@
         // append gameScript as src script to game-container
         const gameContainer = document.getElementById('game-container');
         let width = gameContainer.offsetWidth;
-        let height = width * 9 / 21;
+        let height = width * 9 /16;
         var iframe = document.createElement('iframe');
         iframe.src= response.data.detail.src;
         iframe.width = width;
@@ -105,11 +105,3 @@
         align-items: center;
     }
 </style>
-
-{{-- <x-app-layout>
-    <x-slot name="header">
-        
-    </x-slot>
-
-    
-</x-app-layout> --}}

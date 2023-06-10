@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Scene extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'level',
+        'description',
+        'src',
+    ];
 }

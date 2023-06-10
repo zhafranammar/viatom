@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\SceneFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,6 +66,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             abort(403, 'Unauthorized');
         }
     })->name('cms');
+    Route::resource('/cms/levels', SceneFormController::class);
 });
 
 
