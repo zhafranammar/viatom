@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('level')->unique();
             $table->string('description');
+            $table->string('src');
             $table->timestamps();
         });
     }

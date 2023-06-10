@@ -17,11 +17,13 @@ class MateriSeeder extends Seeder
             'title' => 'Materi 1',
             'level' => 2,
             'description' => 'Description for Materi 1',
+            'src' => 'assets/pdf/materi-1.pdf',
         ]);
         Materi::Create([
             'title' => 'Materi 2',
             'level' => 9,
             'description' => 'Description for Materi 2',
+            'src' => 'assets/pdf/materi-2.pdf',
         ]);
     }
 }

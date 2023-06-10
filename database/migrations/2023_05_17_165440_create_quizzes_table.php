@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('level')->unique();
             $table->string('question');
             $table->string('option_true');
+            $table->string('option_tru_image')->nullable();
             $table->string('option_false_1');
+            $table->string('option_false_1_image')->nullable();
             $table->string('option_false_2')->nullable();
+            $table->string('option_false_2_image')->nullable();
             $table->string('option_false_3')->nullable();
+            $table->string('option_false_3_image')->nullable();
             $table->timestamps();
         });
     }
