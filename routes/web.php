@@ -52,21 +52,19 @@ Route::get('/next-level', [App\Http\Controllers\LevelController::class, 'nextLev
 
 // Make route for CMS (Content Management System) where user is_admin is 1
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/cms', function () {
-        if (auth()->user()->is_admin) {
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/cms', function () {
             return view('cms.dashboard');
-        } else {
-            abort(403, 'Unauthorized');
-        }
-    })->name('cms');
-    Route::get('/cms/materi', function () {
-        if (auth()->user()->is_admin) {
-            return view('cms.materi.index');
-        } else {
-            abort(403, 'Unauthorized');
-        }
-    })->name('cms');
-    Route::resource('/cms/levels', SceneFormController::class);
+        })->name('cms');
+        Route::resource('/cms/levels', SceneFormController::class);
+        Route::resource('/cms/materi', SceneFormController::class);
+        Route::resource('/cms/videos', SceneFormController::class);
+        Route::resource('/cms/quiz', SceneFormController::class);
+        Route::resource('/cms/exams', SceneFormController::class);
+        Route::resource('/cms/build-the-atom', SceneFormController::class);
+        Route::resource('/cms/see-the-atom', SceneFormController::class);
+        Route::resource('/cms/atom-experiment', SceneFormController::class);
+    });
 });
 
 

@@ -17,26 +17,6 @@ class SceneFormController extends Controller
         return view('cms.scenes.index', compact('scenes'));
     }
 
-    public function create()
-    {
-        return view('cms.scenes.create');
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required',
-            'level' => 'required',
-            'description' => 'required',
-            'src' => 'required',
-        ]);
-
-        Scene::create($request->all());
-
-        return redirect()->route('cms.scenes.index')
-            ->with('success', 'Scene created successfully.');
-    }
-
     public function show(Scene $scene)
     {
         $scene = Scene::find($scene->id);
