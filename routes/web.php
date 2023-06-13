@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuildTheAtomForm;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\SceneFormController;
@@ -58,10 +59,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('cms');
         Route::resource('/cms/levels', SceneFormController::class);
         Route::resource('/cms/materi', SceneFormController::class);
-        Route::resource('/cms/videos', SceneFormController::class);
+        Route::resource('/cms/videos', VideoFormController::class);
         Route::resource('/cms/quiz', SceneFormController::class);
         Route::resource('/cms/exams', SceneFormController::class);
-        Route::resource('/cms/build-the-atom', SceneFormController::class);
+        Route::resource('/cms/build-the-atom', BuildTheAtomForm::class);
         Route::resource('/cms/see-the-atom', SceneFormController::class);
         Route::resource('/cms/atom-experiment', SceneFormController::class);
     });
