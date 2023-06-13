@@ -19,11 +19,11 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 2,
-            'type' => 'materi',
+            'type' => 'video',
         ]);
         Scene::Create([
             'level' => 3,
-            'type' => 'build-the-atom',
+            'type' => 'materi',
         ]);
         Scene::Create([
             'level' => 4,
@@ -31,7 +31,7 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 5,
-            'type' => 'atom-experiment',
+            'type' => 'build-the-atom',
         ]);
         Scene::Create([
             'level' => 6,
@@ -39,7 +39,7 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 7,
-            'type' => 'mini-game',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 8,
@@ -51,15 +51,15 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 10,
-            'type' => 'build-the-atom',
-        ]);
-        Scene::Create([
-            'level' => 11,
             'type' => 'see-the-atom',
         ]);
         Scene::Create([
+            'level' => 11,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
             'level' => 12,
-            'type' => 'atom-experiment',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 13,
@@ -67,15 +67,15 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 14,
-            'type' => 'mini-game',
+            'type' => 'video',
         ]);
         Scene::Create([
             'level' => 15,
-            'type' => 'build-the-atom',
+            'type' => 'materi',
         ]);
         Scene::Create([
             'level' => 16,
-            'type' => 'build-the-atom',
+            'type' => 'atom-experiment',
         ]);
         Scene::Create([
             'level' => 17,
@@ -95,15 +95,99 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 21,
-            'type' => 'atom-experiment',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 22,
-            'type' => 'see-the-atom',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 23,
+            'type' => 'video',
+        ]);
+        Scene::Create([
+            'level' => 24,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 25,
+            'type' => 'atom-experiment',
+        ]);
+        Scene::Create([
+            'level' => 26,
+            'type' => 'atom-experiment',
+        ]);
+        Scene::Create([
+            'level' => 27,
             'type' => 'see-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 28,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 29,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 30,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 31,
+            'type' => 'video',
+        ]);
+        Scene::Create([
+            'level' => 32,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 33,
+            'type' => 'see-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 34,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 35,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 36,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 37,
+            'type' => 'video',
+        ]);
+        Scene::Create([
+            'level' => 38,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 39,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 40,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 41,
+            'type' => 'video',
+        ]);
+        Scene::Create([
+            'level' => 42,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 43,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 44,
+            'type' => 'quiz',
         ]);
     }
 }

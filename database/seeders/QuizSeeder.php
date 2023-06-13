@@ -14,20 +14,120 @@ class QuizSeeder extends Seeder
     public function run(): void
     {
         Quiz::Create([
+            'question' => 'This is question 1',
             'level' => 6,
-            'question' => 'Pernyataan yang benar mengenai atom adalah',
-            'option_true' => 'Atom terdiri dari inti atom dan elektron',
-            'option_false_1' => 'Atom terdiri dari inti atom dan proton',
-            'option_false_2' => 'Atom terdiri dari inti atom dan neutron',
-            'option_false_3' => 'Atom terdiri dari inti atom dan elektron',
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
         ]);
         Quiz::Create([
+            'question' => 'This is question 2',
+            'level' => 7,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 3',
+            'level' => 12,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 4',
             'level' => 13,
-            'question' => 'Pernyataan yang benar mengenai elektron adalah',
-            'option_true' => 'Elektron bermuatan negatif',
-            'option_false_1' => 'Elektron bermuatan positif',
-            'option_false_2' => 'Elektron bermuatan netral',
-            'option_false_3' => 'Elektron bermuatan negatif',
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 5',
+            'level' => 21,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 6',
+            'level' => 22,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 7',
+            'level' => 29,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 8',
+            'level' => 30,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 9',
+            'level' => 35,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 10',
+            'level' => 36,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 11',
+            'level' => 39,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 12',
+            'level' => 40,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 13',
+            'level' => 43,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+
+        ]);
+        Quiz::Create([
+            'question' => 'This is question 14',
+            'level' => 44,
+            'option_true' => 'Option A',
+            'option_false_1' => 'Option B',
+            'option_false_2' => 'Option C',
+            'option_false_3' => 'Option D',
+
         ]);
     }
 }

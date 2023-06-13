@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('max_level')->default(1);
             $table->integer('current_level')->default(1);
             $table->double('avg_attempt')->default(0);
-            $table->time('avg_time')->default('00:00:00');
+            $table->double('avg_time')->default(0);
             $table->string('tier')->default('Bronze');
             $table->boolean('is_admin')->default(0);
             $table->rememberToken();

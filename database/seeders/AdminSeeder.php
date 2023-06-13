@@ -24,5 +24,8 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('test'),
             'is_admin' => 0,
         ]);
+
+        // run factory user
+        // \App\Models\User::factory(2000)->create();
     }
 }
