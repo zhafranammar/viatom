@@ -128,7 +128,7 @@
                 <div class="p-6 text-gray-900">
                     <h2 class="font-bold font-serif text-2xl">Build The Atom</h2>
                     <div class="mt-4">
-                        <a href="/cms/levels/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
+                        <a href="/cms/build-the-atoms/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
                     </div>
 
                     {{-- Add table from database --}}
@@ -153,8 +153,8 @@
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->description}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->src}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/levels/{{$buildtheatom->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/levels/{{$buildtheatom->id}}" method="POST" class="inline-block">
+                                        <a href="/cms/build-the-atoms/{{$buildtheatom->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
+                                        <form action="/cms/build-the-atoms/{{$buildtheatom->id}}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
