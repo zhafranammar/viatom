@@ -126,25 +126,7 @@
         <div class="max-w-full h-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="text-xl font-bold mb-4">Viatom CMS for Web-Game Management</h2>
-                    <p>
-                        Viatom CMS is a comprehensive Content Management System (CMS) specifically designed to manage content for the Viatom web-game. With Viatom CMS, you can easily organize and control various aspects of your web-game, including materials, videos, quizzes, experiments, and more.
-                    </p>
-                    <p>
-                        Viatom CMS offers a user-friendly interface that enables you to efficiently create, edit, and update game content. You can easily upload and manage game materials, such as educational resources, documents, and images, providing an engaging and interactive learning experience for your users.
-                    </p>
-                    <p>
-                        Additionally, Viatom CMS allows you to incorporate videos into your web-game, offering multimedia content for enhanced learning. You can upload and embed instructional videos, walkthroughs, or educational presentations to complement the gameplay and provide valuable insights to your users.
-                    </p>
-                    <p>
-                        Furthermore, Viatom CMS provides the capability to create and manage quizzes and assessments within your web-game. You can design and customize quizzes to test users' knowledge and progress. This feature enables you to track and evaluate users' learning outcomes and provide personalized feedback based on their quiz results.
-                    </p>
-                    <p>
-                        Moreover, Viatom CMS supports the integration of interactive experiments or simulations into your web-game. You can create virtual experiments or simulations that allow users to explore scientific concepts, conduct virtual lab experiments, and gain hands-on experience within the game environment.
-                    </p>
-                    <p>
-                        Viatom CMS empowers you to deliver a comprehensive and immersive web-game experience, enabling users to learn, engage, and interact with educational content in a dynamic and interactive manner.
-                    </p>
+                    <h2 class="font-bold font-serif text-2xl">Tambah Data Video</h2>
                 </div>
             </div>
         </div>
