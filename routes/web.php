@@ -4,6 +4,7 @@ use App\Http\Controllers\BuildTheAtomForm;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\SceneFormController;
+use App\Http\Controllers\VideoFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
