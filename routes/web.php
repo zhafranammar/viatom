@@ -4,6 +4,8 @@ use App\Http\Controllers\BuildTheAtomForm;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\SceneFormController;
+use App\Http\Controllers\SeeTheAtomController;
+use App\Models\BuildTheAtom;
 use App\Http\Controllers\VideoFormController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,8 +65,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/cms/videos', VideoFormController::class);
         Route::resource('/cms/quiz', SceneFormController::class);
         Route::resource('/cms/exams', SceneFormController::class);
-        Route::resource('/cms/build-the-atom', BuildTheAtomForm::class);
-        Route::resource('/cms/see-the-atom', SceneFormController::class);
+        Route::resource('/cms/build-the-atoms', BuildTheAtomForm::class);
+        Route::post('cms/build-the-atoms/store', [BuildTheAtomForm::class, 'store'])->name('cms.build-the-atoms.store');
+        Route::put('cms/build-the-atoms/{id}', [BuildTheAtomForm::class, 'update'])->name('cms.build-the-atoms.update');
+        Route::resource('/cms/see-the-atom', SeeTheAtomController::class);
         Route::resource('/cms/atom-experiment', SceneFormController::class);
     });
 });

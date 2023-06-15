@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/web/logo.png" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
     <title>Viatom CMS</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -13,7 +13,8 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
+    <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5') }}" rel="stylesheet" />
+
     <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -25,7 +26,7 @@
       <div class="h-19.5">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-          <img src="../assets/web/logo.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{{ asset('assets/web/logo.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand text-white">Viatom Dashboard</span>
         </a>
       </div>
@@ -128,46 +129,47 @@
                 <div class="p-6 text-gray-900">
                     <h2 class="font-bold font-serif text-2xl">Build The Atom</h2>
                     <div class="mt-4">
-                        <a href="/cms/levels/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
+                    <a href="/cms/build-the-atoms" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
                     </div>
-
+                
                     <!-- mulai dari sini ya diganti -->
-                    {{-- Add table from database --}}
-                    <div class="mt-4">
-                        <table class="table-auto border-separate w-full">
-                            <thead>
-                                <tr>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Id</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Title</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Level</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Description</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Src</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($buildtheatoms as $buildtheatom)
-                                <tr>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->id}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->title}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->level}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->description}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->src}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/levels/{{$buildtheatom->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/levels/{{$buildtheatom->id}}" method="POST" class="inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
                     </div>
+                    @endif
 
-
+                    <form action="store" method="POST">
+                      @csrf
+                      <div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Title</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" placeholder="Title">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Level</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" placeholder="Level">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Description</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" type="text" placeholder="Description">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Src</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="src" type="text" placeholder="Source">
+                        </div>
+                        <div class="mt-4" >
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                    
 
                 </div>
             </div>
