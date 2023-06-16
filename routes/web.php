@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\SceneFormController;
 use App\Http\Controllers\SeeTheAtomController;
+use App\Http\Controllers\SeeTheAtomFormController;
 use App\Models\BuildTheAtom;
 use Illuminate\Support\Facades\Route;
 
@@ -67,7 +68,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/cms/build-the-atoms', BuildTheAtomForm::class);
         Route::post('cms/build-the-atoms/store', [BuildTheAtomForm::class, 'store'])->name('cms.build-the-atoms.store');
         Route::put('cms/build-the-atoms/{id}', [BuildTheAtomForm::class, 'update'])->name('cms.build-the-atoms.update');
-        Route::resource('/cms/see-the-atom', SeeTheAtomController::class);
+        Route::resource('/cms/see-the-atoms', SeeTheAtomFormController::class);
+        Route::post('cms/see-the-atoms/store', [SeeTheAtomFormController::class, 'store'])->name('cms.see-the-atoms.store');
+        Route::put('cms/see-the-atoms/{id}', [SeeTheAtomFormController::class, 'update'])->name('cms.see-the-atoms.update');
         Route::resource('/cms/atom-experiment', SceneFormController::class);
     });
 });

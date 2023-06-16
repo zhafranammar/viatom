@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 class SeeTheAtomFormController extends Controller
 {
-    //
-    public function index()
+    /**
+     * Make resource cms
+     */
+
+     public function index()
      {
          $seetheatoms = SeeTheAtom::all();
          return view('cms.see-the-atom.index', compact('seetheatoms'));
@@ -21,34 +24,36 @@ class SeeTheAtomFormController extends Controller
 
      public function store(Request $request)
      {
-        $request->validate([
-            'title' => 'required',
-            'level' => 'required',
-            'description' => 'required',
-            'src' => 'required',
-        ]);
-
-        SeeTheAtom::create([
+        // $request->validate([
+        //     'title' => 'required',
+        //     'level' => 'required',
+        //     'description' => 'required',
+        //     'src' => 'required',
+        // ]);
+        
+        $seetheatoms = SeeTheAtom::create([
             'title'     => $request->title,
             'level'   => $request->level,
-            'description'   => $request->descrtiption,
+            'description'   => $request->description,
             'src'   => $request->src,
         ]);
+        // dd($seetheatoms);
 
-        return redirect()->route('cms.build-the-atom.index')
-             ->with('success', 'Build The Atom created successfully');
+        return redirect()->route('see-the-atoms.index')
+             ->with('success', 'See The Atom created successfully');
      }
  
      public function show(string $id)
      {
-         $buildtheatom = SeeTheAtom::where('level', $id)->first();
-         return view('cms.build-the-atom.show', compact('buildtheatom'));
+        $seetheatoms = SeeTheAtom::findOrFail($id);
+         return view('cms.see-the-atom.show', compact('seetheatom'));
      }
  
      public function edit(string $id)
      {
-         $buildtheatom = SeeTheAtom::where('level', $id)->first();
-         return view('cms.build-the-atom.edit', compact('buildtheatom'));
+        $seetheatom = SeeTheAtom::findOrFail($id);
+        //  dd($seetheatom);
+         return view('cms.see-the-atom.edit', compact('seetheatom'));
      }
  
      public function update(Request $request, string $id)
@@ -60,19 +65,21 @@ class SeeTheAtomFormController extends Controller
              'src' => 'required',
          ]);
  
-         $buildtheatom = SeeTheAtom::where('level', $id)->first();
-         $buildtheatom->update($request->all());
+         $seetheatoms = SeeTheAtom::findOrFail($id);
+        // dd($seetheatom);
+         $seetheatoms->update($request->all());
  
-         return redirect()->route('cms.build-the-atom.index')
-             ->with('success', 'Build The Atom updated successfully');
+         return redirect()->route('see-the-atoms.index')
+             ->with('success', 'See The Atom updated successfully');
      }
  
      public function destroy(string $id)
      {
-         $buildtheatom = SeeTheAtom::where('level', $id)->first();
-         $buildtheatom->delete();
- 
-         return redirect()->route('cms.build-the-atom.index')
-             ->with('success', 'Build The Atom deleted successfully');
+        $seetheatoms = SeeTheAtom::findOrFail($id);        
+        //  dd($seetheatom);
+         $seetheatoms->delete();
+         
+         return redirect()->route('see-the-atoms.index')
+             ->with('success', 'See The Atom deleted successfully');
      }
 }

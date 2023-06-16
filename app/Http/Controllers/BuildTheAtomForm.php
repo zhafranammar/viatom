@@ -30,12 +30,6 @@ class BuildTheAtomForm extends Controller
         //     'description' => 'required',
         //     'src' => 'required',
         // ]);
-        // $data = $request->all();
-        // $buildtheatom = new BuildTheAtom();
-        // $buildtheatom->title = $request['title'];
-        // $buildtheatom->level = $request['level'];
-        // $buildtheatom->description = $request['description'];
-        // $buildtheatom->src = $request['src'];
         
         $buildtheatom = BuildTheAtom::create([
             'title'     => $request->title,

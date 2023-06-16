@@ -13,7 +13,7 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
+    <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5') }}" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -126,9 +126,9 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="font-bold font-serif text-2xl">Build The Atom</h2>
+                    <h2 class="font-bold font-serif text-2xl">See The Atom</h2>
                     <div class="mt-4">
-                        <a href="/cms/build-the-atom/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
+                        <a href="/cms/see-the-atoms/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
                     </div>
 
                     {{-- Add table from database --}}
@@ -145,16 +145,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($buildtheatoms as $buildtheatom)
+                                @foreach ($seetheatoms as $seetheatom)
                                 <tr>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->id}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->title}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->level}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->description}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$buildtheatom->src}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$seetheatom->id}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$seetheatom->title}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$seetheatom->level}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$seetheatom->description}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$seetheatom->src}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/build-the-atom/{{$buildtheatom->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/build-the-atom/{{$buildtheatom->id}}" method="POST" class="inline-block">
+                                        <a href="/cms/see-the-atoms/{{$seetheatom->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
+                                        <form action="/cms/see-the-atoms/{{$seetheatom->id}}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
