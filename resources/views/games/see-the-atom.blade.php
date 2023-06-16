@@ -43,7 +43,7 @@
     </script>
     <title>Viatom</title>
 </head>
-<body style="background-image: url('assets/web/map1.png'); background-size: cover;">
+<body style="background-image: url('{{asset('assets/web/map1.png')}}'); background-size: cover;">
     
     <div class="py-8">
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
@@ -67,8 +67,8 @@
                 
                 
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
-                    <img src="assets/web/logo.png" alt="" class="mr-2 w-16">
-                    <img src="assets/web/viatom-text.png" alt="" class="w-48">
+                    <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
+                    <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
                 <div class="flex flex-col items-center">
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>

@@ -48,6 +48,13 @@ Route::get('/discussions/{discussion}', [DiscussionController::class, 'show']);
 Route::post('/discussions', [DiscussionController::class, 'store']);
 Route::post('/discussions/{discussion}/replies', [DiscussionController::class, 'storeReply']);
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/exams', [App\Http\Controllers\ExamController::class, 'index'])->name('exams');
+    Route::get('/exams/start', [App\Http\Controllers\ExamController::class, 'start'])->name('exams.start');
+    Route::post('/exams/next-question', [App\Http\Controllers\ExamController::class, 'nextQuestion'])->name('exams.next-question');
+    Route::get('/exams/result/{$exam}', [App\Http\Controllers\ExamController::class, 'result'])->name('exams.result');
+    Route::get('/exams/history', [App\Http\Controllers\ExamController::class, 'history'])->name('exams.history');
+});
 // Make route to levels
 Route::get('/game', [App\Http\Controllers\LevelController::class, 'play'])
     ->middleware(['auth', 'verified'])

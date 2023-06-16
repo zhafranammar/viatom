@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('quizzes', function (Blueprint $table) {
+        Schema::create('question_exams', function (Blueprint $table) {
             $table->id();
-            $table->string('level')->unique();
             $table->string('question');
             $table->string('option_true');
             $table->string('option_true_image')->nullable();
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->string('option_false_2_image')->nullable();
             $table->string('option_false_3')->nullable();
             $table->string('option_false_3_image')->nullable();
-            $table->text('explanation')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('quizzes');
+        Schema::dropIfExists('question_exams');
     }
 };
