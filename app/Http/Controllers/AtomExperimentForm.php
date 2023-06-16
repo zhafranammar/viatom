@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BuildTheAtom;
+use App\Models\AtomExperiment;
 use Illuminate\Http\Request;
 
-class BuildTheAtomForm extends Controller
+class AtomExperimentForm extends Controller
 {
     /**
      * Make resource cms
@@ -13,13 +13,13 @@ class BuildTheAtomForm extends Controller
 
      public function index()
      {
-         $buildtheatoms = BuildTheAtom::all();
-         return view('cms.build-the-atom.index', compact('buildtheatoms'));
+         $atomexperiments = AtomExperiment::all();
+         return view('cms.atom-experiment.index', compact('atomexperiments'));
      }
 
      public function create()
      {
-        return view('cms.build-the-atom.create');
+        return view('cms.atom-experiment.create');
      }
 
      public function store(Request $request)
@@ -31,33 +31,31 @@ class BuildTheAtomForm extends Controller
         //     'src' => 'required',
         // ]);
         
-        $buildtheatom = BuildTheAtom::create([
+        $atomexperiment = AtomExperiment::create([
             'title'     => $request->title,
             'level'   => $request->level,
             'description'   => $request->description,
             'src'   => $request->src,
         ]);
-        dd($buildtheatom);
+        // dd($atomexperiment);
 
-        
-
-        return redirect()->route('build-the-atoms.index')
-             ->with('success', 'Build The Atom created successfully');
+        return redirect()->route('atom-experiments.index')
+             ->with('success', 'Atom Experiment created successfully');
      }
  
      public function show(string $id)
      {
-        $buildtheatom = BuildTheAtom::findOrFail($id);
+        $atomexperiment = AtomExperiment::findOrFail($id);
         //  $buildtheatom = BuildTheAtom::where('level', $id)->first();
-         return view('cms.build-the-atom.show', compact('buildtheatom'));
+         return view('cms.atom-experiment.show', compact('atomexperiment'));
      }
  
      public function edit(string $id)
      {
-        $buildtheatom = BuildTheAtom::findOrFail($id);
+        $atomexperiment = AtomExperiment::findOrFail($id);
         //  $buildtheatom = BuildTheAtom::where('level', $id)->first();
         //  dd($buildtheatom);
-         return view('cms.build-the-atom.edit', compact('buildtheatom'));
+         return view('cms.atom-experiment.edit', compact('atomexperiment'));
      }
  
      public function update(Request $request, string $id)
@@ -69,23 +67,23 @@ class BuildTheAtomForm extends Controller
              'src' => 'required',
          ]);
  
-         $buildtheatom = BuildTheAtom::findOrFail($id);
+         $atomexperiment = AtomExperiment::findOrFail($id);
         //  $buildtheatom = BuildTheAtom::where('level', $id)->first();
         // dd($buildtheatom);
-         $buildtheatom->update($request->all());
+         $atomexperiment->update($request->all());
  
-         return redirect()->route('build-the-atoms.index')
-             ->with('success', 'Build The Atom updated successfully');
+         return redirect()->route('atom-experiments.index')
+             ->with('success', 'Atom Experiment updated successfully');
      }
  
      public function destroy(string $id)
      {
-        $buildtheatom = BuildTheAtom::findOrFail($id);        
+        $atomexperiment = AtomExperiment::findOrFail($id);        
         //  $buildtheatom = BuildTheAtom::where('level', $id)->first();
         //  dd($buildtheatom);
-         $buildtheatom->delete();
+         $atomexperiment->delete();
          
-         return redirect()->route('build-the-atoms.index')
-             ->with('success', 'Build The Atom deleted successfully');
+         return redirect()->route('atom-experiments.index')
+             ->with('success', 'Atom Experiment deleted successfully');
      }
 }

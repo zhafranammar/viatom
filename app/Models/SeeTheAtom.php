@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class SeeTheAtom extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title', 
+        'level',
+        'description',
+        'src',
+    ];
 }
