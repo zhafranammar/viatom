@@ -13,8 +13,13 @@ class DiscussionController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('discussion.index', compact('users'));
+        $discussions = Discussion::all();
+        return view('discussion.index', compact('discussions'));
+    }
+
+    public function create()
+    {
+        return view('discussion.create');
     }
 
     public function show(Discussion $discussion)
