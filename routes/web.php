@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AtomExperimentForm;
 use App\Http\Controllers\BuildTheAtomForm;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
@@ -72,7 +73,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/cms/see-the-atoms', SeeTheAtomFormController::class);
         Route::post('cms/see-the-atoms/store', [SeeTheAtomFormController::class, 'store'])->name('cms.see-the-atoms.store');
         Route::put('cms/see-the-atoms/{id}', [SeeTheAtomFormController::class, 'update'])->name('cms.see-the-atoms.update');
-        Route::resource('/cms/atom-experiment', SceneFormController::class);
+        Route::resource('/cms/atom-experiments', AtomExperimentForm::class);
+        Route::post('cms/atom-experiments/store', [AtomExperimentForm::class, 'store'])->name('cms.atom-experiments.store');
+        Route::put('cms/atom-experiments/{id}', [AtomExperimentForm::class, 'update'])->name('cms.atom-experiments.update');
     });
 });
 
