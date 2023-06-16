@@ -63,6 +63,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/cms/levels', SceneFormController::class);
         Route::resource('/cms/materi', SceneFormController::class);
         Route::resource('/cms/videos', VideoFormController::class);
+        Route::post('cms/videos/store', [VideoFormController::class, 'store'])->name('cms.videos.store');
+        Route::put('cms/videos/{id}', [VideoFormController::class, 'update'])->name('cms.videos.update');
         Route::resource('/cms/quiz', SceneFormController::class);
         Route::resource('/cms/exams', SceneFormController::class);
         Route::resource('/cms/build-the-atoms', BuildTheAtomForm::class);

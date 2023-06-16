@@ -47,7 +47,7 @@ class SceneFormController extends Controller
 
     public function destroy(string $id)
     {
-        $scene = Scene::where('level', $id)->first();
+        $scene = Scene::find($id);
         $scene->delete();
 
         return redirect()->view('levels.index')

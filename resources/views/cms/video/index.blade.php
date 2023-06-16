@@ -138,7 +138,7 @@
                 <div class="p-6 text-gray-900">
                     <h2 class="font-bold font-serif text-2xl">Video</h2>
                     <div class="mt-4">
-                        <a href="/cms/video/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Video</a>
+                        <a href="/cms/videos/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Video</a>
                     </div>
 
                     {{-- Add table from database --}}
@@ -161,8 +161,9 @@
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->title}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->video_url}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/levels/{{$video->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/levels/{{$video->id}}" method="POST" class="inline-block">
+                                        <a href="/cms/videos/{{$video->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Detail</a>
+                                        <a href="/cms/videos/{{$video->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
+                                        <form action="/cms/videos/{{$video->id}}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>

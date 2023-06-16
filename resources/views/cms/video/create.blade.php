@@ -126,7 +126,46 @@
         <div class="max-w-full h-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="font-bold font-serif text-2xl">Tambah Data Video</h2>
+                    <h2 class="font-bold font-serif text-2xl">Videos</h2>
+                    <div class="mt-4">
+                    <a href="/cms/videos" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
+                    </div>
+                
+                    <!-- mulai dari sini ya diganti -->
+                    
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                    @endif
+
+                    <form action="store" method="POST">
+                      @csrf
+                      <div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Title</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" placeholder="Title">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Level</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" placeholder="Level">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Video Url</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="video_url" type="text" placeholder="Description">
+                        </div>
+                        <div class="mt-4" >
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                    
+
                 </div>
             </div>
         </div>
