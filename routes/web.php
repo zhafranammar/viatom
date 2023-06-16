@@ -7,6 +7,7 @@ use App\Http\Controllers\SceneFormController;
 use App\Http\Controllers\SeeTheAtomController;
 use App\Http\Controllers\SeeTheAtomFormController;
 use App\Models\BuildTheAtom;
+use App\Http\Controllers\VideoFormController;
 use Illuminate\Support\Facades\Route;
 
 /*

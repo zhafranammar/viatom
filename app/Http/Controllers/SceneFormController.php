@@ -17,19 +17,19 @@ class SceneFormController extends Controller
         return view('cms.scenes.index', compact('scenes'));
     }
 
-    public function show(Scene $scene)
+    public function show(string $id)
     {
-        $scene = Scene::find($scene->id);
+        $scene = Scene::where('level', $id)->first();
         return view('cms.scenes.show', compact('scene'));
     }
 
-    public function edit(Scene $scene)
+    public function edit(string $id)
     {
-        $scene = Scene::find($scene->id);
+        $scene = Scene::where('level', $id)->first();
         return view('cms.scenes.edit', compact('scene'));
     }
 
-    public function update(Request $request, Scene $scene)
+    public function update(Request $request, string $id)
     {
         $request->validate([
             'title' => 'required',
@@ -38,17 +38,19 @@ class SceneFormController extends Controller
             'src' => 'required',
         ]);
 
+        $scene = Scene::where('level', $id)->first();
         $scene->update($request->all());
 
         return redirect()->route('cms.scenes.index')
             ->with('success', 'Scene updated successfully');
     }
 
-    public function destroy(Scene $scene)
+    public function destroy(string $id)
     {
-        $scene = Scene::find($scene->id);
+        $scene = Scene::where('level', $id)->first();
         $scene->delete();
-        return redirect()->route('cms.scenes.index')
+
+        return redirect()->view('levels.index')
             ->with('success', 'Scene deleted successfully');
     }
 }

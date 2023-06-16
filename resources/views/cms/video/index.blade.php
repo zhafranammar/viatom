@@ -25,7 +25,7 @@
       <div class="h-19.5">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-          <img src="{{ asset('assets/web/logo.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="../assets/web/logo.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand text-white">Viatom Dashboard</span>
         </a>
       </div>
@@ -34,12 +34,13 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;">home</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> home</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Dashboard</span>
             </a>
           </li>
 
@@ -67,6 +68,15 @@
                 <span class="material-symbols-outlined" style="color: #636357;"> video_library</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Video</span>
+            </a>
+          </li>
+
+          <li class="mt-0.5 w-full">
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/video">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">video_library</span>
+              </div>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Video</span>
             </a>
           </li>
 
@@ -123,28 +133,49 @@
 
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
       <div class="py-12">
-        <div class="max-w-full h-full mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="text-xl font-bold mb-4">Viatom CMS for Web-Game Management</h2>
-                    <p>
-                        Viatom CMS is a comprehensive Content Management System (CMS) specifically designed to manage content for the Viatom web-game. With Viatom CMS, you can easily organize and control various aspects of your web-game, including materials, videos, quizzes, experiments, and more.
-                    </p>
-                    <p>
-                        Viatom CMS offers a user-friendly interface that enables you to efficiently create, edit, and update game content. You can easily upload and manage game materials, such as educational resources, documents, and images, providing an engaging and interactive learning experience for your users.
-                    </p>
-                    <p>
-                        Additionally, Viatom CMS allows you to incorporate videos into your web-game, offering multimedia content for enhanced learning. You can upload and embed instructional videos, walkthroughs, or educational presentations to complement the gameplay and provide valuable insights to your users.
-                    </p>
-                    <p>
-                        Furthermore, Viatom CMS provides the capability to create and manage quizzes and assessments within your web-game. You can design and customize quizzes to test users' knowledge and progress. This feature enables you to track and evaluate users' learning outcomes and provide personalized feedback based on their quiz results.
-                    </p>
-                    <p>
-                        Moreover, Viatom CMS supports the integration of interactive experiments or simulations into your web-game. You can create virtual experiments or simulations that allow users to explore scientific concepts, conduct virtual lab experiments, and gain hands-on experience within the game environment.
-                    </p>
-                    <p>
-                        Viatom CMS empowers you to deliver a comprehensive and immersive web-game experience, enabling users to learn, engage, and interact with educational content in a dynamic and interactive manner.
-                    </p>
+                    <h2 class="font-bold font-serif text-2xl">Video</h2>
+                    <div class="mt-4">
+                        <a href="/cms/video/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Video</a>
+                    </div>
+
+                    {{-- Add table from database --}}
+                    <div class="mt-4">
+                        <table class="table-auto border-separate w-full">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Id</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Level</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Title</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Link</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($videos as $video)
+                                <tr>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->id}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->level}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->title}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->video_url}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-md">
+                                        <a href="/cms/levels/{{$video->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
+                                        <form action="/cms/levels/{{$video->id}}" method="POST" class="inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
