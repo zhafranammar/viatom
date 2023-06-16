@@ -35,7 +35,6 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
-
           <li class="mt-0.5 w-full">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
@@ -91,20 +90,20 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/build-the-atoms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;">polyline</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/build-the-atoms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> polyline</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Build The Atom</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Build The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/see-the-atoms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> view_in_ar</span>
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/see-the-atoms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">view_in_ar</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">See The Atom</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">See The Atom</span>
             </a>
           </li>
 
@@ -128,9 +127,9 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="font-bold font-serif text-2xl">Build The Atom</h2>
+                    <h2 class="font-bold font-serif text-2xl">See The Atom</h2>
                     <div class="mt-4">
-                    <a href="/cms/build-the-atoms" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
+                    <a href="/cms/see-the-atoms" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
                     </div>
                 
                     <!-- mulai dari sini ya diganti -->
@@ -146,27 +145,26 @@
                     </div>
                     @endif
 
-                    <form action="store" method="POST">
+                    <form action="{{ route('cms.see-the-atoms.update', ['id' => $seetheatom->id]) }}" method="POST">
                       @csrf
+                      @method('PUT')
+
                       <div>
                         <div class="form grup mt-4 ">
                             <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Title</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" placeholder="Title">
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" value="{{ $seetheatom->title }}" placeholder="Title">
                         </div>
                         <div class="form grup mt-4 ">
                             <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Level</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" placeholder="Level">
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" value="{{ $seetheatom->level }}" placeholder="Level">
                         </div>
                         <div class="form grup mt-4 ">
                             <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Description</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" type="text" placeholder="Description">
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" type="text" value="{{ $seetheatom->description }}" placeholder="Description">
                         </div>
                         <div class="form grup mt-4 ">
                             <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Src</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="src" type="text" placeholder="Source">
-                        </div>
-                        <div class="mt-4" >
-                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Submit</button>
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="src" type="text" value="{{ $seetheatom->src }}" placeholder="Source">
                         </div>
                       </div>
                     </form>
