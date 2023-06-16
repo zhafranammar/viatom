@@ -34,12 +34,13 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;">home</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> home</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Dashboard</span>
             </a>
           </li>
 
@@ -61,12 +62,13 @@
             </a>
           </li>
 
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/videos">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> video_library</span>
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/videos">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">video_library</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Video</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Video</span>
             </a>
           </li>
 
@@ -89,25 +91,25 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/build-the-atom">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/build-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> construction</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> polyline</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Build The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/see-the-atom">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/see-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> visibility</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> view_in_ar</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">See The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/atom-experiment">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/atom-experiments">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> science</span>
               </div>
@@ -126,7 +128,46 @@
         <div class="max-w-full h-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="font-bold font-serif text-2xl">Tambah Data Video</h2>
+                    <h2 class="font-bold font-serif text-2xl">Videos</h2>
+                    <div class="mt-4">
+                    <a href="/cms/videos" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
+                    </div>
+                
+                    <!-- mulai dari sini ya diganti -->
+                    
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                    @endif
+
+                    <form action="store" method="POST">
+                      @csrf
+                      <div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Title</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" placeholder="Title">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Level</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" placeholder="Level">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Video Url</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="video_url" type="text" placeholder="Description">
+                        </div>
+                        <div class="mt-4" >
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                    
+
                 </div>
             </div>
         </div>

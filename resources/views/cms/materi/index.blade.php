@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/web/logo.png" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
     <title>Viatom CMS</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -13,19 +13,19 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
+    <link href="{{asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5')}}" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
-  <body class="m-0 font-sans antialiased font-normal text-base leading-default text-slate-500" style="background-image: url('../assets/web/map1.png'); background-repeat: no-repeat; background-size: cover;">
+  <body class="m-0 font-sans antialiased font-normal text-base leading-default text-slate-500" style="background-image: url('{{asset('assets/web/map1.png')}}'); background-repeat: no-repeat; background-size: cover;">
     <!-- sidenav  -->
     <aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 py-4 pl-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-r-2xl border-0 bg-[#636357] p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0">
       <div class="h-19.5">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-          <img src="../assets/web/logo.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{{ asset('assets/web/logo.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand text-white">Viatom Dashboard</span>
         </a>
       </div>
@@ -34,17 +34,18 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/dashboard.html">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;">home</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> home</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-white">Dashboard</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Dashboard</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/levels">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> signal_cellular_alt</span>
               </div>
@@ -53,16 +54,16 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 bg-[#F2DC52] font-semibold text-slate-700 rounded-lg transition-colors" href="../pages/tables.html">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;"> library_books</span>
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/materi">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">library_books</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Materi</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/videos">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> video_library</span>
               </div>
@@ -71,7 +72,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/quiz">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> quiz</span>
               </div>
@@ -80,7 +81,7 @@
           </li>
           
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/exam">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> assignment_turned_in</span>
               </div>
@@ -89,25 +90,25 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/build-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> construction</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> polyline</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Build The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/see-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> visibility</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> view_in_ar</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">See The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/tables.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/atom-experiments">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> science</span>
               </div>
@@ -132,17 +133,43 @@
                     </div>
 
                     {{-- Add table from database --}}
-                    <div class="mt-4">
-                        <table class="table-auto w-full">
+                     <div class="mt-4">
+                        <table class="table-auto border-separate w-full">
                             <thead>
                                 <tr>
-                                    <th class="px-4 py-2">No</th>
-                                    <th class="px-4 py-2">Judul</th>
-                                    <th class="px-4 py-2">Deskripsi</th>
-                                    <th class="px-4 py-2">Aksi</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Id</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Title</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Level</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Description</th>
+                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($materis as $materi)
+                                <tr>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$materi->id}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$materi->title}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$materi->level}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$materi->description}}</td>
+                                    <td class="border px-4 py-2 font-serif text-center text-md">
+                                        <div class="flex space-x-4">
+                                          <a href="/cms/materi/{{ $materi->id }}" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">info</span>
+                                          </a>
+                                          <a href="/cms/materi/{{ $materi->id }}/edit" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">edit</span>
+                                          </a>
+                                          <form action="/cms/materi/{{ $materi->id }}" method="POST" class="inline-block">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="bg-[#636357] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                              <span class="material-symbols-outlined" style="color: #F2DC52;">delete</span>
+                                            </button>
+                                          </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

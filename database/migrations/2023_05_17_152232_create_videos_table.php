@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->integer('level')->unique();
             $table->string('video_url');
-            $table->string('thumbnail_url');
             $table->timestamps();
         });
     }

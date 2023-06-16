@@ -25,7 +25,7 @@
       <div class="h-19.5">
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-          <img src="../assets/web/logo.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{{ asset('assets/web/logo.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
           <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand text-white">Viatom Dashboard</span>
         </a>
       </div>
@@ -62,17 +62,9 @@
             </a>
           </li>
 
-          <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/videos">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> video_library</span>
-              </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Video</span>
-            </a>
-          </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/video">
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/videos">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #F2DC52;">video_library</span>
               </div>
@@ -99,25 +91,25 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/build-the-atom">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/build-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> construction</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> polyline</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Build The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/see-the-atom">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/see-the-atoms">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> visibility</span>
+                <span class="material-symbols-outlined" style="color: #636357;"> view_in_ar</span>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">See The Atom</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/atom-experiment">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/atom-experiments">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                 <span class="material-symbols-outlined" style="color: #636357;"> science</span>
               </div>
@@ -138,7 +130,7 @@
                 <div class="p-6 text-gray-900">
                     <h2 class="font-bold font-serif text-2xl">Video</h2>
                     <div class="mt-4">
-                        <a href="/cms/video/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Video</a>
+                        <a href="/cms/videos/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Video</a>
                     </div>
 
                     {{-- Add table from database --}}
@@ -161,12 +153,21 @@
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->title}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->video_url}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/levels/{{$video->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/levels/{{$video->id}}" method="POST" class="inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
-                                        </form>
+                                        <div class="flex space-x-4">
+                                          <a href="/cms/videos/{{ $video->id }}" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">info</span>
+                                          </a>
+                                          <a href="/cms/videos/{{ $video->id }}/edit" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">edit</span>
+                                          </a>
+                                          <form action="/cms/videos/{{ $video->id }}" method="POST" class="inline-block">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="bg-[#636357] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                              <span class="material-symbols-outlined" style="color: #F2DC52;">delete</span>
+                                            </button>
+                                          </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -18,15 +18,29 @@ class VideoFormController extends Controller
         return view('cms.video.create');
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'level' => 'required',
+            'video_url' => 'required',
+        ]);
+
+        Video::create($request->all());
+
+        return redirect()->route('videos.index')
+            ->with('success', 'Video created successfully.');
+    }
+
     public function show(string $id)
     {
-        $video = Video::where('level', $id)->first();
+        $video = Video::findOrFail($id);
         return view('cms.video.show', compact('video'));
     }
 
     public function edit(string $id)
     {
-        $video = Video::where('level', $id)->first();
+        $video = Video::findOrFail($id);
         return view('cms.video.edit', compact('video'));
     }
 
@@ -35,23 +49,23 @@ class VideoFormController extends Controller
         $request->validate([
             'title' => 'required',
             'level' => 'required',
-            'description' => 'required',
-            'src' => 'required',
+            'video_url' => 'required',
         ]);
 
-        $video = Video::where('level', $id)->first();
+        $video = Video::findOrFail($id);
         $video->update($request->all());
 
-        return redirect()->route('cms.video.index')
+        return redirect()->route('videos.index')
             ->with('success', 'Video updated successfully');
     }
 
     public function destroy(string $id)
     {
-        $video = Video::where('level', $id)->first();
+        $video = Video::find($id);
+        // dd($video);
         $video->delete();
 
-        return redirect()->route('video.index')
+        return redirect()->route('videos.index')
             ->with('success', 'Video deleted successfully');
     }
 }
