@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
-  <body class="m-0 font-sans antialiased font-normal text-base leading-default text-slate-500" style="background-image: url('../assets/web/map1.png'); background-repeat: no-repeat; background-size: cover;">
+  <body class="m-0 font-sans antialiased font-normal text-base leading-default text-slate-500" style="background-image: url('{{asset('assets/web/map1.png')}}'); background-repeat: no-repeat; background-size: cover;">
     <!-- sidenav  -->
     <aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 py-4 pl-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-r-2xl border-0 bg-[#636357] p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0">
       <div class="h-19.5">

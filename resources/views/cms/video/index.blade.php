@@ -34,12 +34,13 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;">home</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> home</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Dashboard</span>
             </a>
           </li>
 
@@ -61,12 +62,13 @@
             </a>
           </li>
 
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/videos">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> video_library</span>
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/videos">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">video_library</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Video</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Video</span>
             </a>
           </li>
 
@@ -151,13 +153,21 @@
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->title}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-xl">{{$video->video_url}}</td>
                                     <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/videos/{{$video->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Detail</a>
-                                        <a href="/cms/videos/{{$video->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/videos/{{$video->id}}" method="POST" class="inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
-                                        </form>
+                                        <div class="flex space-x-4">
+                                          <a href="/cms/videos/{{ $video->id }}" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">info</span>
+                                          </a>
+                                          <a href="/cms/videos/{{ $video->id }}/edit" class="bg-[#636357] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                            <span class="material-symbols-outlined" style="color: #F2DC52;">edit</span>
+                                          </a>
+                                          <form action="/cms/videos/{{ $video->id }}" method="POST" class="inline-block">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="bg-[#636357] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition duration-300">
+                                              <span class="material-symbols-outlined" style="color: #F2DC52;">delete</span>
+                                            </button>
+                                          </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

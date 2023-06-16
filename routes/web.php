@@ -3,6 +3,7 @@
 use App\Http\Controllers\BuildTheAtomForm;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\MateriForm;
 use App\Http\Controllers\SceneFormController;
 use App\Http\Controllers\SeeTheAtomController;
 use App\Models\BuildTheAtom;
@@ -61,7 +62,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('cms.dashboard');
         })->name('cms');
         Route::resource('/cms/levels', SceneFormController::class);
-        Route::resource('/cms/materi', SceneFormController::class);
+        Route::resource('/cms/materi', MateriForm::class);
+        Route::post('cms/materi/store', [MateriForm::class, 'store'])->name('cms.materi.store');
+        Route::put('cms/materi/{id}', [MateriForm::class, 'update'])->name('cms.materi.update');
         Route::resource('/cms/videos', VideoFormController::class);
         Route::post('cms/videos/store', [VideoFormController::class, 'store'])->name('cms.videos.store');
         Route::put('cms/videos/{id}', [VideoFormController::class, 'update'])->name('cms.videos.update');

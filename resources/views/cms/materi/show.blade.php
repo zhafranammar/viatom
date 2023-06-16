@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/web/logo.png') }}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
     <title>Viatom CMS</title>
     <!--     Fonts and icons     -->
@@ -34,12 +34,13 @@
 
       <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0">
+
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #F2DC52;">home</span>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #636357;"> home</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Dashboard</span>
             </a>
           </li>
 
@@ -53,11 +54,11 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/cms/materi">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                <span class="material-symbols-outlined" style="color: #636357;"> library_books</span>
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-[#F2DC52] px-4 font-semibold text-slate-700 transition-colors" href="/cms/materi">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#636357] bg-center stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">library_books</span>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft text-center text-white">Materi</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Materi</span>
             </a>
           </li>
 
@@ -126,42 +127,48 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h2 class="font-bold font-serif text-2xl">Level</h2>
+                    <h2 class="font-bold font-serif text-2xl">Materi</h2>
                     <div class="mt-4">
-                        <a href="/cms/levels/create" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Tambah Level</a>
+                    <a href="/cms/materi" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Kembali</a>
                     </div>
-
-                    {{-- Add table from database --}}
-                    <div class="mt-4">
-                        <table class="table-auto border-separate w-full">
-                            <thead>
-                                <tr>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Level</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Tipe</th>
-                                    <th class="px-4 py-2 text-center font-serif bg-gray-200">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($scenes as $scene)
-                                <tr>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$scene->level}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-xl">{{$scene->type}}</td>
-                                    <td class="border px-4 py-2 font-serif text-center text-md">
-                                        <a href="/cms/levels/{{$scene->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Edit</a>
-                                        <form action="/cms/levels/{{$scene->id}}" method="POST" class="inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                
+                    <!-- mulai dari sini ya diganti -->
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
                     </div>
+                    @endif
+                    <form action="{{ route('cms.materi.update', ['id' => $materi->id]) }}" method="POST">
+                      @csrf
+                      @method('PUT')
 
-
-
+                      <div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Title</label>
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" value="{{ $materi->title }}" placeholder="Title">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Level</label>
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="level" type="text" value="{{ $materi->level }}" placeholder="Level">
+                        </div>
+                        <div class="form grup mt-4 ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-base font-bold mb-2">Description</label>
+                            <input disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" type="text" value="{{ $materi->description }}" placeholder="Video Url">
+                        </div>
+                        @if ($materi->src != null)
+                        <div class="form grup mt-4 ">
+                            {{-- buat button download materi sebelumnya aja --}}
+                            <a href="{{ asset($materi->src) }}" class="bg-green-500 hover:bg-green-700 text-white left-0 font-bold py-2 px-4 rounded">Download Materi</a>
+                        </div>
+                        @endif
+                        
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>

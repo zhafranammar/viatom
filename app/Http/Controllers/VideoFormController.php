@@ -34,13 +34,13 @@ class VideoFormController extends Controller
 
     public function show(string $id)
     {
-        $video = Video::where('level', $id)->first();
+        $video = Video::findOrFail($id);
         return view('cms.video.show', compact('video'));
     }
 
     public function edit(string $id)
     {
-        $video = Video::where('level', $id)->first();
+        $video = Video::findOrFail($id);
         return view('cms.video.edit', compact('video'));
     }
 
