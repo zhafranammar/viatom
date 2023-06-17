@@ -33,7 +33,7 @@ class LevelController extends Controller
             $user->max_level = $user->current_level;
         }
         if ($user->current_level > Scene::count()) {
-            return redirect()->route('finish');
+            return redirect()->route('dashboard');
         }
         $user->save();
         return redirect()->route('play');
