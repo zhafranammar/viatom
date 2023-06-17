@@ -36,6 +36,31 @@
         const titleElement = document.getElementById('title');
         titleElement.innerHTML = title;
 
+        const nextButton = document.createElement('a');
+        nextButton.href = `{{ route('next-level') }}`;
+        nextButton.innerHTML = 'Next Level';
+        nextButton.classList.add('p-2');
+        nextButton.classList.add('font-bold');
+        nextButton.classList.add('font-mono');
+        nextButton.classList.add('my-2');
+        nextButton.classList.add('text-2xl');
+        nextButton.style.color = '#F2DC52';
+        nextButton.classList.add('rounded-md');
+        nextButton.classList.add('btn-game');
+        nextButton.classList.add('absolute');
+        nextButton.classList.add('bottom-1.5');
+        nextButton.classList.add('right-3');
+
+        const nextIcon = document.createElement('span');
+        nextIcon.classList.add('material-symbols-outlined');
+        nextIcon.classList.add('mr-2');
+        nextIcon.innerHTML = 'navigate_next';
+        nextIcon.style.color = '#F2DC52';
+        nextIcon.classList.add('shadow-soft-2xl');
+        nextButton.prepend(nextIcon);
+
+        gameContainer.appendChild(nextButton);
+
         })
         .catch(error => {
         console.error('Terjadi kesalahan:', error);

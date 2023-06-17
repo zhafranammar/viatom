@@ -184,7 +184,31 @@ function makeLayer3(countElectron) {
     if (countElectron < atom.layer3) {
       makeLayer3.call(this, countElectron);
     } else {
-      console.log('finish');
+      const button = document.getElementById('next-button');
+      const nextButton = document.createElement('a');
+      nextButton.href = '/next-level';
+      nextButton.innerHTML = 'Next Level';
+      nextButton.classList.add('p-2');
+      nextButton.classList.add('font-bold');
+      nextButton.classList.add('font-mono');
+      nextButton.classList.add('my-2');
+      nextButton.classList.add('text-2xl');
+      nextButton.style.color = '#F2DC52';
+      nextButton.classList.add('rounded-md');
+      nextButton.classList.add('btn-game');
+      nextButton.classList.add('absolute');
+      nextButton.classList.add('bottom-1.5');
+      nextButton.classList.add('right-3');
+
+      const nextIcon = document.createElement('span');
+      nextIcon.classList.add('material-symbols-outlined');
+      nextIcon.classList.add('mr-2');
+      nextIcon.innerHTML = 'navigate_next';
+      nextIcon.style.color = '#F2DC52';
+      nextIcon.classList.add('shadow-soft-2xl');
+      nextButton.prepend(nextIcon);
+
+      button.appendChild(nextButton);
     }
   }, null, this);
 }

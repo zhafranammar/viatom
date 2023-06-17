@@ -25,7 +25,7 @@ class VideoSeeder extends Seeder
         ]);
         Video::Create([
             'title' => 'Video Materi Atom Thomson',
-            'level' => 9,
+            'level' => 8,
             'video_url' => 'https://www.youtube.com/embed/1X7fZoDs9KU',
         ]);
         Video::Create([

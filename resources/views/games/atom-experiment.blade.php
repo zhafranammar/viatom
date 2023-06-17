@@ -65,6 +65,8 @@
                 <div class="flex flex-col items-center">
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>
                 </div>
+                <div class="flex flex-col items-center relative" id="next-button">
+                </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
                     <div class="flex btn-game align-center rounded-md p-2">
                         <svg width="42" height="38" viewBox="0 0 42 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,10 +97,30 @@
     }
 </style>
 
-{{-- <x-app-layout>
-    <x-slot name="header">
-        
-    </x-slot>
+<script>
+    const button = document.getElementById('game-container');
+    const nextButton = document.createElement('a');
+    nextButton.href = '/next-level';
+    nextButton.innerHTML = 'Next Level';
+    nextButton.classList.add('p-2');
+    nextButton.classList.add('font-bold');
+    nextButton.classList.add('font-mono');
+    nextButton.classList.add('my-2');
+    nextButton.classList.add('text-2xl');
+    nextButton.style.color = '#F2DC52';
+    nextButton.classList.add('rounded-md');
+    nextButton.classList.add('btn-game');
+    nextButton.classList.add('absolute');
+    nextButton.classList.add('bottom-1.5');
+    nextButton.classList.add('right-3');
 
-    
-</x-app-layout> --}}
+    const nextIcon = document.createElement('span');
+    nextIcon.classList.add('material-symbols-outlined');
+    nextIcon.classList.add('mr-2');
+    nextIcon.innerHTML = 'navigate_next';
+    nextIcon.style.color = '#F2DC52';
+    nextIcon.classList.add('shadow-soft-2xl');
+    nextButton.prepend(nextIcon);
+
+    button.appendChild(nextButton);
+</script>

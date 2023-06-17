@@ -65,6 +65,8 @@
                 <div class="flex flex-col items-center">
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>
                 </div>
+                <div class="fixed bottom-0 m-8 left-0 right-0 items-center" id="next-button">
+                </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
                     <div class="flex btn-game align-center rounded-md p-2">
                         <svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
