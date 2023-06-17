@@ -14,43 +14,43 @@ class MateriSeeder extends Seeder
     public function run(): void
     {
         Materi::Create([
-            'level' => 3,
+            'level' => 1,
             'title' => 'Materi Atom Dalton',
             'description' => 'Materi Atom Dalton',
             'src' => 'assets\pdf\[1]-Teori-Atom-Dalton.pdf'
         ]);
         Materi::Create([
-            'level' => 9,
+            'level' => 4,
             'title' => 'Materi Atom Thomson',
             'description' => 'Materi Atom Thomson',
             'src' => 'assets\pdf\[2]-Teori-Atom-Thomson.pdf'
         ]);
         Materi::Create([
-            'level' => 15,
+            'level' => 7,
             'title' => 'Materi Percobaan Sinar Katoda dan Tetes Minyak Milikan',
             'description' => 'Materi Percobaan Sinar Katoda dan Tetes Minyak Milikan',
             'src' => 'assets\pdf\[3]-Percobaan Sinar Katoda _ Minyak Milikan.pdf'
         ]);
         Materi::Create([
-            'level' => 24,
+            'level' => 13,
             'title' => 'Materi Atom Rutherford',
             'description' => 'Materi Atom Rutherford',
             'src' => 'public\assets\pdf\[4]-Teori Atom Rutherford.pdf'
         ]);
         Materi::Create([
-            'level' => 32,
+            'level' => 18,
             'title' => 'Materi Atom Bohr',
             'description' => 'Materi Atom Bohr',
             'src' => 'assets\pdf\[5]-Teori Atom Bohr.pdf'
         ]);
         Materi::Create([
-            'level' => 38,
+            'level' => 21,
             'title' => 'Materi Notasi Atom',
             'description' => 'Materi Notasi Atom',
             'src' => 'assets\pdf\[6]-Notasi Atom.pdf'
         ]);
         Materi::Create([
-            'level' => 42,
+            'level' => 22,
             'title' => 'Materi Isoton, Isobar, Isotop',
             'description' => 'Materi Isoton, Isobar, Isotop',
             'src' => 'assets\pdf\[7]-Isotop, Isobar, Isoton.pdf'
