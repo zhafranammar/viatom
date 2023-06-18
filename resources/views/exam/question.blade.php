@@ -56,11 +56,11 @@
                               @endphp
 
                               @foreach ($shuffledOptions as $key => $option)
-                                  <div class="py-8 rounded-lg flex items-center" style="background-color: #d9d9d9">
-                                      <input type="radio" id="{{ $key }}" name="answer" value="{{ $key }}" class="m-4">
-                                      <label class="text-xl font-bold" for="{{ $key }}">{{ $option }}</label>
-                                  </div>
-                              @endforeach
+                                <div class="py-8 rounded-lg flex items-center" style="background-color: #d9d9d9">
+                                    <input type="radio" id="{{ $key }}" name="answer" value="{{ $option }}" class="m-4">
+                                    <label class="text-xl font-bold" for="{{ $key }}">{{ $option }}</label>
+                                </div>
+                            @endforeach
                           </div>
                           
                           <button type="submit" class="p-2 justify-center flex font-bold font-mono my-2 text-2xl rounded-md btn-game" style="color: #F2DC52">

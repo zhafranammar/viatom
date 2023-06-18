@@ -21,7 +21,7 @@
                     <a href="#" class="nav-menu"><li>Features</li></a>
                     <a href="#" class="nav-menu"><li>About Us</li></a>
                     <a href="#" class="nav-menu"><li>Team</li></a>
-                    <button class="btn-signup">Sign Up</button>
+                    <button onclick="window.location.href='/register'" class="btn-signup">Sign Up</button>
                 </ul>
             </div>
         </nav>
@@ -35,7 +35,7 @@
                 <p class="hero-welcome">Halo, selamat datang</p>
                 <h1 class="hero-heading"><span class="text-yellow">Temukan</span> Suasana<br>Asyik Belajar <span class="text-yellow">Atom</span></h1>
                 <p class="hero-text">Ikuti petualangan atom bersama viatom!<br>Mainkan sekarang gratis.</p>
-                <button class="btn-yellow">Get Started</button>
+                <button onclick="window.location.href='/game'" class="btn-yellow">Get Started</button>
             </div>
         </section>
         
