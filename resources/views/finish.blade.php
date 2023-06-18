@@ -34,44 +34,14 @@
                 
                 <div class="flex flex-col items-center relative" id="game-container">
                   <div class="w-8xl p-16 flex my-8 flex-col items-center bg-gray-200 rounded-lg">
-                    <h1 class="text-3xl m-2 font-bold text-gray-900" id="title">Ketentuan Exam</h1>
-                    <ol class="m-6" type="1">
-                      <li class="text-xl font-bold">1. Exam menjadi dasar pengukuran kompetensi siswa di materi Atom</li>
-                      <li class="text-xl font-bold">2. Exam hanya dapat dikerjakan setelah siswa menyelesaikan adventure game</li>
-                      <li class="text-xl font-bold">3. Exam terdiri atas 40 soal pilihan ganda</li>
-                    </ol>
-
-                    <div class="flex flex-col items-center">
-                      <a href="{{ route('exams.start') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5 text-2xl text-center font-bold" style="color: #F2DC52">
-                        <span class="material-symbols-outlined">skip_next</span> Mulai Ujian
-                      </a>
-                    </div>
+                    <h1 class="text-3xl m-2 font-bold text-gray-900" id="title">Congratulations</h1>
+                    <h3 class="text-3xl m-2 font-bold text-gray-900">You have finished the game</h3>
+                    <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5 text-2xl text-center font-bold" style="color: #F2DC52">
+                        <span class="material-symbols-outlined">skip_next</span> Back to Dashboard
+                    </a>
                   </div>
 
-                  {{-- tampilkan $exams jika not null --}}
-                  @if ($exam)
-                    <div class="w-8xl p-16 flex my-8 flex-col items-center bg-gray-200 rounded-lg">
-                      <h1 class="text-3xl m-2 font-bold text-gray-900">High Score</h1>
-                      <h3 class="text-3xl m-2 font-bold text-gray-900">{{$exam->score}}</h3>
-                    </div>
-                  @else 
-                    <div class="w-8xl p-16 flex my-8 flex-col items-center bg-gray-200 rounded-lg">
-                      <h1 class="text-3xl m-2 font-bold text-gray-900" id="title">Daftar Exam</h1>
-                      <ol class="m-6" type="1">
-                        <li class="text-xl font-bold">Belum ada exam</li>
-                      </ol>
-                    </div>
-                  @endif
-                </div>
 
-                <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
-                    <div class="flex btn-game align-center rounded-md p-2">
-                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                            <span class="material-symbols-outlined" style="color: #F2DC52;"> assignment_turned_in</span>
-                        </div>
-                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Assignment</h1>
-                    </div>
-                </div>
             </div>
             {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>

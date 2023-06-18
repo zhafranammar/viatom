@@ -35,7 +35,7 @@ class MateriSeeder extends Seeder
             'level' => 24,
             'title' => 'Materi Atom Rutherford',
             'description' => 'Materi Atom Rutherford',
-            'src' => 'public\assets\pdf\[4]-Teori Atom Rutherford.pdf'
+            'src' => 'assets\pdf\[4]-Teori_Atom_Rutherford.pdf'
         ]);
         Materi::Create([
             'level' => 32,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quiz;
 use App\Models\Scene;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,10 @@ class LevelController extends Controller
         $user = auth()->user();
         $level = $user->current_level;
         $scene = Scene::where('level', $level)->first();
+        if ($scene->type == 'quiz') {
+            $quiz = Quiz::where('level', $level)->first();
+            return view('games.quiz', compact('quiz'));
+        }
         $page = 'games.' . $scene->type;
         return view($page, compact('scene'));
     }
