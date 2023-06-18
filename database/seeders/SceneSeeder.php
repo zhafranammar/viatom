@@ -27,35 +27,35 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 4,
-            'type' => 'materi',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 5,
-            'type' => 'see-the-atom',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 6,
-            'type' => 'build-the-atom',
-        ]);
-        Scene::Create([
-            'level' => 7,
             'type' => 'materi',
         ]);
         Scene::Create([
+            'level' => 7,
+            'type' => 'see-the-atom',
+        ]);
+        Scene::Create([
             'level' => 8,
-            'type' => 'atom-experiment',
+            'type' => 'build-the-atom',
         ]);
         Scene::Create([
             'level' => 9,
-            'type' => 'atom-experiment',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 10,
-            'type' => 'atom-experiment',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 11,
-            'type' => 'atom-experiment',
+            'type' => 'materi',
         ]);
         Scene::Create([
             'level' => 12,
@@ -63,7 +63,7 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 13,
-            'type' => 'materi',
+            'type' => 'atom-experiment',
         ]);
         Scene::Create([
             'level' => 14,
@@ -75,11 +75,11 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 16,
-            'type' => 'see-the-atom',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 17,
-            'type' => 'build-the-atom',
+            'type' => 'quiz',
         ]);
         Scene::Create([
             'level' => 18,
@@ -87,19 +87,71 @@ class SceneSeeder extends Seeder
         ]);
         Scene::Create([
             'level' => 19,
-            'type' => 'see-the-atom',
+            'type' => 'atom-experiment',
         ]);
         Scene::Create([
             'level' => 20,
-            'type' => 'build-the-atom',
+            'type' => 'atom-experiment',
         ]);
         Scene::Create([
             'level' => 21,
-            'type' => 'materi',
+            'type' => 'see-the-atom',
         ]);
         Scene::Create([
             'level' => 22,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 23,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 24,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 25,
             'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 26,
+            'type' => 'see-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 27,
+            'type' => 'build-the-atom',
+        ]);
+        Scene::Create([
+            'level' => 28,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 29,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 30,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 31,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 32,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 33,
+            'type' => 'materi',
+        ]);
+        Scene::Create([
+            'level' => 34,
+            'type' => 'quiz',
+        ]);
+        Scene::Create([
+            'level' => 35,
+            'type' => 'quiz',
         ]);
     }
 }

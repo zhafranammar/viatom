@@ -15,7 +15,7 @@ class QuizSeeder extends Seeder
     {
         Quiz::Create([
             'question' => 'Siapa ilmuwan yang mengemukakan teori atom Dalton?',
-            'level' => 6,
+            'level' => 4,
             'option_true' => 'John Dalton',
             'option_false_1' => 'Albert Einstein',
             'option_false_2' => 'Joseph John Thomson',
@@ -25,7 +25,7 @@ class QuizSeeder extends Seeder
 
         Quiz::create([
             'question' => 'Teori atom Dalton menyatakan bahwa atom merupakan partikel terkecil yang memiliki karakteristik yaitu?',
-            'level' => 7,
+            'level' => 5,
             'option_true' => 'Tidak dapat dibagi menjadi subatom',
             'option_false_1' => 'Dapat terbagi menjadi subatom',
             'option_false_2' => 'Hanya terdiri dari elektron',
@@ -35,7 +35,7 @@ class QuizSeeder extends Seeder
 
         Quiz::create([
             'question' => 'Berdasarkan Teori Thomson, apa yang merupakan struktur dasar atom?',
-            'level' => 12,
+            'level' => 9,
             'option_true' => 'Elektron',
             'option_false_1' => 'Proton',
             'option_false_2' => 'Neutron',
@@ -45,7 +45,7 @@ class QuizSeeder extends Seeder
 
         Quiz::create([
             'question' => 'Maksud dari penggambaran model atom sebagai "Roti kismis" pada teori atom Thomson adalah...',
-            'level' => 13,
+            'level' => 10,
             'option_true' => 'Atom terdiri atas materi bermuatan positif dan di dalamnya tersebar elektron',
             'option_false_1' => 'Atom berbentuk bola pejal padat yang tidak dapat dipecahkan',
             'option_false_2' => 'Atom hanya terdiri dari proton yang mengelilingi inti atom',
@@ -55,7 +55,7 @@ class QuizSeeder extends Seeder
 
         Quiz::create([
             'question' => 'Siapakah yang mengusulkan nama partikel sinar katoda disebut "elektron"?',
-            'level' => 21,
+            'level' => 16,
             'option_true' => 'George Johnstone Stoney',
             'option_false_1' => 'William Crookes',
             'option_false_2' => 'John Dalton',
@@ -64,7 +64,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => '2.Percobaan yang mendasari adanya penemuan muatan dan massa elektron adalah…',
-            'level' => 22,
+            'level' => 17,
             'option_true' => 'Percobaan Tetes Minyak Milikan',
             'option_false_1' => 'Percobaan Tabung Sinar Katode',
             'option_false_2' => 'Percobaan Hamburan Partikel Alfa',
@@ -73,7 +73,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Eksperimen yang dilakukan oleh Rutherford untuk mengembangkan teorinya tentang struktur atom adalah…',
-            'level' => 29,
+            'level' => 23,
             'option_true' => 'Eksperimen hamburan partikel alfa',
             'option_false_1' => 'Eksperimen sinar katode',
             'option_false_2' => 'Eksperimen sinar-X',
@@ -82,7 +82,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Apa yang menyebabkan partikel alfa sedikit yang dibelokkan menurut teori Rutherford?',
-            'level' => 30,
+            'level' => 24,
             'option_true' => 'Partikel alfa ditolak inti atom yang bermuatan positif',
             'option_false_1' => 'Inti atom menarik partikel alfa',
             'option_false_2' => 'Partikel alfa mengalami tumbukan dengan partikel beta di dalam atom',
@@ -91,7 +91,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Siapakah ilmuwan yang mengusulkan model atom Bohr ?',
-            'level' => 35,
+            'level' => 28,
             'option_true' => 'Niels Bohr',
             'option_false_1' => 'Ernest Rutherford',
             'option_false_2' => 'John Dalton',
@@ -100,7 +100,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Menurut model atom Bohr, perubahan energi elektron dalam atom terjadi ketika…',
-            'level' => 36,
+            'level' => 29,
             'option_true' => 'Elektron memancarkan cahaya',
             'option_false_1' => 'Elektron bertabrakan dengan partikel lain',
             'option_false_2' => 'Elektron mendapatkan energi kinetik tambahan',
@@ -109,7 +109,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Diketahui atom magnesium (Mg) memiliki nomor massa 24 dan nomor atom 12. Berapa jumlah proton, elektron, dan neutron berturut-turut dalam atom tersebut?',
-            'level' => 39,
+            'level' => 31,
             'option_true' => '12 ; 12 ; 12',
             'option_false_1' => '12 ; 24 ; 12',
             'option_false_2' => '12 ; 12 ; 24',
@@ -120,7 +120,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Berapa jumlah proton, elektron, dan neutron berturut-turut pada ion oksigen dengan muatan -2 (O2-)? (No atom O = 8 ; No massa = 18)',
-            'level' => 40,
+            'level' => 32,
             'option_true' => '8 ; 10 ; 10',
             'option_false_1' => '10 ; 10 ; 8',
             'option_false_2' => '8 ; 10 ; 8',
@@ -131,7 +131,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Diketahui Atom X memiliki nomor massa 20 dan nomor atom 9. Atom Y memiliki nomor massa 19 dan nomor atom 9. Atom Z memiliki nomor massa 20 dan nomor atom 10. Berdasarkan informasi tersebut, manakah pilihan yang benar?',
-            'level' => 43,
+            'level' => 34,
             'option_true' => 'Atom X dan Y merupakan isotop',
             'option_false_1' => 'Atom Y dan Z adalah isotop',
             'option_false_2' => 'Atom X dan Y adalah isoton',
@@ -141,7 +141,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::Create([
             'question' => 'Seorang ahli kimia sedang mengamati dua jenis inti atom berbeda yang memiliki jumlah proton yang sama namun jumlah neutron yang berbeda. Ia menyimpulkan bahwa inti-inti atom ini termasuk dalam kategori…',
-            'level' => 44,
+            'level' => 35,
             'option_true' => 'Isotop',
             'option_false_1' => 'Isoton',
             'option_false_2' => 'Isobar',

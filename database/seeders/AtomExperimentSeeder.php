@@ -15,43 +15,37 @@ class AtomExperimentSeeder extends Seeder
     {
         AtomExperiment::Create([
             'title' => 'Alat Sinar Katoda',
-            'level' => 8,
+            'level' => 12,
             'description' => 'Description experiment 1',
             'src' => 'js\atom-experiment\sinar-katoda-a.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Katoda',
-            'level' => 9,
+            'level' => 13,
             'description' => 'Description experiment 2',
             'src' => 'js\atom-experiment\sinar-katoda-b.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Katoda',
-            'level' => 10,
-            'description' => 'Description experiment 3',
+            'level' => 14,
+            'description' => 'Description experiment 4',
             'src' => 'js\atom-experiment\sinar-katoda-c.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Katoda',
-            'level' => 11,
-            'description' => 'Description experiment 4',
-            'src' => 'js\atom-experiment\sinar-katoda-d.js',
-        ]);
-        AtomExperiment::Create([
-            'title' => 'Alat Sinar Katoda',
-            'level' => 12,
+            'level' => 15,
             'description' => 'Description experiment 5',
             'src' => 'js\atom-experiment\sinar-katoda-e.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Alfa',
-            'level' => 14,
+            'level' => 19,
             'description' => 'Description experiment 6',
             'src' => 'js\atom-experiment\sinar-alfa-a.js',
         ]);
         AtomExperiment::Create([
             'title' => 'Alat Sinar Alfa',
-            'level' => 15,
+            'level' => 20,
             'description' => 'Description experiment 7',
             'src' => 'js\atom-experiment\sinar-alfa-b.js',
         ]);

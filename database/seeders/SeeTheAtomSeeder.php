@@ -21,19 +21,19 @@ class SeeTheAtomSeeder extends Seeder
         ]);
         SeeTheAtom::Create([
             'title' => 'Atom Thomson',
-            'level' => 5,
+            'level' => 7,
             'description' => 'See the Atom',
             'src' => 'https://mywebar.com/p/viatom-atom-thomson',
         ]);
         SeeTheAtom::Create([
             'title' => 'Atom Rutherford',
-            'level' => 16,
+            'level' => 21,
             'description' => 'See the Atom',
             'src' => 'https://mywebar.com/p/viatom-atom-rutherford',
         ]);
         SeeTheAtom::Create([
             'title' => 'Atom Bohr',
-            'level' => 19,
+            'level' => 26,
             'description' => 'See the Atom',
             'src' => 'https://mywebar.com/p/viatom-atom-bohr',
         ]);
