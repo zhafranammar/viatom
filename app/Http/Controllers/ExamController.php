@@ -43,10 +43,13 @@ class ExamController extends Controller
     public function nextQuestion(Request $request)
     {
         $exam = Exam::where('user_id', auth()->user()->id)->latest()->first();
+        $question = QuestionExam::where('id', $exam->number_of_questions)->first();
         $exam->number_of_questions += 1;
-        if ($request->answer == 'true') {
+
+        if ($request->answer == $question->option_true) {
             $exam->score += 1;
         }
+
         $exam->save();
         if ($exam->number_of_questions > QuestionExam::count()) {
             $exam->finish_time = now();
