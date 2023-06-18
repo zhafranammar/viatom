@@ -1,18 +1,160 @@
-<x-app-layout>
-    <x-slot name="header">
-      <script src="https://cdn.jsdelivr.net/npm/phaser@3.50/dist/phaser.min.js"></script>
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Quiz') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.50/dist/phaser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Viatom</title>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" id="game-container">
-              {{-- <canvas id="game-canvas"></canvas> --}}
-              <script src="{{ asset('js/levels/level1.js') }}"></script>
+</head>
+<body style="background-image: url('{{asset('assets/web/map1.png')}}'); background-size: cover;">
+    
+    <div class="py-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="relative">
+                    <a href="{{ route('home') }}" class="btn-game px-2 py-2 rounded-lg absolute left-0 top-0 m-5">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <div class="flex flex-col items-end absolute top-0 right-0">
+                        <a href="{{ route('profile') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 mt-5 mb-2.5">
+                            <span class="material-symbols-outlined">person</span>
+                        </a>
+                        <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5">
+                            <span class="material-symbols-outlined">home</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
+                    <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
+                    <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
+                </div>
+                
+                <div class="flex flex-col items-center relative" id="game-container">
+                  <div class="mt-8 container items-center">
+                    <div class="w-6xl p-16 flex my-8 flex-col items-center rounded-lg" style="background-color: #d9d9d9">
+                      <h3 class="text-3xl m-2 font-bold text-black" id="title">Pertanyaan</h3>
+                      <h1 class="text-4xl m-2 font-bold text-black" >{{ $quiz->question }}</h1>
+                    </div>
+                   <form action="">
+                      <div class="w-8xl flex my-8 flex-col items-center rounded-lg" style="background-color: #636357">
+                          <h3 class="text-2xl m-2 font-bold" id="title" style="color: #F2DC52">Pilihlah Jawaban Yang Tepat</h3>
+                          
+                          @csrf
+                          {{-- <input type="hidden" name="question_id" value="{{ $quiz->id }}"> --}}
+
+                          <div class="m-4 grid grid-cols-4 gap-4">
+                              @php
+                                  $shuffledOptions = collect([
+                                      'answer_true' => $quiz['option_true'],
+                                      'answer_false_1' => $quiz['option_false_1'],
+                                      'answer_false_2' => $quiz['option_false_2'],
+                                      'answer_false_3' => $quiz['option_false_3'],
+                                  ])->shuffle();
+                              @endphp
+
+                              @foreach ($shuffledOptions as $key => $option)
+                                <div class="py-8 rounded-lg flex items-center" style="background-color: #d9d9d9">
+                                    <input type="radio" id="{{ $key }}" name="answer" value="{{ $option }}" class="m-4">
+                                    <label class="text-xl font-bold" for="{{ $key }}">{{ $option }}</label>
+                                </div>
+                            @endforeach
+                          </div>
+                          
+                          <button type="submit" class="p-2 justify-center flex font-bold font-mono my-2 text-2xl rounded-md btn-game" style="color: #F2DC52">
+                              <span class="material-symbols-outlined mr-2" style="color: #F2DC52">skip_next</span>
+                              Submit
+                          </button>
+                      </div>
+                  </form>
+                    
+                  </div>
+                </div>
+
+                <div id="pembahasan"></div>
+
+                <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
+                    <div class="flex btn-game align-center rounded-md p-2">
+                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                            <span class="material-symbols-outlined" style="color: #F2DC52;"> quiz</span>
+                        </div>
+                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Assignment</h1>
+                    </div>
+                </div>
             </div>
-            <a href="{{ route('next-level') }}">Next Level</a>
+            {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>
     </div>
-</x-app-layout>
+</body>
+</html>
+
+<style>
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-size: 36px;
+        color: #F2DC52;
+        font: bold;
+    }
+    .btn-game {
+        background-color: #636357;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<script>
+  // if radio button is change then bg-color change
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      radioButtons.forEach(radio => {
+        radio.parentElement.style.backgroundColor = '#d9d9d9';
+      });
+      radio.parentElement.style.backgroundColor = '#F2DC52';
+    });
+  });
+
+  //make function to check jawaban benar dan munculkan alert
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const answer = document.querySelector('input[type="radio"]:checked');
+      if (answer.value === '{{ $quiz->option_true }}') {
+        // munculkan pembahasan 
+        const pembahasan = document.querySelector('#pembahasan');
+        pembahasan.classList.add('left-0', 'right-0', 'flex-row', 'items-center', 'justify-center', 'pb-5', 'fixed', 'bottom-0', 'top-0' ,'p-2');
+        pembahasan.innerHTML = `
+        <div class="flex btn-game align-center rounded-md p-2 w-full">
+            <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                <span class="material-symbols-outlined" style="color: #F2DC52;">sticky_note_2</span>
+            </div>
+            <div>
+                <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Pembahasan</h1>
+            </div>
+            
+
+
+        </div>
+        <p class="bg-white p-2 font-bold font-mono text-2xl text-black">{{ $quiz->explanation }}</p>
+        `;
+
+        // add button in pembahasan to go to next level
+        const button = document.createElement('a');
+        button.href = '{{ route('next-level') }}';
+        button.classList.add('bottom-0', 'right-0', 'p-2', 'justify-center', 'flex', 'font-bold', 'font-mono', 'my-2', 'text-2xl', 'rounded-md', 'btn-game');
+        button.style.color = '#F2DC52';
+        button.innerHTML = `
+        <span class="material-symbols-outlined mr-2" style="color: #F2DC52;">skip_next</span>
+        Next Level
+        `;
+        pembahasan.appendChild(button);
+
+      } else {
+        alert('Jawaban Anda Salah');
+      }
+    });
+</script>
