@@ -35,7 +35,7 @@
                 <p class="hero-welcome">Halo, selamat datang</p>
                 <h1 class="hero-heading"><span class="text-yellow">Temukan</span> Suasana<br>Asyik Belajar <span class="text-yellow">Atom</span></h1>
                 <p class="hero-text">Ikuti petualangan atom bersama viatom!<br>Mainkan sekarang gratis.</p>
-                <button class="btn-yellow">Get Started</button>
+                <button class="btn-yellow" onclick="window.location.href='/game'">Get Started</button> 
             </div>
         </section>
         
@@ -186,7 +186,26 @@
                 <p class="footer-text">About Us</p>
                 <p class="footer-text">Team</p>
             </div> 
-            
+            <div class="content">
+                <h1 class="footer-title">Contact</h1>
+                <p class="footer-text">+62 888 2889 059</p>
+                <p class="footer-text">Gedung D, Sekaran, Kec. Gn. Pati, Kota Semarang, Jawa Tengah 50229</p>
+            </div>
+        </div>
+        <hr class="footer-line">
+        <div class="footer-sosmed">
+            <div class="sosmed">
+                <img src="assets/web/mail.png" alt="" class="sosmed-icon">
+                <p class="sosmed-title">viatomgame@gmail.com</p>
+            </div>
+            <div class="sosmed">
+                <img src="assets/web/instagram.png" alt="" class="sosmed-icon">
+                <p class="sosmed-title">viatom_game</p>
+            </div>
+        </div>
+    </section>
+</footer>
+
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
@@ -504,4 +523,100 @@
     font-weight: 600;
     position: relative;
 }
+
+/* Footer Styles */
+.footer-container {
+    padding: 24px 92px;
+    padding-top: 42px;
+    background-color: #343530;
+}
+
+.footer-contents {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    gap: 12rem;
+}
+
+.footer-title {
+    color: #F2DC52;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.footer-text {
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+
+.footer-line {
+    margin: 2rem 0;
+}
+
+.footer-sosmed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.sosmed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sosmed-icon {
+    width: 32px;
+}
+
+.sosmed-title {
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Navbar Styles */
+    .nav-container {
+        padding: 24px 42px;
+    }
+
+    .nav-box {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .btn-nav {
+        display: flex;
+    }
+
+    .nav-menus {
+        flex-direction: column;
+        width: 100%;
+        gap: 42px;
+        display: none;
+    }
+
+    .show-menus {
+        display: flex;
+    }
+
+ /* Footer Styles */
+ .footer-container {
+        padding: 24px 24px;
+    }
+
+    .footer-contents {
+        flex-direction: column
+        gap: 2rem;
+    }
+
+    .footer-sosmed {
+        flex-direction: column
+    }
+
+    .sosmed {
+        margin: 0 auto;
+    }
+
     </style> 
