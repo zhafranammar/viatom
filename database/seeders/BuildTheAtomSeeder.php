@@ -15,25 +15,25 @@ class BuildTheAtomSeeder extends Seeder
     {
         BuildTheAtom::Create([
             'title' => 'Atom Dalton',
-            'level' => 3,
+            'level' => 4,
             'description' => 'Description for Build The Atom 1',
             'src' => 'js\build-the-atom\dalton.js',
         ]);
         BuildTheAtom::Create([
             'title' => 'Atom Thomson',
-            'level' => 8,
+            'level' => 10,
             'description' => 'Description for Build The Atom 2',
             'src' => 'js\build-the-atom\thomson.js',
         ]);
         BuildTheAtom::Create([
             'title' => 'Atom Rutherford',
-            'level' => 22,
+            'level' => 27,
             'description' => 'Description for Build The Atom 3',
             'src' => 'js\build-the-atom\rutherford.js',
         ]);
         BuildTheAtom::Create([
             'title' => 'Atom Bohr',
-            'level' => 27,
+            'level' => 33,
             'description' => 'Description for Build The Atom 4',
             'src' => 'js\build-the-atom\bohr.js',
         ]);

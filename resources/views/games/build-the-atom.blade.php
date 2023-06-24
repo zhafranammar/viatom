@@ -57,7 +57,18 @@
                         </a>
                     </div>
                 </div>
-                
+                <div class="flex flex-col top-1/3 w-1/4  fixed items-center mx-4 px-8" id="instruction">
+                    <div class="flex my-4 flex-col items-center rounded-lg btn-game px-8 py-4">
+                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                            <span class="material-symbols-outlined" style="color: #F2DC52;"> info</span>
+                        </div>
+                        <h3 class="text-3xl m-2 font-bold" style="color: #F2DC52">Instruksi Permainan</h3>
+                        <ol>
+                            <li class="text-xl m-2 font-bold" style="color: #F2DC52">1. Gerakkan Item yang berada disebelah kanan layar anda menuju tengah layar</li>
+                            <li class="text-xl m-2 font-bold" style="color: #F2DC52">2. Susunlah item tersebut menjadi struktur atom yang diperintahkan</li>
+                        </ol>
+                    </div>
+                </div>
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
@@ -66,12 +77,7 @@
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>
                 </div>
                 {{-- Make section how to play as card in left of container game --}}
-                <div class="flex flex-col fixed items-center">
-                    <div class="w-6xl p-16 flex my-8 flex-col items-center rounded-lg" style="background-color: #d9d9d9">
-                        <h3 class="text-3xl m-2 font-bold text-black">How To Play</h3>
-                        <h1 class="text-4xl m-2 font-bold text-black" id="description"></h1>
-                    </div>
-                </div>
+                
                 <div class="bottom-0 m-8 left-0 right-0 items-center" id="next-button">
                 </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
@@ -86,6 +92,7 @@
             {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>
     </div>
+    
 </body>
 </html>
 

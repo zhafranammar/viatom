@@ -29,6 +29,9 @@
         const titleElement = document.getElementById('title');
         titleElement.innerHTML = title;
 
+        const descriptionElement = document.getElementById('description');
+        descriptionElement.innerHTML = description;
+
         })
         .catch(error => {
         console.error('Terjadi kesalahan:', error);
@@ -57,7 +60,28 @@
                         </a>
                     </div>
                 </div>
-                
+                <div class="flex flex-col top-1/3 w-1/4  fixed items-center mx-4 px-8" id="instruction">
+                    <div class="flex my-4 flex-col items-center rounded-lg btn-game px-8 py-4">
+                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                            <span class="material-symbols-outlined" style="color: #F2DC52;"> info</span>
+                        </div>
+                        <h3 class="text-3xl m-2 font-bold" style="color: #F2DC52">Instruksi Permainan</h3>
+                        <ol>
+                            <li class="text-xl m-2 font-bold" style="color: #F2DC52">1. Nyalakan alat dengan menekan tombol button</li>
+                            <li class="text-xl m-2 font-bold" style="color: #F2DC52">2. Jika terdapat item dikanan layar anda dapat menggerakkan item tersebut menuju alat</li>
+                            <li class="text-xl m-2 font-bold" style="color: #F2DC52">3. Amatilah simulasi tersebut </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="flex flex-col top-1/3 w-1/4  right-0 fixed items-center mx-4 px-8" >
+                    <div class="flex my-4 flex-col items-center rounded-lg btn-game px-8 py-4">
+                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
+                            <span class="material-symbols-outlined" style="color: #F2DC52;"> travel_explore</span>
+                        </div>
+                        <h3 class="text-3xl m-2 font-bold" style="color: #F2DC52">Hasil Eksperimen</h3>
+                        <p class="text-xl m-2 font-bold" style="color: #F2DC52" id="description"></p>
+                    </div>
+                </div>
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
@@ -123,4 +147,5 @@
     nextButton.prepend(nextIcon);
 
     button.appendChild(nextButton);
+
 </script>
