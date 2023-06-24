@@ -44,7 +44,7 @@
         </section>
         
   <!-- Section Features -->
-  <section class="features-container">
+  <section class="features-container" style="background-image: url('{{asset('assets/web/bg-feature.png')}}')">
     <h1 class="section-heading">We Have Best Features</h1>
     <p class="section-subheading">Kami dengan bangga menghadirkan berbagai fitur menarik yang dirancang untuk memperkaya<br>pengalaman belajar Anda dalam memahami atom secara mendalam.</p>
     <div class="features-box">
