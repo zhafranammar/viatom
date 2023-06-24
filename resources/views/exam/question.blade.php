@@ -35,8 +35,13 @@
                 <div class="flex flex-col items-center relative" id="game-container">
                   <div class="mt-8 container items-center">
                     <div class="w-6xl p-16 flex my-8 flex-col items-center rounded-lg" style="background-color: #d9d9d9">
-                      <h3 class="text-3xl m-2 font-bold text-black" id="title">Question {{ $exam->number_of_questions }}</h3>
+                      <h3 class="text-3xl m-2 font-bold text-black" id="title">Soal {{ $exam->number_of_questions }}</h3>
                       <h1 class="text-4xl m-2 font-bold text-black" >{{ $question->question }}</h1>
+                      
+                      @if ($question->question_image)
+                        <img src="{{ asset($question->question_image) }}" alt="" class="w-1/2">
+                      @endif
+
                     </div>
                    <form action="{{ route('exams.next-question') }}" method="POST">
                       <div class="w-8xl flex my-8 flex-col items-center rounded-lg" style="background-color: #636357">

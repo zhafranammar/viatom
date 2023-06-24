@@ -29,7 +29,7 @@ class QuestionExamSeeder extends Seeder
       'option_false_3' => 'Ukuran yang sama.',
     ]);
     QuestionExam::create([
-      'question' => 'Pokok teori atom Thumson dititikberatkan pada…',
+      'question' => 'Pokok teori atom Thomson dititikberatkan pada…',
       'option_true' => 'Atom sebagai bola masif bermuatan positif yang di dalamnya tersebar elektron sehingga keseluruhannya bersifat netral.',
       'option_false_1' => 'Atom terdiri dari elektron - elektron.',
       'option_false_2' => 'Atom sebagai bola masif yang hanya berisi elektron.',
@@ -108,13 +108,6 @@ class QuestionExamSeeder extends Seeder
       'option_false_3' => '8 dan 16',
     ]);
 
-    QuestionExam::create([
-      'question' => 'Diketahui suatu atom bersifat netral. Apabila nomor massa nya diketahui 16 dan nomor atom nya 8, maka berapa jumlah proton dan elektron nya berturut-turut adalah?',
-      'option_true' => '8 dan 8',
-      'option_false_1' => '16 dan 8',
-      'option_false_2' => '8 dan 7',
-      'option_false_3' => '8 dan 16',
-    ]);
 
     QuestionExam::create([
       'question' => 'Dalam sebuah eksperimen ilmiah, seorang ahli kimia bernama Prof. Rachel mengamati ion logam X yang terbentuk. Ia menemukan bahwa ion logam X tersebut memiliki muatan +2. Prof. Rachel ingin mengetahui jumlah proton, elektron, dan neutron pada ion tersebut. Setelah melakukan penelitian lebih lanjut, ia menemukan bahwa pada atom logam X netral terdapat 12 proton dan 12 neutron. Berapa jumlah elektron yang dimiliki oleh ion logam X tersebut?',
@@ -186,14 +179,6 @@ class QuestionExamSeeder extends Seeder
       'option_false_1' => 'Robert Hooke.',
       'option_false_2' => 'Isaac Newton.',
       'option_false_3' => 'J.J Thomson.',
-    ]);
-
-    QuestionExam::create([
-      'question' => 'What happens when electrons in an atom absorb energy?',
-      'option_true' => 'Electrons will move to a higher energy shell.',
-      'option_false_1' => 'Electrons will move to a lower energy shell.',
-      'option_false_2' => 'Electrons will remain in the same energy shell.',
-      'option_false_3' => 'Electrons will leave the atom.',
     ]);
 
     QuestionExam::create([
