@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('question_exams', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
-            $table->string('option_true');
-            $table->string('option_true_image')->nullable();
-            $table->string('option_false_1');
-            $table->string('option_false_1_image')->nullable();
-            $table->string('option_false_2')->nullable();
-            $table->string('option_false_2_image')->nullable();
-            $table->string('option_false_3')->nullable();
-            $table->string('option_false_3_image')->nullable();
+            $table->text('question');
+            $table->string('question_image')->nullable();
+            $table->text('option_true');
+            $table->text('option_false_1');
+            $table->text('option_false_2')->nullable();
+            $table->text('option_false_3')->nullable();
             $table->timestamps();
         });
     }

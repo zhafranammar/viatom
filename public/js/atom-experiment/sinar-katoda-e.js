@@ -44,9 +44,13 @@ let turbinRotate = false;
 let electronCount = 0;
 
 function spawnElectron(status, turbin) {
+  if (electronCount === 0) {
+    turbinRotate = false; // Mengubah nilai turbinRotate menjadi true saat animasi selesai
+  }
   if (status == 1 && !electronInterval) {
     electronInterval = setInterval(() => {
       let electron = this.add.image(centerX - 105, centerY - 67, 'electron');
+      electronCount++;
       // console.log(electron);
       electron.setScale(0.005);
       this.tweens.add({

@@ -50,11 +50,21 @@ function spawnRotateRelectron() {
   let y = centerY - 170;
 
   // For every 5th electron, set a specific position
-  if (electronCount % 5 === 0) {
-    let radius = 120;
-    let rotateAngle = (electronCount / 10) * (Math.PI / 4);
-    x = centerX - 45 + radius * Math.cos(rotateAngle);
-    y = centerY - 100 + radius * Math.sin(rotateAngle);
+  if (electronCount % 20 === 7) {
+    x = centerX + 145
+    y = centerY - 125
+  }
+  if (electronCount % 20 === 15) {
+    x = centerX - 40
+    y = centerY - 20
+  }
+  if (electronCount % 20 === 5) {
+    x = centerX - 150
+    y = centerY - 190
+  }
+  if (electronCount % 20 === 19) {
+    x = centerX - 250
+    y = centerY - 100
   }
 
   this.tweens.add({
@@ -100,6 +110,8 @@ function create() {
   let alfa = this.add.image(centerX, centerY - 50, 'alfa');
   let onButton = this.add.image(centerX, centerY + 150, 'onButton');
   let offButton = this.add.image(centerX, centerY + 150, 'offButton');
+  // let electron = this.add.image(centerX - 250, centerY - 100, 'electron');
+  // electron.setScale(0.005);
   alfa.setScale(0.2);
   alfa.setDepth(0);
   onButton.setScale(0.05);

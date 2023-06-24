@@ -65,7 +65,14 @@
                 <div class="flex flex-col items-center">
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>
                 </div>
-                <div class="fixed bottom-0 m-8 left-0 right-0 items-center" id="next-button">
+                {{-- Make section how to play as card in left of container game --}}
+                <div class="flex flex-col fixed items-center">
+                    <div class="w-6xl p-16 flex my-8 flex-col items-center rounded-lg" style="background-color: #d9d9d9">
+                        <h3 class="text-3xl m-2 font-bold text-black">How To Play</h3>
+                        <h1 class="text-4xl m-2 font-bold text-black" id="description"></h1>
+                    </div>
+                </div>
+                <div class="bottom-0 m-8 left-0 right-0 items-center" id="next-button">
                 </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
                     <div class="flex btn-game align-center rounded-md p-2">
@@ -96,11 +103,3 @@
         align-items: center;
     }
 </style>
-
-{{-- <x-app-layout>
-    <x-slot name="header">
-        
-    </x-slot>
-
-    
-</x-app-layout> --}}

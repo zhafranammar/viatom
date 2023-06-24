@@ -81,7 +81,7 @@
                         <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
                             <span class="material-symbols-outlined" style="color: #F2DC52;"> quiz</span>
                         </div>
-                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Assignment</h1>
+                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Quiz</h1>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
       if (answer.value === '{{ $quiz->option_true }}') {
         // munculkan pembahasan 
         const pembahasan = document.querySelector('#pembahasan');
-        pembahasan.classList.add('left-0', 'right-0', 'flex-row', 'items-center', 'justify-center', 'pb-5', 'fixed', 'bottom-0', 'top-0' ,'p-2');
+        pembahasan.classList.add('left-0', 'right-0', 'flex-row', 'items-center', 'justify-center', 'px-64', 'fixed', 'bottom-3/4', 'top-1/4' ,'p-2');
         pembahasan.innerHTML = `
         <div class="flex btn-game align-center rounded-md p-2 w-full">
             <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
@@ -145,7 +145,7 @@
         // add button in pembahasan to go to next level
         const button = document.createElement('a');
         button.href = '{{ route('next-level') }}';
-        button.classList.add('bottom-0', 'right-0', 'p-2', 'justify-center', 'flex', 'font-bold', 'font-mono', 'my-2', 'text-2xl', 'rounded-md', 'btn-game');
+        button.classList.add('bottom-0', 'right-0', 'justify-center', 'flex', 'font-bold', 'font-mono', 'text-2xl', 'rounded-md', 'btn-game');
         button.style.color = '#F2DC52';
         button.innerHTML = `
         <span class="material-symbols-outlined mr-2" style="color: #F2DC52;">skip_next</span>
