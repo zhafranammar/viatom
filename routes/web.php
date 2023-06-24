@@ -55,12 +55,8 @@ Route::middleware('auth')->group(function () {
 Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
-Route::get('/discussion/create', function () {
-    return view('discussion.create');
-})->middleware(['auth', 'verified'])->name('discussion');
-Route::get('/discussions', [DiscussionController::class, 'index']);
-Route::get('/discussions/{discussion}', [DiscussionController::class, 'show']);
-Route::post('/discussions', [DiscussionController::class, 'store']);
+// Make route to discussion
+Route::resource('discussions', DiscussionController::class);
 Route::post('/discussions/{discussion}/replies', [DiscussionController::class, 'storeReply']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
