@@ -31,7 +31,7 @@
         </div>
 
         <div class="row row-cols-3 my-4 mx-3 ps-4">
-          <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+          <a class="card col my-4 mx-5" style="width: 15rem; height: 24rem" href="/adventure">
             <img
               src="assets/web/roadmap.png"
               class="card-img-top mt-2"
@@ -46,7 +46,7 @@
                 level yang menantang!
               </p>
             </div>
-          </div>
+          </a>
 
           <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
             <img

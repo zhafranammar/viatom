@@ -18,7 +18,7 @@
                         <span class="material-symbols-outlined">arrow_back</span>
                     </a>
                     <div class="flex flex-col items-end absolute top-0 right-0">
-                        <a href="{{ route('home') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 mt-5 mb-2.5">
+                        <a href="{{ route('users') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 mt-5 mb-2.5">
                             <span class="material-symbols-outlined">person</span>
                         </a>
                         <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5">

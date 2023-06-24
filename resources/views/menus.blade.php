@@ -4,9 +4,16 @@
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.50/dist/phaser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Viatom</title>
+
 </head>
 <body style="background-image: url('{{asset('assets/web/map1.png')}}'); background-size: cover;">
     
@@ -31,19 +38,17 @@
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
+                <div class="row row-cols-3 my-4 mx-3 ps-4 ">
+                  @foreach ($detail as $level)
+                  <a class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 15rem" href="{{$href . '/' . $level->id}}">
+                    <div class="card-body text-center">
+                      <h1 class="text-8xl pb-4" style="color: #F2DC52">{{$level->id}}</h1>
+                      <h5 class="text-2xl text-bold" style="color: #F2DC52">{{$level->title}}</h5>
+                    </div>
+                  </a>
+                  @endforeach
+                </div>
                 
-                <div class="flex flex-col items-center relative" id="game-container">
-                  <div class="w-8xl p-16 flex my-8 flex-col items-center bg-gray-200 rounded-lg">
-                    <h1 class="text-3xl m-2 font-bold text-gray-900" id="title">Congratulations</h1>
-                    <h3 class="text-3xl m-2 font-bold text-gray-900">You have finished the game</h3>
-                    <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5 text-2xl text-center font-bold" style="color: #F2DC52">
-                        <span class="material-symbols-outlined">skip_next</span> Back to Dashboard
-                    </a>
-                  </div>
-
-
-            </div>
-            {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>
     </div>
 </body>
