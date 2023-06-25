@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Register Viatom</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   </head>
   <body>
@@ -11,23 +11,19 @@
         <div class="row">
           <div class="col">
             <div class="rectangle"> 
-                <img class="in-rec" src="asseets/web/pena.png">
+                <img class="in-rec" src="assets/web/pena.png">
             </div>
           </div>
           <div class="col" id="box">
-            <h2>Login to your account</h2>
-            <a>Mulai petualangan atommu sekarang!</a>
-            <div class="input-group flex-nowrap">
-                <a href="/auth/google" class=""row justify-content-md-center">
-                    <div class="p-2 bd-highlight">
-                        <img
-                            class="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                        />
-                    </div>
-                    <p class="p-2 bd-highlight">Sign In with Google</p>
+            <h2>Create your account</h2>
+            <a>Mulai petualangan atommu sekarang!</a><br>
+            <button  class=" btn btn-light flex-nowrap" id="google" type="button" href="/auth/google">
+                <a>
+                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg">
+                        <a>Sign Up with Google</a> 
+                    </img>
                 </a>
-            </div>
+            </button>  
             <div class="line">
                 <div class="row">
                     <div class="col">
@@ -41,19 +37,27 @@
                     </div>
                 </div>
             </div>
-            <h3>Email*</h3>
+            <h3>Name</h3>
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Enter you name" aria-label="Enter you name" aria-describedby="addon-wrapping">
+            </div>
+            <h3>Email</h3>
             <div class="input-group flex-nowrap">
                 <input type="text" class="form-control" placeholder="Enter you email" aria-label="Enter you email" aria-describedby="addon-wrapping">
             </div>
-            <h3>Password*</h3>
+            <h3>Password</h3>
             <div class="input-group flex-nowrap">
                 <input type="text" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping">
             </div>
-            <button class="btn btn-primary input-group flex-nowrap" id="sub" type="submit">Login</button>
-            <ul class="sign input-group flex-nowrap">
+            <button class="btn btn-primary input-group flex-nowrap" id="sub" type="submit">Sign Up</button>
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                <a>I aggree to all Term, Privacy Policy and Fees</a>
+            </div>
+            <ul class="group">
                 <li>
                     <a>Already have an account?</a>
-                    <a class="btn btn-link" href="#SignUp" role="button">Sign Up</a>
+                    <a class="btn btn-link" href="#Login" role="button">Log in</a>
                 </li>
             </ul>
         </div>
@@ -69,8 +73,23 @@
         height: 1024px;
     }
     .google-icon{
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
+    }
+    .input-group-text{
+        position: relative;
+        width: 550px;
+        top: 80px;
+        left: 35px;
+    }
+    #google{
+        position: relative;
+        top: 20px;
+        left: -10px;
+    }
+    .group{
+        position: relative;
+        top: 80px;
     }
     h3{
         position: relative;
@@ -105,7 +124,7 @@
     }
     #sub{
         position: absolute;
-        top: 320px;
+        top: 430px;
         left: 50px;
     }
     .btn-primary{
