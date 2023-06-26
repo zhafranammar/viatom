@@ -28,38 +28,54 @@
                     </div>
                 </div>
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
-                    <img src="assets/web/logo.png" alt="" class="mr-2 w-16">
-                    <img src="assets/web/viatom-text.png" alt="" class="w-48">
+                    <img src="{{asset('assets/web/logo.png')}}" alt="" class="mr-2 w-16">
+                    <img src="{{asset('assets/web/viatom-text.png')}}" alt="" class="w-48">
                 </div>
                 <div class="mt-4 flex flex-col items-center relative">
-                    <div class="top-bg px-8 mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
-                        <h1 class="text-white">Discussion Detil</h1>
+                    <div class="top-bg mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
+                        <h1 class="text-white text-3xl font-bold leading-loose">Topik Diskusi</h1>
                     </div>
                 </div>
                 <div class="flex flex-col items-center relative">
-                    <div class="bg-gray-300 px-8 pb-8 w-full max-w-screen-lg flex flex-col items-start relative" id="discussion-container">
-                        <h2>{{ $discussion->topic }}</h2>
-                        <p>{{ $discussion->body }}</p>
-                        <hr>
-                        <h3>Replies</h3>
-                        <ul>
+                    <div class="bg-gray-300 pb-8 px-1 w-full max-w-screen-lg flex flex-col items-start relative" id="discussion-container">
+                        <div class="bg-white rectangle w-full">
+                            <h2 class="w-full text-black text-3xl px-8 pb-2 font-medium">{{ $discussion->topic }}</h2>
+                            <p class="text-black text-xl max-w-full break-words px-8 font-medium pb-4">{{ $discussion->body }}</p>
+                            <p class="w-full text-black px-8 font-medium pb-4">{{ $discussion->username }} Dibuat Pada {{ $discussion->created_at->setTimezone('Asia/Jakarta')->format('d M Y H:i:s') }}</p>
+                        </div>
+                        <div class=rectangle w-full">
+                            <h2 class="w-full text-black text-3xl px-8 pb-2 font-medium">Balasan</h2>
                             @if ($discussion->replies)
                             @foreach ($discussion->replies as $reply)
-                            <ul>
-                                <li>{{ $reply->user->name }}</li>
-                                <li>{{ $reply->body }}</li>
-                                <li>{{ $reply->created_at}}</li>
-                            </ul>
+                                {{-- {{dd($reply->user)}} --}}
+                                <div class="flex items-center px-8">
+                                    <div class="shadow-2xl mr-2 flex h-10 w-10 items-center justify-center rounded-lg btn-game text-white text-center">
+                                        <span class="material-symbols-outlined">person</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-black font-medium">{{ $reply->user->name }}</p>
+                                        <p class="text-black text-small font-medium">{{ $reply->created_at->setTimezone('Asia/Jakarta')->format('d M Y H:i:s') }}</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white rectangle max-w-4xl mx-20">
+                                    <p class="text-black break-words px-1 font-medium pb-2">{{ $reply->body }}</p>
+            
+                                </div>
                             @endforeach
+                            @else
+                                <p class="text-black max-w-full break-words px-1 font-medium pb-4">Belum Ada Balasan</p>
                             @endif
-                        </ul>
-                        <h3>Add Reply</h3>
-                        <form method="POST" action="/discussions/{{ $discussion->id }}/replies">
-                            @csrf
-                            <label for="reply">Reply:</label><br>
-                            <textarea id="reply" name="body"></textarea><br><br>
-                            <button type="submit">Submit</button>
-                        </form>
+                            <form class="px-8 w-full" method="POST" action="/discussions/{{ $discussion->id }}/replies">
+                                @csrf
+                                <label for="reply">Reply:</label><br>
+                                <textarea class="my-1 px-2 py-8 border border-gray-400 rounded-md w-full" id="reply" name="body"></textarea>
+                                <button type="submit" class="px-2 py-1 btn-game rounded-md" style="color: #F2DC52">
+                                    <span class="material-symbols-outlined">send</span>
+                                    <p class="font-semibold"> Kirim</p>
+                                </button>
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
@@ -93,7 +109,7 @@
         font-size: 24px;
         font-weight: bold;
     }
-    #game-container {
+    /* #game-container {
         position: absolute;
         width: 1280px;
         height: 720px;
@@ -101,8 +117,8 @@
         top: calc(50% - 720px/2 + 17px);
         background: #FFFFFF;
         border-radius: 16px;
-    }
+    } */
     .top-bg {
     background-color: #636357;
-    }
+    }
 </style>

@@ -29,30 +29,49 @@
                     </div>
                 </div>
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
-                    <img src="assets/web/logo.png" alt="" class="mr-2 w-16">
-                    <img src="assets/web/viatom-text.png" alt="" class="w-48">
+                    <img src="{{asset('assets/web/logo.png')}}" alt="" class="mr-2 w-16">
+                    <img src="{{asset('assets/web/viatom-text.png')}}" alt="" class="w-48">
                 </div>
                 <div class="mt-4 flex flex-col items-center relative">
-                    <div class="top-bg px-8 mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
-                        <h1 class="text-white">Discussion List</h1>
+                    <div class="top-bg mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
+                        <h1 class="text-white text-3xl font-bold leading-loose">Daftar Topik Diskusi</h1>
                     </div>
                 </div>
                 <div class="flex flex-col items-center relative">
-                    <div class="bg-gray-300 px-8 pb-8 max-w-screen-lg flex flex-col items-start relative" id="discussion-container">
+                    <div class="bg-gray-300 flex flex-col items-start mb-8 relative" id="discussion-container">
                         @if ($discussions->count() > 0)
-                            <div class="rectangle border-3 border-gray-700">
-                                <ul>
+                            <div class="rectangle max-w-screen-lg">
+                                <table class="w-full border border-black">
                                     @foreach ($discussions as $discussion)
-                                        <li>
-                                            <a href="{{ route('discussions.show', $discussion->id) }}" class="text-gray-700">{{ $discussion->topic }}</a>
-                                        </li>
+                                        <tr class="bg-gray-300 hover:bg-yellow-300 cursor-pointer ">
+                                            <td class="border border-black">
+                                                <a href="{{ route('discussions.show', $discussion->id) }}" class="block text-gray-700 text-3xl px-12 py-2 font-bold leading-loose hover:bg-yellow-300 cursor-pointer">{{ $discussion->topic }}</a>
+                                            </td>
+                                        </tr>
                                     @endforeach
-                                </ul>
+                                    <tr class="bg-gray-300 hover:bg-yellow-300 cursor-pointer">
+                                        <td class="border border-black">
+                                            <a href="{{ route('discussions.create') }}" class="block text-gray-700 text-3xl px-12 py-2 font-bold leading-loose hover:bg-yellow-300 cursor-pointer">Buat Diskusi Baru + </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         @else
-                            <p class="text-gray-700">No discussions found.</p>
+                            <div class="rectangle max-w-screen-lg">
+                                <table class="w-full border border-black">
+                                        <tr class="hover:bg-yellow-300 cursor-pointer">
+                                            <td class="border border-black">
+                                                <a href="/discussions" class="block text-gray-700 text-3xl px-12 py-2 font-bold leading-loose hover:bg-yellow-300 cursor-pointer">Tidak Ada Diskusi</a>
+                                            </td>
+                                        </tr>
+                                    <tr class="hover:bg-yellow-300 cursor-pointer">
+                                        <td class="border border-black">
+                                            <a href="{{ route('discussions.create') }}" class="block text-gray-700 text-3xl px-12 py-2 font-bold leading-loose hover:bg-yellow-300 cursor-pointer">Buat Diskusi Baru + </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         @endif
-                        <a href="{{ route('discussions.create') }}" class="text-blue-500">Create New Discussion</a>
                     </div>
                 </div>
                 <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
@@ -88,21 +107,11 @@
     .rectangle {
         box-sizing: border-box;
         width: 1056px;
-        height: 360px;
     }
     .border-gray-700 {
         border-color: #636357;
     }
-    #game-container {
-        position: absolute;
-        width: 1280px;
-        height: 720px;
-        left: calc(50% - 1280px/2 - 0.5px);
-        top: calc(50% - 720px/2 + 17px);
-        background: #FFFFFF;
-        border-radius: 16px;
-    }
     .top-bg {
     background-color: #636357;
-    }
+    }
 </style>

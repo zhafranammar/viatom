@@ -46,12 +46,12 @@ function spawnRotateRelectron() {
   electron.setScale(0.005);
 
   if (electronCount % 5 === 1) {
-    x = centerX - 150
-    y = centerY - 190
+    x = centerX + 145
+    y = centerY - 125
   }
   if (electronCount % 5 === 4) {
-    x = centerX - 250
-    y = centerY - 100
+    x = centerX - 40
+    y = centerY - 20
   }
 
   this.tweens.add({

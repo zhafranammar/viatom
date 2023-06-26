@@ -11,7 +11,7 @@
 </head>
 <body class="bg-cover" style="background-image: url('{{ asset('assets/web/map1.png') }}');">
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" id="game-container">
 
                 <div class="relative">
@@ -29,28 +29,31 @@
                 </div>
 
                 <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
-                    <img src="assets/web/logo.png" alt="" class="mr-2 w-16">
-                    <img src="assets/web/viatom-text.png" alt="" class="w-48">
+                    <img src="{{asset('assets/web/logo.png')}}" alt="" class="mr-2 w-16">
+                    <img src="{{asset('assets/web/viatom-text.png')}}" alt="" class="w-48">
                 </div>
                 
                 <div class="mt-4 flex flex-col items-center relative">
-                    <div class="top-bg px-8 mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
-                        <h1 class="text-white">Create Discussion</h1>
+                    <div class="top-bg mt-8 pt-4 pb-4 w-full max-w-screen-lg flex flex-col items-center relative text-white rounded-t-lg">
+                        <h1 class="text-white text-3xl font-bold leading-loose">Buat Topik Diskusi</h1>
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center relative">
                     <div class="bg-gray-200 px-8 pb-8 w-full max-w-screen-lg flex flex-col items-start relative" id="discussion-container">
                         
-                        <form method="POST" action="/discussions" class="mt-4">
+                        <form method="POST" action="/discussions" class="mt-4 w-full">
                             @csrf
-                            <label for="title" class="block">Title:</label>
-                            <input type="text" id="title" name="title" class="mt-1 mb-4 px-2 py-1 border border-gray-400 rounded-md w-full">
+                            <label for="title" class="block text-[#636357] font-semibold font-serif text-2xl">Topik:</label>
+                            <input type="text" id="title" name="title" class="mt-1 mb-4 px-2 py-4 border border-gray-400 rounded-md w-full">
                             
-                            <label for="body" class="block">Body:</label>
-                            <textarea id="body" name="body" class="mt-1 mb-4 px-2 py-1 border border-gray-400 rounded-md w-full"></textarea>
+                            <label for="body" class="block text-[#636357] font-semibold font-serif text-2xl">Isi Diskusi:</label>
+                            <textarea id="body" name="body" class="mt-1 mb-4 px-2 py-8 border border-gray-400 rounded-md w-full"></textarea>
                             
-                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Submit</button>
+                            <button type="submit" class="px-4 py-2 btn-game rounded-md" style="color: #F2DC52">
+                                <span class="material-symbols-outlined">save</span>
+                                <h1 class="font-semibold text-2xl"> Kirim</h1>
+                            </button>
                         </form>
                     </div>
                 </div>
