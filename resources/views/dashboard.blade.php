@@ -525,15 +525,15 @@
     }
 
     .team-img {
-      width: 324px;
+      width: 224px;
       position: absolute;
     }
 
     .team-position {
       text-align: center;
       margin-top: 21rem;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       position: relative;
     }
 
