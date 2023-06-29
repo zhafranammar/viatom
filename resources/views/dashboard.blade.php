@@ -156,40 +156,66 @@
     </div>
 </section>
 
-<!-- Section Teams -->
-<section class="teams-section">
-    <h1 class="section-heading">We Have The Best Team</h1>
-    <p class="section-subheading">Rasakan pengalam belajar atom yang seru melalui game interaktif <br> yang menawarkan simulasi yang mendalam</p>
-    <div class="team-groups">
+     <!-- Section Teams -->
+     <section class="teams-section">
+      <h1 class="section-heading">We Have The Best Team</h1>
+      <p class="section-subheading">
+        Rasakan pengalam belajar atom yang seru melalui game interaktif <br />
+        yang mena
+      </p>
+      <div class="team-groups">
         <div class="team">
-            <img src="assets/web/yopi.png" alt="..." class="team-img">
-            <p class="team-position">Yopi Julia Nurizki<br>UI/UX Designer</p> 
-        </div>
-        <div class="team">
-            <img src="assets/web/yopi.png" alt="..." class="team-img">
-            <p class="team-position">Fitri Noor Apsari<br>Frontend Developer</p>
-        </div>
-        <div class="team">
-            <img src="assets/web/yopi.png" alt="..." class="team-img">
-            <p class="team-position">Mumamad Zhafran Ammar<br>Backend Developer</p>
+          <img src="assets/web/1.png" alt="..." class="team-img" />
+          <p class="team-position">Yopi Julia Nurizki<br />UI/UX Designer</p>
         </div>
         <div class="team">
-            <img src="assets/web/yopi.png" alt="..." class="team-img">
-            <p class="team-position">Elvara Siti Azzahra<br>Content Developer</p>
+          <img src="assets/web/2.png" alt="..." class="team-img" />
+          <p class="team-position">
+            Fitri Noor Apsari<br />Frontend Developer
+          </p>
         </div>
-    </div>
-</section> 
-</main> 
-
-<footer>
-    <section class="footer-container">
-        <div class="footer-contents">
-            <div class="content">
-                <h1 class="footer-title">Platform</h1>
-                <p class="footer-text">Features</p>
-                <p class="footer-text">About Us</p>
-                <p class="footer-text">Team</p>
-            </div> 
+        <div class="team">
+          <img src="assets/web/3.png" alt="..." class="team-img" />
+          <p class="team-position">
+            Mumamad Zhafran Ammar<br />Backend Developer
+          </p>
         </div>
+        <div class="team">
+          <img src="assets/web/4.png" alt="..." class="team-img" />
+          <p class="team-position">
+            Elvara Siti Azzahra<br />Content Developer
+          </p>
+        </div>
+      </div>
     </section>
-</footer>
+  </main>
+  <footer>
+    <section class="footer-container">
+      <div class="footer-contents">
+        <div class="content">
+          <h1 class="footer-title">Platform</h1>
+          <p class="footer-text">Features</p>
+          <p class="footer-text">About Us</p>
+          <p class="footer-text">Team</p>
+        </div>
+        <div class="content">
+          <h1 class="footer-title">Contact</h1>
+          <p class="footer-text">+62 888 2889 059</p>
+          <p class="footer-text">
+            Gedung D, Sekaran, Kec. Gn. Pati, Kota Semarang, Jawa Tengah 50229
+          </p>
+        </div>
+      </div>
+      <hr class="footer-line" />
+      <div class="footer-sosmed">
+        <div class="sosmed">
+          <img src="assets/web/mail.png" alt="" class="sosmed-icon" />
+          <p class="sosmed-title">viatomgame@gmail.com</p>
+        </div>
+        <div class="sosmed">
+          <img src="assets/web/instagram.png" alt="" class="sosmed-icon" />
+          <p class="sosmed-title">viatom_game</p>
+        </div>
+      </div>
+    </section>
+  </footer>
