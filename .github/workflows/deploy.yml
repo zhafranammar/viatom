@@ -24,3 +24,5 @@ jobs:
             git config user.name "zhafranammar"
             git config user.email "mzhafranammar@gmail.com"
             git pull
+
+# Path: .github\workflows\deploy.yml
