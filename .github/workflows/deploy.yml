@@ -23,6 +23,7 @@ jobs:
             sudo su
             cd /var/www/viatom-prod
             pwd
+            git config --global --add safe.directory /var/www/viatom-prod
             git config --global user.name "zhafranammar"
             git config --global user.email "mzhafranammar@gmail.com"
             git pull
