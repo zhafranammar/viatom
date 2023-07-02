@@ -40,15 +40,19 @@
                 </div>
                 <div class="row row-cols-3 my-4 mx-3 ps-4 ">
                   @foreach ($detail as $level)
-                  <a class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 15rem" href="{{$href . '/' . $level->id}}">
+                  <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" href="{{$href . '/' . $level->id}}">
+                    <img
+                    src="assets/web/roadmap.png"
+                    class="card-img-top mt-2"
+                    alt=""
+                    style=""
+                    />
                     <div class="card-body text-center">
-                      <h1 class="text-8xl pb-4" style="color: #F2DC52">{{$level->id}}</h1>
-                      <h5 class="text-2xl text-bold" style="color: #F2DC52">{{$level->title}}</h5>
+                      <h6 class="text-xl text-bold" style="color: #F2DC52">{{$level->title}}</h6>
                     </div>
-                  </a>
+                </button>
                   @endforeach
                 </div>
-                
         </div>
     </div>
 </body>

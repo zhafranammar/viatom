@@ -1,100 +1,202 @@
-{{-- <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Viatom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container text-center">
+        <div class="logo ms-4">
+            <img src="assets/web/logo-s.png" width="150">
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-         <div class="flex items-center justify-center mt-4">
-                <a href="/auth/google" class="google-btn">
-                    <div class="google-icon-wrapper">
-                        <img
-                            class="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                        />
-                    </div>
-                    <p class="btn-text">Sign In with Google</p>
-                </a>
+        <div class="row">
+          <div class="col">
+            <div class="rectangle"> 
+                <img class="in-rec" src="assets/web/pena.png">
             </div>
-    </form>
-</x-guest-layout> --}}
-
-<div style="width: 100%; height: 100%; position: relative; background: white">
-    <div style="width: 171px; left: 104px; top: 48px; position: absolute">
-        <img style="width: 49px; height: 48px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/49x48" />
-        <img style="width: 114px; height: 43px; left: 57px; top: 3px; position: absolute" src="https://via.placeholder.com/114x43" />
-    </div>
-    <div style="width: 728px; height: 796.22px; left: 104px; top: 144px; position: absolute">
-        <div style="width: 728px; height: 796.22px; left: 0px; top: 0px; position: absolute; background: #343530; border-top-left-radius: 50px; border-top-right-radius: 50px"></div>
-        <img style="width: 592.42px; height: 592.42px; left: 63.91px; top: 101.90px; position: absolute" src="https://via.placeholder.com/592x592" />
-    </div>
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-            <div class="flex items-center justify-center mt-4">
-                <a href="/auth/google" class="google-btn">
-                    <div class="google-icon-wrapper">
-                        <img
-                            class="google-icon"
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                        />
-                    </div>
-                    <p class="btn-text">Sign In with Google</p>
+          </div>
+          <div class="col" id="box">
+            <h2>Login your account</h2>
+            <a>Mulai petualangan atommu sekarang!</a><br>
+            <button class=" btn btn-light flex-nowrap" id="google" type="button" onclick="window.location.href='/auth/google'">
+                <a>
+                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg">
+                        <a>Sign In with Google</a> 
+                    </img>
                 </a>
+            </button>  
+            <div class="line">
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <p class="or">Or</p>
+                    </div>
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
             </div>
-        <div style="left: 966px; top: 294px; position: absolute; color: black; font-size: 32px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 32px; word-wrap: break-word">Login to your account</div>
-        <div style="left: 985px; top: 352px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 20px; word-wrap: break-word">Mulai petualangan atommu sekarang!</div>
-        <div style="width: 421px; height: 48px; left: 915px; top: 407px; position: absolute; border-radius: 8px; border: 1px solid rgba(42.50, 42.50, 42.50, 0.30)"></div>
-        <div style="left: 1077.31px; top: 421px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 20px; word-wrap: break-word">Login with Google</div>
-        <div style="width: 14.35px; height: 14.05px; left: 1038.95px; top: 428.22px; position: absolute; background: #4285F4"></div>
-        <div style="width: 23.25px; height: 11.99px; left: 1025.59px; top: 433.90px; position: absolute; background: #34A853"></div>
-        <div style="width: 6.44px; height: 13.49px; left: 1024px; top: 424.17px; position: absolute; background: #FBBC05"></div>
-        <div style="width: 8.92px; height: 14.05px; left: 1040.25px; top: 424.17px; position: absolute; background: #EA4335"></div>
-        <div style="width: 14.35px; height: 14.05px; left: 1056.50px; top: 424.17px; position: absolute; background: #4285F4"></div>
-        <input type="email" name="email" placeholder="Email address" style="width: 385px; height: 32px; left: 926px; top: 411px; position: absolute; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 20px; padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(42.50, 42.50, 42.50, 0.30)" />
-        <input type="password" name="password" placeholder="Password" style="width: 385px; height: 32px; left: 926px; top: 466px; position: absolute; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 20px; padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(42.50, 42.50, 42.50, 0.30)" />
-        <button type="submit" style="width: 421px; height: 48px; left: 915px; top: 521px; position: absolute; background: #2A2A2A; color: white; font-size: 16px; font-family: Plus Jakarta Sans; font-weight: 700; line-height: 20px; border-radius: 8px; border: none; cursor: pointer">Login</button>
-        <div style="left: 915px; top: 590px; position: absolute; color: black; font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 20px; word-wrap: break-word">Don't have an account? <a href="#" style="color: #2A2A2A; text-decoration: none; font-weight: 700">Sign up</a></div>
-        <div style="left: 915px; top: 630px; position: absolute; color: black; font-size: 14px; font-family: Plus Jakarta Sans; font-weight: 400; line-height: 20px; word-wrap: break-word">Forgot your password? <a href="#" style="color: #2A2A2A; text-decoration: none; font-weight: 700">Reset password</a></div>
-    </form>
+            <!-- <h3>Name</h3>
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Enter you name" aria-label="Enter you name" aria-describedby="addon-wrapping">
+            </div> -->
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <h3>Email</h3>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="Enter you email" aria-label="Enter you email" aria-describedby="addon-wrapping" name="email">
+                </div>
+                <h3>Password</h3>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping" name="password">
+                </div>
+                <button class="btn btn-primary mt-4 border-0" type="submit">Login</button>
+                <ul class="group">
+                    <li>
+                        <a>Don't have an account?</a>
+                        <a class="btn btn-link" href="/register" role="button">Register Here</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
 </div>
 
+<style>
+    body{
+        padding: 0;
+        width: 1440px;
+        height: 1024px;
+    }
+    .google-icon{
+        width: 25px;
+        height: 25px;
+    }
+    .input-group-text{
+        position: relative;
+        width: 550px;
+        top: 80px;
+        left: 35px;
+    }
+    #google{
+        position: relative;
+        top: 20px;
+        left: -10px;
+    }
+    .group{
+        position: relative;
+        top: 80px;
+    }
+    h3{
+        position: relative;
+        left: 35px;
+        top: 10px;
+        color: var(--5, #000);
+        text-align: left;
+        /* H3 */
+        font-size: 15px;
+        font-family: Plus Jakarta Sans;
+        font-weight: 600;
+        line-height: 28px;
+    }
+    .line{
+        position: relative;
+        top: 25px;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .sign{
+        position: absolute;
+        top: 380px;
+        left: 200px;
+
+    }
+    #box{
+        position: relative;
+        top: 150px;
+    }
+    #sub{
+        position: absolute;
+        top: 430px;
+        left: 50px;
+    }
+    .btn-primary{
+        width: 550px;
+        height: 48px;
+        border-radius: 8px;
+        background: #343530;
+    }
+    h2{
+        color: #000;
+        /* H2 */
+        font-size: 32px;
+        font-family: Plus Jakarta Sans;
+        font-weight: 700;
+        line-height: 32px;
+    }
+    .input-group{
+        font-size: 16px;
+        font-family: Plus Jakarta Sans;
+        line-height: 20px;
+    }
+    .or{
+        color: var(--6, rgba(43, 43, 43, 0.30));
+        text-align: center;
+        /* Body 1 */
+        font-size: 16px;
+        font-family: Plus Jakarta Sans;
+        opacity: 0.9;
+    }
+    .flex-nowrap{
+        width: 550px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--6, rgba(43, 43, 43, 0.30));
+        left: 35px;
+    }
+    hr{
+        position: relative;
+        left: 20px;
+        width: 140px;
+        height: 1px;
+        opacity: 0.3;
+    }
+    .in-rec{
+        position: absolute;
+        width: 530px;
+        height: 530px;
+        flex-shrink: 0;
+        top: 40px;
+        left: 40px;
+    }
+    .logo{
+        position: absolute;
+        width: 114px;
+        height: 43px;
+        flex-shrink: 0;
+        top: 30px;
+        left: 104px;   
+    }
+    .rectangle{
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        top: 105px;
+        left: 104px;
+        flex-shrink: 0;
+        border-radius: 50px 0px;
+        background: #343530;
+    }
+</style>
 
 

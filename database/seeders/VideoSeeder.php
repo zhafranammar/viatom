@@ -16,7 +16,7 @@ class VideoSeeder extends Seeder
         Video::Create([
             'title' => 'Video Opening',
             'level' => 1,
-            'video_url' => 'https://www.youtube.com/embed/VjAqGWleH4s',
+            'video_url' => 'https://www.youtube.com/embed/PP4-4I-Crek',
         ]);
         Video::Create([
             'title' => 'Video Materi Atom Dalton',
@@ -46,12 +46,12 @@ class VideoSeeder extends Seeder
         Video::Create([
             'title' => 'Video Materi Notasi Atom',
             'level' => 37,
-            'video_url' => 'https://www.youtube.com/embed/1X7fZoDs9KU',
+            'video_url' => 'https://www.youtube.com/embed/RTMm7oJl7BE',
         ]);
         Video::Create([
             'title' => 'Video Materi Isoton, Isobar, Isotop',
             'level' => 41,
-            'video_url' => 'https://www.youtube.com/embed/1X7fZoDs9KU',
+            'video_url' => 'https://www.youtube.com/embed/EfcfpdfYnmI',
         ]);
     }
 }
