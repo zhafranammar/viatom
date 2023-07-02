@@ -21,11 +21,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo su
-            cd /var/www/viatom-prod
+            sudo cd /var/www/viatom-prod
             pwd
-            git config --global --add safe.directory /var/www/viatom-prod
-            git config --global user.name "zhafranammar"
-            git config --global user.email "mzhafranammar@gmail.com"
-            git pull
+            sudo git config --global --add safe.directory /var/www/viatom-prod
+            sudo git config --global user.name "zhafranammar"
+            sudo git config --global user.email "mzhafranammar@gmail.com"
+            sudo git pull
 
 # Path: .github\workflows\deploy.yml
