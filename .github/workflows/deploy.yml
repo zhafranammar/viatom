@@ -20,6 +20,7 @@ jobs:
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            sudo su
             cd /var/www/viatom-prod
             git config user.name "zhafranammar"
             git config user.email "mzhafranammar@gmail.com"
