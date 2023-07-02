@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo su
-            sudo cd /var/www/viatom-prod
+            cd /var/www/viatom-prod
             pwd
             sudo git config --global --add safe.directory /var/www/viatom-prod
             sudo git config --global user.name "zhafranammar"
