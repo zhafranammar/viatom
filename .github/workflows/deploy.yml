@@ -22,8 +22,9 @@ jobs:
           script: |
             sudo su
             cd /var/www/viatom-prod
-            git config user.name "zhafranammar"
-            git config user.email "mzhafranammar@gmail.com"
+            pwd
+            git config --global user.name "zhafranammar"
+            git config --global user.email "mzhafranammar@gmail.com"
             git pull
 
 # Path: .github\workflows\deploy.yml
