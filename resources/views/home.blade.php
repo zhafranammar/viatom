@@ -39,7 +39,7 @@
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
                 <div class="row row-cols-3 my-4 mx-3 ps-4">
-                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" href="/adventure">
+                  <a class="card col my-4 mx-5" style="width: 15rem; height: 24rem" href="/adventure">
                     <img
                       src="https://i.ibb.co/7pQ5Tr1/40942.jpg"
                       class="card-img-top mt-2"
@@ -54,9 +54,9 @@
                         level yang menantang!
                       </p>
                     </div>
-                  </button>
+                  </a>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <a class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
                     <img
                       src="https://i.ibb.co/pdBT7p7/1086746-ONKVWT0.jpg"
                       class="card-img-top mt-2"
@@ -70,7 +70,7 @@
                         secara menarik melalui video dan audio.
                       </p>
                     </div>
-                  </div>
+                  </a>
 
                   <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
                     <img
