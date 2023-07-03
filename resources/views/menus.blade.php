@@ -38,21 +38,20 @@
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
-                <div class="row row-cols-3 my-4 mx-3 ps-4 ">
-                  @foreach ($detail as $level)
-                  <a class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" href="{{$href . '/' . $level->id}}">
-                    <img
-                    src="assets/web/roadmap.png"
-                    class="card-img-top mt-2"
-                    alt=""
-                    style=""
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="text-xl text-bold" style="color: #F2DC52">{{$level->title}}</h6>
-                    </div>
-                </a>
-                  @endforeach
-                </div>
+                <div class="row row-cols-3 my-4 mx-3 ps-4">
+                @foreach ($detail as $index => $level)
+    <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" onclick="window.location.href='{{$href . '/' . $level->id}}'">
+        <div class="mt-4 flex justify-center items-center rounded-full" style="background-color: #F2DC52; width: 10rem; height: 10rem;">
+            <span class="text-6xl font-bold">{{$index + 1}}</span>
+        </div>
+        <div class="card-body text-center">
+            <h6 class="text-xl font-bold" style="color: #F2DC52">{{$level->title}}</h6>
+        </div>
+    </button>
+@endforeach
+
+
+            </div>
         </div>
     </div>
 </body>
