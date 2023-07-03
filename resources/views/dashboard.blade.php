@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viatom-Tour Game</title>
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -18,7 +19,7 @@
                 </div>
                 <button class="btn-nav" id="btnNav">&equiv;</button>
                 <ul class="nav-menus" id="navMenus">
-                    <a href="#" class="nav-menu"><li>Features</li></a>
+                    <a href="#features-container" class="nav-menu"><li>Features</li></a>
                     <a href="#" class="nav-menu"><li>About Us</li></a>
                     <a href="#" class="nav-menu"><li>Team</li></a>
                     {{-- add logout button --}}
@@ -44,12 +45,12 @@
         </section>
         
   <!-- Section Features -->
-  <section class="features-container" style="background-image: url('{{asset('assets/web/bg-feature.png')}}')">
+  <section class="features-container" id="features-container" style="background-image: url('{{asset('assets/web/bg-feature.png')}}')">
     <h1 class="section-heading">We Have Best Features</h1>
     <p class="section-subheading">Kami dengan bangga menghadirkan berbagai fitur menarik yang dirancang untuk memperkaya<br>pengalaman belajar Anda dalam memahami atom secara mendalam.</p>
     <div class="features-box">
         <div class="long-feature">
-            <img src="assets/web/roadmap.png" alt="..." class="long-feature-img">
+            <img src="https://i.ibb.co/7pQ5Tr1/40942.jpg" alt="..." class="long-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
             <div class="long-content">
                 <h1 class="feature-title">Adventure</h1>
                 <p class="feature-text">Explorasi dunia atom dengan fitur <br> Adventure yang membuatmu terhanyut <br> dalam keseruan, tantang diri sendiri <br> dengan tingkatan level yang menantang!</p>
@@ -57,14 +58,14 @@
         </div>
         <div class="side-features">
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/pdBT7p7/1086746-ONKVWT0.jpg" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">Learning Materials</h1>
                     <p class="feature-text">Dapatkan pengalaman belajar menarik <br> dengan fitur materi yang dikemas secara <br> menarik, melalui video dan audio yang <br> memperkuat pemahaman siswa <br> terhadap struktur atom.</p>
                 </div>
             </div>
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/qFJKdtX/6169691-23914.jpg" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">Build The Atom</h1>
                     <p class="feature-text">Bangun model atom secara akurat dan <br> pahami interaksi partikel dalam atom <br> dengan mudah dengan bantuan <br> teknologi AI.</p>
@@ -74,7 +75,7 @@
     </div>
     <div class="features-box">
         <div class="long-feature">
-            <img src="assets/web/roadmap.png" alt="..." class="long-feature-img">
+            <img src="https://i.ibb.co/NtZCYHc/28158575-onlineconsultant-online-2.jpg" alt="..." class="long-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
             <div class="long-content">
                 <h1 class="feature-title">Discussion</h1>
                 <p class="feature-text">Jelajahi fitur diskusi kami yang membantu <br> pengguna saling berinteraksi, berdiskusi, <br> dan berbagi pendapat dengan <br> semangat. Menghadapi topik menarik <br> yang akan kita bahas dalam diskusi ini.</p>
@@ -82,14 +83,14 @@
         </div>
         <div class="side-features">
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/vdN5bN2/5597112-56392.jpg" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">See The Atom</h1>
                     <p class="feature-text">Jelajahi fitur menarik yang menggunakan <br> teknologi AR untuk memvisualisasikan <br> bentuk atom. Memungkinkan pengguna <br> melihat secara langsung dan memahami <br> struktur atom dengan lebih mendalam <br> secara visual.</p>
                 </div>
             </div>
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/gZGKKvZ/23591844-kids-education-02.jpg" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">Atomic Experiments</h1>
                     <p class="feature-text">Rasakan pengalaman simulasi percobaan <br> atomic yang nyata dan interaktif untuk <br> memperoleh pemahaman yang lebih <br> mendalam tentang atom.</p>
@@ -99,7 +100,7 @@
     </div>
     <div class="features-box">
         <div class="long-feature">
-            <img src="assets/web/roadmap.png" alt="..." class="long-feature-img">
+            <img src="https://i.ibb.co/kyBQm9J/8131809-3745105.jpg" alt="..." class="long-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
             <div class="long-content">
                 <h1 class="feature-title">Mini Games</h1>
                 <p class="feature-text">Tingkatkan rasa seru dalam mempelajari <br> atom melalui Mini Games yang <br> mengasyikkan dan menderbarkan!</p>
@@ -107,14 +108,14 @@
         </div>
         <div class="side-features">
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/fVW078r/quiz.png" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">Quiz</h1>
                     <p class="feature-text">Tingkatkan pemahamanmu tentang atom <br> melalui tantang Quiz yang menghibur!</p>
                 </div>
             </div>
             <div class="wide-feature">
-                <img src="assets/web/roadmap.png" alt="..." class="wide-feature-img">
+                <img src="https://i.ibb.co/0B2rMFj/8609244-3963716.jpg" alt="..." class="wide-feature-img rounded-lg" style="width: 270px; height: 270px; object-fit: cover;">
                 <div>
                     <h1 class="feature-title">Exam</h1>
                     <p class="feature-text">Siapkan diri untuk menghadapi ujian yang <br> menegangkan dan raih gelar ahli atom <br> sebagai bukti keberhasilanmu!</p>
@@ -161,7 +162,7 @@
       <h1 class="section-heading">We Have The Best Team</h1>
       <p class="section-subheading">
         Rasakan pengalam belajar atom yang seru melalui game interaktif <br />
-        yang mena
+        yang menarik
       </p>
       <div class="team-groups">
         <div class="team">

@@ -304,15 +304,15 @@
 }
 
 .team-img {
-  width: 324px;
+  width: 124px;
   position: absolute;
 }
 
 .team-position {
   text-align: center;
   margin-top: 21rem;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   position: relative;
 }
 
@@ -521,7 +521,7 @@
   }
 
   .team-img {
-    width: 242px;
+    width: 142px;
   }
 
   .team-position {
@@ -687,4 +687,5 @@
   .sosmed {
     margin: 0 auto;
   }
+
 }

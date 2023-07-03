@@ -39,24 +39,16 @@
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
                 <div class="row row-cols-3 my-4 mx-3 ps-4">
-                  <a class="card col my-4 mx-5" style="width: 15rem; height: 24rem" href="/adventure">
-                    <img
-                      src="https://i.ibb.co/7pQ5Tr1/40942.jpg"
-                      class="card-img-top mt-2"
-                      alt=""
-                      style="width: 100%; height: 160px; object-fit: cover;"
-                    />
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/adventure'">
+                    <img src="https://i.ibb.co/7pQ5Tr1/40942.jpg" class="card-img-top mt-2" alt="" style="width: 100%; height: 160px; object-fit: cover;" />
                     <div class="card-body text-center">
                       <h5 class="card-title">Adventure</h5>
-                      <p class="card-text">
-                        Explorasi dunia atom dengan fitur Adventure yang membuatmu
-                        terhanyut dalam keseruan, tantang diri sendiri dengan tingkatan
-                        level yang menantang!
-                      </p>
+                      <p class="card-text">Explorasi dunia atom dengan fitur Adventure yang membuatmu terhanyut dalam keseruan, tantang diri sendiri dengan tingkatan level yang menantang!</p>
                     </div>
-                  </a>
+                  </button>
 
-                  <a class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/learning-materials'">
                     <img
                       src="https://i.ibb.co/pdBT7p7/1086746-ONKVWT0.jpg"
                       class="card-img-top mt-2"
@@ -70,9 +62,9 @@
                         secara menarik melalui video dan audio.
                       </p>
                     </div>
-                  </a>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/build-the-atom'">
                     <img
                       src="https://i.ibb.co/qFJKdtX/6169691-23914.jpg"
                       class="card-img-top mt-2"
@@ -86,9 +78,9 @@
                         dalam atom dengan mudah,dengan bantuan teknologi AI.
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/see-the-atom'">
                     <img
                       src="https://i.ibb.co/vdN5bN2/5597112-56392.jpg"
                       class="card-img-top mt-2"
@@ -102,9 +94,9 @@
                         memvisualisasikan bentuk atom.
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/atom-experiment'">
                     <img
                       src="https://i.ibb.co/gZGKKvZ/23591844-kids-education-02.jpg"
                       class="card-img-top mt-2"
@@ -119,9 +111,9 @@
                         tentang atom.
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/discussions'">
                     <img
                       src="https://i.ibb.co/NtZCYHc/28158575-onlineconsultant-online-2.jpg"
                       class="card-img-top mt-2"
@@ -135,9 +127,9 @@
                         berinteraksi, berdiskusi,dan berbagi pendapat dengan semangat.
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/minigames'">
                     <img
                       src="https://i.ibb.co/kyBQm9J/8131809-3745105.jpg"
                       class="card-img-top mt-2"
@@ -151,9 +143,9 @@
                         yang mengasyikkan dan menderbarkan!
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/quiz'">
                     <img
                       src="https://i.ibb.co/fVW078r/quiz.png"
                       class="card-img-top mt-2"
@@ -166,9 +158,9 @@
                         menghibur!
                       </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div class="card col my-4 mx-5" style="width: 15rem; height: 24rem">
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/exams'">
                     <img
                       src="https://i.ibb.co/0B2rMFj/8609244-3963716.jpg"
                       class="card-img-top mt-2"
@@ -182,7 +174,7 @@
                         gelar ahli atom sebagai bukti keberhasilanmu!
                       </p>
                     </div>
-                  </div>
+                  </button>
                 </div>
         </div>
     </div>

@@ -14,6 +14,7 @@ class QuizSeeder extends Seeder
     public function run(): void
     {
         Quiz::Create([
+            'title' => 'Quiz 1',
             'question' => 'Siapa ilmuwan yang mengemukakan teori atom Dalton?',
             'level' => 5,
             'option_true' => 'John Dalton',
@@ -24,6 +25,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'title' => 'Quiz 2',
             'question' => 'Teori atom Dalton menyatakan bahwa atom merupakan partikel terkecil yang memiliki karakteristik yaitu?',
             'level' => 6,
             'option_true' => 'Tidak dapat dibagi menjadi subatom',
@@ -34,6 +36,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'title' => 'Quiz 3',
             'question' => 'Berdasarkan Teori Thomson, apa yang merupakan struktur dasar atom?',
             'level' => 11,
             'option_true' => 'Elektron',
@@ -44,6 +47,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'title' => 'Quiz 4',
             'question' => 'Maksud dari penggambaran model atom sebagai "Roti kismis" pada teori atom Thomson adalah...',
             'level' => 12,
             'option_true' => 'Atom terdiri atas materi bermuatan positif dan di dalamnya tersebar elektron',
@@ -54,6 +58,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'title' => 'Quiz 5',
             'question' => 'Siapakah yang mengusulkan nama partikel sinar katoda disebut "elektron"?',
             'level' => 19,
             'option_true' => 'George Johnstone Stoney',
@@ -63,6 +68,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Elektron adalah partikel subatom yang bermuatan negatif. Nama elektron diperkenalkan untuk menamakan muatan ini pada tahun 1894 oleh fisikawan Irlandia George Johnstone Stoney.',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 6',
             'question' => '2.Percobaan yang mendasari adanya penemuan muatan dan massa elektron adalah…',
             'level' => 20,
             'option_true' => 'Percobaan Tetes Minyak Milikan',
@@ -72,6 +78,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Percobaan Tetes Minyak Milikan dilakukan untuk menemukan muatan satu electron oleh seorang ilmuan bernama Robert Andrews Milikan',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 7',
             'question' => 'Eksperimen yang dilakukan oleh Rutherford untuk mengembangkan teorinya tentang struktur atom adalah…',
             'level' => 28,
             'option_true' => 'Eksperimen hamburan partikel alfa',
@@ -81,6 +88,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Eksperimen hamburan partikel alfa. Hasil percobaan ini membuat Rutherford menyatakan hipotesisnya bahwa atom tersusun dari inti atom yang bermuatan positif dan dikelilingi elektron yang bermuatan negatif, sehingga atom bersifat netral.',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 8',
             'question' => 'Apa yang menyebabkan partikel alfa sedikit yang dibelokkan menurut teori Rutherford?',
             'level' => 29,
             'option_true' => 'Partikel alfa ditolak inti atom yang bermuatan positif',
@@ -90,6 +98,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Partikel alfa yang bermuatan positif sedikit yang dibelokkan karena ditolak inti atom yang bermuatan positif',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 9',
             'question' => 'Siapakah ilmuwan yang mengusulkan model atom Bohr ?',
             'level' => 34,
             'option_true' => 'Niels Bohr',
@@ -99,6 +108,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Niels Bohr adalah seorang fisikawan Denmark yang mengusulkan model atom pada tahun 1913.',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 10',
             'question' => 'Menurut model atom Bohr, perubahan energi elektron dalam atom terjadi ketika…',
             'level' => 35,
             'option_true' => 'Elektron memancarkan cahaya',
@@ -108,6 +118,7 @@ class QuizSeeder extends Seeder
             'explanation' => 'Menurut model atom Bohr, perubahan energi elektron dalam atom terjadi ketika elektron memancarkan cahaya.',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 11',
             'question' => 'Diketahui atom magnesium (Mg) memiliki nomor massa 24 dan nomor atom 12. Berapa jumlah proton, elektron, dan neutron berturut-turut dalam atom tersebut?',
             'level' => 38,
             'option_true' => '12 ; 12 ; 12',
@@ -119,6 +130,7 @@ class QuizSeeder extends Seeder
             Jumlah neutron = nomor massa - nomor atom = 24 - 12 = 12',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 12',
             'question' => 'Berapa jumlah proton, elektron, dan neutron berturut-turut pada ion oksigen dengan muatan -2 (O2-)? (No atom O = 8 ; No massa = 18)',
             'level' => 39,
             'option_true' => '8 ; 10 ; 10',
@@ -130,6 +142,7 @@ class QuizSeeder extends Seeder
             Jumlah neutron = nomor massa - nomor atom = 18 - 8 = 10',
         ]);
         Quiz::Create([
+            'title' => 'Quiz 13',
             'question' => 'Diketahui Atom X memiliki nomor massa 20 dan nomor atom 9. Atom Y memiliki nomor massa 19 dan nomor atom 9. Atom Z memiliki nomor massa 20 dan nomor atom 10. Berdasarkan informasi tersebut, manakah pilihan yang benar?',
             'level' => 42,
             'option_true' => 'Atom X dan Y merupakan isotop',
@@ -140,6 +153,7 @@ class QuizSeeder extends Seeder
 
         ]);
         Quiz::Create([
+            'title' => 'Quiz 14',
             'question' => 'Seorang ahli kimia sedang mengamati dua jenis inti atom berbeda yang memiliki jumlah proton yang sama namun jumlah neutron yang berbeda. Ia menyimpulkan bahwa inti-inti atom ini termasuk dalam kategori…',
             'level' => 43,
             'option_true' => 'Isotop',
