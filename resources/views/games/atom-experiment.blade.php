@@ -38,6 +38,7 @@
         });
     </script>
     <title>Viatom</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
 </head>
 <body style="background-image: url('{{asset('assets/web/map1.png')}}'); background-size: cover;">
     

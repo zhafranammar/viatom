@@ -154,7 +154,7 @@ class HomeController extends Controller
 
     public function quizPlay(string $id)
     {
-        $detail = \App\Models\Quiz::find($id);
+        $detail = \App\Models\Quiz::where('level', $id)->first();
         $user = auth()->user();
         $user->current_level = $detail->level;
         $user->save();

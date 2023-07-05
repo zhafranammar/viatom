@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viatom-Tour Game</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
 

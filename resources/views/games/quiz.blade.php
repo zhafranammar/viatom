@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Viatom</title>
-
+    
+    <link rel="icon" type="image/png" href="{{ asset('assets/web/logo.png') }}" />
 </head>
 <body style="background-image: url('{{asset('assets/web/map1.png')}}'); background-size: cover;">
     
