@@ -28,6 +28,15 @@ class AdminSeeder extends Seeder
             'current_level' => 1,
             'max_level' => 44,
         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Yopi',
+            'email' => 'yopi@viatom.com',
+            'password' => bcrypt('gold'),
+            'is_admin' => 1,
+            'current_level' => 1,
+            'max_level' => 44,
+        ]);
+
 
         // run factory user
         // \App\Models\User::factory(2000)->create();
