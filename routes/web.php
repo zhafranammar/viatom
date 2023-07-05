@@ -31,19 +31,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/adventure', [App\Http\Controllers\HomeController::class, 'adventure'])->name('adventure');
-Route::get('/adventure/{id}', [App\Http\Controllers\HomeController::class, 'adventurePlay'])->name('adventure.play');
-Route::get('/atom-experiment', [App\Http\Controllers\HomeController::class, 'atomExperiment'])->name('atom-experiment');
-Route::get('/atom-experiment/{id}', [App\Http\Controllers\HomeController::class, 'atomExperimentPlay'])->name('atom-experiment.play');
-Route::get('/build-the-atom', [App\Http\Controllers\HomeController::class, 'buildTheAtom'])->name('build-the-atom');
-Route::get('/build-the-atom/{id}', [App\Http\Controllers\HomeController::class, 'buildTheAtomPlay'])->name('build-the-atom.play');
-Route::get('/see-the-atom', [App\Http\Controllers\HomeController::class, 'seeTheAtom'])->name('see-the-atom');
-Route::get('/see-the-atom/{id}', [App\Http\Controllers\HomeController::class, 'seeTheAtomPlay'])->name('see-the-atom.play');
-Route::get('/learning-materials', [App\Http\Controllers\HomeController::class, 'learningMaterials'])->name('learning-materials');
-Route::get('/learning-materials/{id}', [App\Http\Controllers\HomeController::class, 'learningMaterialsPlay'])->name('learning-materials.play');
-Route::get('/quiz', [App\Http\Controllers\HomeController::class, 'quiz'])->name('quiz');
-Route::get('/quiz/{id}', [App\Http\Controllers\HomeController::class, 'quizPlay'])->name('quiz.play');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -65,6 +53,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/exams/next-question', [App\Http\Controllers\ExamController::class, 'nextQuestion'])->name('exams.next-question');
     Route::get('/exams/result/{$exam}', [App\Http\Controllers\ExamController::class, 'result'])->name('exams.result');
     Route::get('/exams/history', [App\Http\Controllers\ExamController::class, 'history'])->name('exams.history');
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/adventure', [App\Http\Controllers\HomeController::class, 'adventure'])->name('adventure');
+    Route::get('/adventure/{id}', [App\Http\Controllers\HomeController::class, 'adventurePlay'])->name('adventure.play');
+    Route::get('/atom-experiment', [App\Http\Controllers\HomeController::class, 'atomExperiment'])->name('atom-experiment');
+    Route::get('/atom-experiment/{id}', [App\Http\Controllers\HomeController::class, 'atomExperimentPlay'])->name('atom-experiment.play');
+    Route::get('/build-the-atom', [App\Http\Controllers\HomeController::class, 'buildTheAtom'])->name('build-the-atom');
+    Route::get('/build-the-atom/{id}', [App\Http\Controllers\HomeController::class, 'buildTheAtomPlay'])->name('build-the-atom.play');
+    Route::get('/see-the-atom', [App\Http\Controllers\HomeController::class, 'seeTheAtom'])->name('see-the-atom');
+    Route::get('/see-the-atom/{id}', [App\Http\Controllers\HomeController::class, 'seeTheAtomPlay'])->name('see-the-atom.play');
+    Route::get('/learning-materials', [App\Http\Controllers\HomeController::class, 'learningMaterials'])->name('learning-materials');
+    Route::get('/learning-materials/videos', [App\Http\Controllers\HomeController::class, 'videos'])->name('learning-materials.videos');
+    Route::get('/learning-materials/videos/{id}', [App\Http\Controllers\HomeController::class, 'videosPlay'])->name('learning-materials.videos.play');
+    Route::get('/learning-materials/materi', [App\Http\Controllers\HomeController::class, 'materis'])->name('learning-materials.materi');
+    Route::get('/learning-materials/materi/{id}', [App\Http\Controllers\HomeController::class, 'materiPlay'])->name('learning-materials.materi.play');
+    Route::get('/quiz', [App\Http\Controllers\HomeController::class, 'quiz'])->name('quiz');
+    Route::get('/quiz/{id}', [App\Http\Controllers\HomeController::class, 'quizPlay'])->name('quiz.play');
 });
 
 Route::get('/users', function () {

@@ -35,8 +35,7 @@
         videoElement.allowFullscreen = true;
         videoElement.frameborder = 0;
 
-        const nextButton = document.createElement('a');
-        nextButton.href = `{{ route('next-level') }}`;
+        const nextButton = document.createElement('button');
         nextButton.innerHTML = 'Next Level';
         nextButton.classList.add('p-2');
         nextButton.classList.add('font-bold');
@@ -49,6 +48,10 @@
         nextButton.classList.add('absolute');
         nextButton.classList.add('bottom-1.5');
         nextButton.classList.add('right-3');
+
+        nextButton.addEventListener('click', function() {
+            window.location.href = '{{ route('next-level') }}';
+        });
 
         const nextIcon = document.createElement('span');
         nextIcon.classList.add('material-symbols-outlined');

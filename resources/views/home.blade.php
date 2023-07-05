@@ -129,22 +129,6 @@
                     </div>
                   </button>
 
-                  <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/minigames'">
-                    <img
-                      src="https://i.ibb.co/kyBQm9J/8131809-3745105.jpg"
-                      class="card-img-top mt-2"
-                      alt=""
-                      style="width: 100%; height: 160px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h5 class="card-title">Minigames</h5>
-                      <p class="card-text">
-                        Tingkatkan rasa seru dalam mempelajari atom melalui Mini Games
-                        yang mengasyikkan dan menderbarkan!
-                      </p>
-                    </div>
-                  </button>
-
                   <button class="card col my-4 mx-5" style="width: 15rem; height: 24rem" onclick="window.location.href='/quiz'">
                     <img
                       src="https://i.ibb.co/fVW078r/quiz.png"

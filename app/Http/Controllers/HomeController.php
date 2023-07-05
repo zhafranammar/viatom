@@ -74,13 +74,41 @@ class HomeController extends Controller
 
     public function learningMaterials()
     {
+        return view('learning-materials');
+    }
+
+    public function videos()
+    {
         $maxLevel = auth()->user()->max_level;
-        $detailVideo = Video::all()->where('level', '<=', $maxLevel);
-        $detailMateri = \App\Models\Materi::all()->where('level', '<=', $maxLevel);
-        // gabungkan detail video dan materi
-        $detail = $detailVideo->concat($detailMateri)->sortBy('level');
-        $href = 'learning-materials';
+        $detail = Video::all()->where('level', '<=', $maxLevel);
+        $href = 'videos';
         return view('menus', compact('detail', 'href'));
+    }
+
+    public function materis()
+    {
+        $maxLevel = auth()->user()->max_level;
+        $detail = \App\Models\Materi::all()->where('level', '<=', $maxLevel);
+        $href = 'materi';
+        return view('menus', compact('detail', 'href'));
+    }
+
+    public function materiPlay(string $id)
+    {
+        $detail = \App\Models\Materi::where('level', $id)->first();
+        $user = auth()->user();
+        $user->current_level = $detail->level;
+        $user->save();
+        return redirect()->route('play');
+    }
+
+    public function videosPlay(string $id)
+    {
+        $detail = \App\Models\Video::where('level', $id)->first();
+        $user = auth()->user();
+        $user->current_level = $detail->level;
+        $user->save();
+        return redirect()->route('play');
     }
 
     public function quiz()
@@ -99,7 +127,7 @@ class HomeController extends Controller
 
     public function atomExperimentPlay(string $id)
     {
-        $detail = AtomExperiment::find($id);
+        $detail = AtomExperiment::where('level', $id)->first();
         $user = auth()->user();
         $user->current_level = $detail->level;
         $user->save();
@@ -108,7 +136,7 @@ class HomeController extends Controller
 
     public function buildTheAtomPlay(string $id)
     {
-        $detail = BuildTheAtom::find($id);
+        $detail = BuildTheAtom::where('level', $id)->first();
         $user = auth()->user();
         $user->current_level = $detail->level;
         $user->save();
@@ -117,19 +145,7 @@ class HomeController extends Controller
 
     public function seeTheAtomPlay(string $id)
     {
-        $detail = SeeTheAtom::find($id);
-        $user = auth()->user();
-        $user->current_level = $detail->level;
-        $user->save();
-        return redirect()->route('play');
-    }
-
-    public function learningMaterialsPlay(string $id)
-    {
-        $maxLevel = auth()->user()->max_level;
-        $detail = Video::all()->where('level', '<=', $maxLevel);
-        $detail = $detail->merge(\App\Models\Materi::all()->where('level', '<=', $maxLevel));
-        $detail = $detail->where('id', $id)->first();
+        $detail = SeeTheAtom::where('level', $id)->first();
         $user = auth()->user();
         $user->current_level = $detail->level;
         $user->save();

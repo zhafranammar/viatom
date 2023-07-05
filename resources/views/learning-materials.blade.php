@@ -19,7 +19,7 @@
     
     <div class="py-8">
         <div class="max-w-full mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="relative">
                     <a href="{{ route('home') }}" class="btn-game px-2 py-2 rounded-lg absolute left-0 top-0 m-5">
                         <span class="material-symbols-outlined">arrow_back</span>
@@ -34,24 +34,41 @@
                     </div>
                 </div>
                 
-                <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
+                <div class="pt-4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center overflow-hidden">
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
-                <div class="row row-cols-3 my-4 mx-3 ps-4">
-                @foreach ($detail as $index => $level)
-                    <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" onclick="window.location.href='{{$href . '/' . $level->level}}'">
-                        <div class="mt-4 flex justify-center items-center rounded-full" style="background-color: #F2DC52; width: 10rem; height: 10rem;">
-                            <span class="text-6xl font-bold">{{$index + 1}}</span>
-                        </div>
-                        <div class="card-body text-center">
-                            <h6 class="text-xl font-bold" style="color: #F2DC52">{{$level->title}}</h6>
-                        </div>
-                    </button>
-                @endforeach
+                <div class="row row-cols-2 my-4 mx-3 ps-4">
 
-
-            </div>
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 25rem" onclick="window.location.href='/learning-materials/videos'">
+                    <img
+                      src="https://i.ibb.co/RD4VNKf/youtube-gc500afd11-1280.png"
+                      class="card-img-top mt-2"
+                      alt=""
+                      style="width: 100%; height: 160px; object-fit: cover;"
+                    />
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Video Pembelajaran</h5>
+                      <p class="card-text">
+                        Bosan dengan pembelajaran yang monoton? Ayo belajar dengan video animasi yang telah kami sediakan
+                      </p>
+                    </div>
+                  </button>
+                  <button class="card col my-4 mx-5" style="width: 15rem; height: 25rem" onclick="window.location.href='/learning-materials/materi'">
+                    <img
+                      src="https://i.ibb.co/zxmLwhj/7069575-3297140.jpg"
+                      class="card-img-top mt-2"
+                      alt=""
+                      style="width: 100%; height: 160px; object-fit: cover;"
+                    />
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Rangkuman</h5>
+                      <p class="card-text">
+                        Kamu lupa dengan materi yang telah kamu pelajari? Tenang, kami sediakan rangkuman materi yang telah kamu pelajari
+                      </p>
+                    </div>
+                  </button>
+                </div>
         </div>
     </div>
 </body>
@@ -71,3 +88,4 @@
         align-items: center;
     }
 </style>
+

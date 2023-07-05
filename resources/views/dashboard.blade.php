@@ -40,7 +40,7 @@
                 <p class="hero-welcome">Halo, selamat datang</p>
                 <h1 class="hero-heading"><span class="text-yellow">Temukan</span> Suasana<br>Asyik Belajar <span class="text-yellow">Atom</span></h1>
                 <p class="hero-text">Ikuti petualangan atom bersama viatom!<br>Mainkan sekarang gratis.</p>
-                <button onclick="window.location.href='/game'" class="btn-yellow">Get Started</button>
+                <button onclick="window.location.href='/home'" class="btn-yellow">Get Started</button>
             </div>
         </section>
         
@@ -224,7 +224,7 @@
       padding-top: 15rem;
     }
     .team-img {
-  width: 224px;
+  width: 334px;
   position: absolute;
 }
 .team-position {
