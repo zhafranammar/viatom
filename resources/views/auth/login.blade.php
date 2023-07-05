@@ -52,7 +52,7 @@
                 </div>
                 <h3>Password</h3>
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping" name="password">
+                    <input type="password" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping" name="password">
                 </div>
                 <button class="btn btn-primary mt-4 border-0" type="submit">Login</button>
                 <ul class="group">

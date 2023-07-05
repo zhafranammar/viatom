@@ -54,12 +54,12 @@
                 </div>
                 <h3>Password</h3>
                 <div class="input-group flex-nowrap">
-                    <input name="password" type="text" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping">
+                    <input name="password" type="password" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping">
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 <h3>Password Confirmation</h3>
                 <div class="input-group flex-nowrap">
-                    <input name="password_confirmation" type="text" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping">
+                    <input name="password_confirmation" type="password" class="form-control" placeholder="Enter you password" aria-label="Enter you password" aria-describedby="addon-wrapping">
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
                 <button class="btn btn-primary input-group flex-nowrap mt-4 text-white d-flex justify-content-center" type="submit">Sign Up</button>

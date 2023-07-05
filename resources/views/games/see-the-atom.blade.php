@@ -78,13 +78,11 @@
                         <span class="material-symbols-outlined">arrow_back</span>
                     </a>
                     <div class="flex flex-col items-end absolute top-0 right-0">
-                        <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 mt-5 mb-2.5">
-                            <span class="material-symbols-outlined">person</span>
-                        </a>
+                         
                         <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5">
                             <span class="material-symbols-outlined">home</span>
                         </a>
-                        <a href="{{ route('dashboard') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5">
+                        <a href="{{ route('play') }}" class="btn-game px-2 py-2 rounded-lg flex mx-5 my-2.5">
                             <span class="material-symbols-outlined">refresh</span>
                         </a>
                     </div>
@@ -98,17 +96,9 @@
                 <div class="flex flex-col items-center">
                     <h1 class="text-3xl font-bold text-gray-900" id="title"></h1>
                 </div>
-                 <div id="game-container" class="pt-4 w-3/4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
+                 <div id="game-container" class="pt-4 pb-16 w-3/4 mx-auto sm:px-6 lg:px-8 flex justify-center items-center bg-white overflow-hidden">
                     <div  class="max-w-full mx-auto sm:px-6 lg:px-8"></div>
                  </div>
-                <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
-                    <div class="flex btn-game align-center rounded-md p-2">
-                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                            <span class="material-symbols-outlined" style="color: #F2DC52;"> view_in_ar</span>
-                        </div>
-                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">See The Atom</h1>
-                    </div>
-                </div>
             </div>
             {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>

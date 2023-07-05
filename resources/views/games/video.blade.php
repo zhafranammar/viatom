@@ -103,15 +103,6 @@
                 <div class="flex flex-col items-center relative" id="game-container">
                 </div>
                 {{-- make tombol download if not load --}}
-
-                <div class="fixed bottom-0 left-0 right-0 flex items-center justify-center pb-5">
-                    <div class="flex btn-game align-center rounded-md p-2">
-                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#F2DC52] stroke-0 text-center xl:p-2.5">
-                            <span class="material-symbols-outlined" style="color: #F2DC52;"> library_books</span>
-                        </div>
-                        <h1 class="p-2 font-bold font-mono text-2xl" style="color: #F2DC52;">Materi</h1>
-                    </div>
-                </div>
             </div>
             {{-- <a href="{{ route('next-level') }}">Next Level</a> --}}
         </div>
