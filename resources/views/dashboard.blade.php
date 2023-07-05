@@ -223,5 +223,16 @@
       padding-left: 52rem;
       padding-top: 15rem;
     }
+    .team-img {
+  width: 224px;
+  position: absolute;
+}
+.team-position {
+  text-align: center;
+  margin-top: 21rem;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+}
   }
 </style>

@@ -17,12 +17,16 @@ class AdminSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
             'is_admin' => 1,
+            'current_level' => 1,
+            'max_level' => 44,
         ]);
         \App\Models\User::factory()->create([
             'name' => 'Test',
             'email' => 'test@test.com',
             'password' => bcrypt('test'),
             'is_admin' => 0,
+            'current_level' => 1,
+            'max_level' => 44,
         ]);
 
         // run factory user
