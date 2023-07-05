@@ -213,10 +213,15 @@
           <img src="assets/web/mail.png" alt="" class="sosmed-icon" />
           <p class="sosmed-title">viatomgame@gmail.com</p>
         </div>
-        <div class="sosmed">
-          <img src="assets/web/instagram.png" alt="" class="sosmed-icon" />
-          <p class="sosmed-title">viatom_game</p>
-        </div>
       </div>
     </section>
   </footer>
+
+  <style>
+  @media (min-width: 1920px) {
+    .hero-content {
+      padding-left: 52rem;
+      padding-top: 15rem;
+    }
+  }
+</style>

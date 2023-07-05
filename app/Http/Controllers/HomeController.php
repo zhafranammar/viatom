@@ -18,7 +18,23 @@ class HomeController extends Controller
     public function adventure()
     {
         $maxLevel = auth()->user()->max_level;
-        $detail = \App\Models\Scene::all()->where('level', '<=', $maxLevel);
+        $levels = \App\Models\Scene::all()->where('level', '<=', $maxLevel);
+        $detail = [];
+        foreach ($levels as $level) {
+            if ($level->type == 'quiz') {
+                $detail[] = \App\Models\Quiz::where('level', $level->level)->first();
+            } else if ($level->type == 'atom-experiment') {
+                $detail[] = AtomExperiment::where('level', $level->level)->first();
+            } else if ($level->type == 'build-the-atom') {
+                $detail[] = BuildTheAtom::where('level', $level->level)->first();
+            } else if ($level->type == 'see-the-atom') {
+                $detail[] = SeeTheAtom::where('level', $level->level)->first();
+            } else if ($level->type == 'video') {
+                $detail[] = Video::where('level', $level->level)->first();
+            } else if ($level->type == 'materi') {
+                $detail[] = \App\Models\Materi::where('level', $level->level)->first();
+            }
+        }
         $href = 'adventure';
         return view('menus', compact('detail', 'href'));
     }
@@ -69,7 +85,8 @@ class HomeController extends Controller
 
     public function quiz()
     {
-        $detail = \App\Models\Quiz::all();
+        $maxLevel = auth()->user()->max_level;
+        $detail = \App\Models\Quiz::all()->where('level', '<=', $maxLevel);
         $href = 'quiz';
         return view('menus', compact('detail', 'href'));
     }
