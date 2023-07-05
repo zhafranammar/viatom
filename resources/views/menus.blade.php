@@ -36,26 +36,19 @@
                     <img src={{asset('assets/web/logo.png')}} alt="" class="mr-2 w-16">
                     <img src={{asset('assets/web/viatom-text.png')}} alt="" class="w-48">
                 </div>
+                <div class="row row-cols-3 my-4 mx-3 ps-4">
                 
-                @if ($detail->isEmpty())
-                    <div class="flex items-center">
-                        <h1 class="text-3xl mt-8 px-4 text-center font-bold text-gray-900" id="title">Belum ada level yang terbuka. Silahkan bermain terlebih dahulu di mode Adventure</h1>
-                    </div>
-                @else
-                    <div class="row row-cols-3 my-4 mx-3 ps-4">
-                    @foreach ($detail as $index => $level)
-                        <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" onclick="window.location.href='{{$href . '/' . $level->level}}'">
-                            <div class="mt-4 flex justify-center items-center rounded-full" style="background-color: #F2DC52; width: 10rem; height: 10rem;">
-                                <span class="text-6xl font-bold">{{$index + 1}}</span>
-                            </div>
-                            <div class="card-body text-center">
-                                <h6 class="text-xl font-bold" style="color: #F2DC52">{{$level->title}}</h6>
-                            </div>
-                        </button>
-                    @endforeach
-                    </div>
-                @endif
-            
+                @foreach ($detail as $index => $level)
+                    <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" onclick="window.location.href='{{$href . '/' . $level->level}}'">
+                        <div class="mt-4 flex justify-center items-center rounded-full" style="background-color: #F2DC52; width: 10rem; height: 10rem;">
+                            <span class="text-6xl font-bold">{{$index + 1}}</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="text-xl font-bold" style="color: #F2DC52">{{$level->title}}</h6>
+                        </div>
+                    </button>
+                @endforeach
+            </div>
         </div>
     </div>
 </body>
