@@ -42,7 +42,6 @@
                         <h1 class="text-3xl mt-8 px-4 text-center font-bold text-gray-900" id="title">Belum ada level yang terbuka. Silahkan bermain terlebih dahulu di mode Adventure</h1>
                     </div>
                 @else
-                    {{var_dump($detail)}}
                     <div class="row row-cols-3 my-4 mx-3 ps-4">
                     @foreach ($detail as $index => $level)
                         <button class="card col my-4 mx-5 btn-game" style="width: 15rem; height: 24rem" onclick="window.location.href='{{$href . '/' . $level->level}}'">
